@@ -243,6 +243,7 @@ class EmailController extends Controller
                     <p style='font-weight: bold; margin: 4px;'>El enlace de inicio es: http://www.icp-servicios.com/</p>
                     <br>
                     <h4>Resumen de su compra</h4>
+                    <br>
                     <table style='width: 100% !important; border: 1px solid;'>
                     <tr style='border: 1px solid;'>
                     <td style='font-weight: bold; border: 1px solid;'>Pines Comprados</td>
@@ -262,7 +263,7 @@ class EmailController extends Controller
                     <br>
                     <p style='margin: 4px;'>Instituto Colombiano de Psicometría.</p>
                     <p style='margin: 4px;'>Ps. Mgr. Antonio Martínez, Gerente</p>
-                    <p style='margin: 4px;'>Correo: icp@incometria.com - Celular (WhatsApp): 3012990890/</p>
+                    <p style='margin: 4px;'>Correo: icp@incometria.com - Celular (WhatsApp): 3012990890</p>
                 </div>
             </div>
             <br>
