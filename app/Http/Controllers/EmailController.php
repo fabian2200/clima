@@ -472,7 +472,7 @@ class EmailController extends Controller
              </div>
              <div class='row' style='padding-top: 20px'>
                  <div class='col-lg-9' style= 'padding-left: 10%; padding-right: 10%;border-right: 3px solid gray;border-left: 3px solid gray;'>
-                     <h3><b>Cuenta Creada</b></h3>
+                     <h3><b>Compra de Pines</b></h3>
                      <br>
                      <h4>Cordial saludo $nombres_apellidos:</h4>
                      <h4 style='text-align: justify;'>Usted ha adquirido nuestro servicio</h4>                    
