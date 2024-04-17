@@ -5,7 +5,7 @@
 
 <html lang="en">
 
-<body style="background-image: url('/imagenes/fondo.png'); background-size: 100% 100%">
+<body style="background-image: url('/imagenes/fondo.png'); background-size: 100% 107%; background-position-y: -55px;">
     <div id="loginDiv" style="height: 100vh">
         <section class="row flexbox-container" style="height: 100vh; align-items: center">
             <div style="height: 93vh;" class="col-6 d-flex align-items-center justify-content-center">
