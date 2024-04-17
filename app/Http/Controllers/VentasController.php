@@ -52,7 +52,7 @@ class VentasController extends Controller
 
             if ($insertado2) {
                 $emailController = new EmailController();
-                $resultado = $emailController->enviarCorreo($correo, $nombres.' '.$apellidos, "user_".$cedula, $clave, $pines_comprados, $precio_pin, ($pines_comprados * $precio_pin));
+                $resultado = $emailController->enviarCorreo('Activación de cuenta', $correo, $nombres.' '.$apellidos, "user_".$cedula, $clave, $pines_comprados, $precio_pin, ($pines_comprados * $precio_pin));
                 return response()->json(["¡Venta realizada correctamente!", 0], 200);
             }else{
                 return response()->json(["¡Ocurrió un error al guardar la venta, intente nuevamente!", 1], 200);
@@ -80,6 +80,7 @@ class VentasController extends Controller
         $usuarios = DB::connection("mysql")->table("usuario")
         ->select("usuario.*")
         ->where("usuario.rol", 2)
+        ->orderBy("usuario.nombres", "ASC")
         ->get();
         
         return response()->json($usuarios, 200);
@@ -89,6 +90,7 @@ class VentasController extends Controller
         $ventas = DB::connection("mysql")->table("venta")
         ->join("usuario", "usuario.id", "venta.id_cliente")
         ->select("venta.*", "usuario.nombres", "usuario.apellidos")
+        ->orderBy("venta.fecha", "DESC")
         ->where("usuario.rol", 2)
         ->get();
         
@@ -114,5 +116,65 @@ class VentasController extends Controller
         ];
         
         return response()->json($datos, 200);
+    }
+
+    public function guardarVentaExistente(Request $request){
+        $id_cliente = $request->input('id_cliente');
+        $pines_comprados = $request->input('pines_comprados');
+        $precio_pin = $request->input('precio_pin');
+
+        $usuario = DB::connection('mysql')->table('usuario')
+        ->where("id", $id_cliente)
+        ->first();
+
+        $actualizado = DB::connection('mysql')->table('usuario')
+        ->where("id", $id_cliente)
+        ->update([
+            "pines_comprados" => DB::raw('pines_comprados + ' . $pines_comprados)
+        ]);
+
+        if ($actualizado) {
+            $datos_venta = [
+                'id_cliente' => $id_cliente,
+                'pines_comprados' => $pines_comprados,
+                'precio_pin' => $precio_pin,
+                'fecha' => date('d-m-Y H:i:s'),
+                'total' => ($pines_comprados * $precio_pin)
+            ];
+
+            $insertado2 = DB::connection('mysql')->table('venta')->insert(
+                $datos_venta 
+            );
+
+            if ($insertado2) {
+                $emailController = new EmailController();
+                $resultado = $emailController->enviarCorreo('Compra de pines', $usuario->correo, $usuario->nombres.' '.$usuario->apellidos, "user_".$usuario->cedula, $usuario->clave, $pines_comprados, $precio_pin, ($pines_comprados * $precio_pin));
+                return response()->json(["¡Venta realizada correctamente!", 0], 200);
+            }else{
+                return response()->json(["¡Ocurrió un error al guardar la venta, intente nuevamente!", 1], 200);
+            }
+        }else{
+            return response()->json(["¡Ocurrió un error al guardar el cliente, intente nuevamente!", 1], 200);
+        }
+    }
+
+    public function disminuirPines(Request $request){
+        $id_cliente = $request->input('id_cliente');
+        $pines_disminuir = $request->input('pines_disminuir');
+        $pines_actuales = $request->input('pines_actuales');
+
+
+        $actualizado = DB::connection('mysql')->table('usuario')
+        ->where("id", $id_cliente)
+        ->update([
+            "pines_comprados" => ($pines_actuales - $pines_disminuir)
+        ]);
+
+        if ($actualizado) {
+            return response()->json(["¡Disminución de pines realizada correctamente!", 0], 200);
+        }else{
+            return response()->json(["¡Ocurrió un error al procesar la solicitud, intente nuevamente!", 1], 200);
+        }
+
     }
 }

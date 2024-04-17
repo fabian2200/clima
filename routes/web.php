@@ -27,16 +27,15 @@ Route::prefix('api')->group(function () {
     Route::get('/verificarLogin', [UsuarioController::class, 'verificarLogin'])->name('verificarLogin');
     Route::post('/editar-usuario', [UsuarioController::class, 'editarUsuario'])->name('editarUsuario');
     Route::post('/cambiar-password', [UsuarioController::class, 'cambiarPassword'])->name('cambiarPassword');
-    Route::get('/consultar-usuarios', [UsuarioController::class, 'consultarUsuarios'])->name('consultarUsuarios');
-    Route::post('/registrar-usuario', [UsuarioController::class, 'registrarUsuario'])->name('registrarUsuario');
-    Route::post('/editar-usuario-admin', [UsuarioController::class, 'editarUsuarioAdmin'])->name('editarUsuarioAdmin');
-    Route::get('/cambiar-estado-usuario', [UsuarioController::class, 'cambiarEstadoUsuario'])->name('cambiarEstadoUsuario');
     Route::get('/cerrar-sesion', [UsuarioController::class, 'cerrarSesion'])->name('cerrarSesion');
 
     Route::post('/guardar-venta', [VentasController::class, 'guardarVenta'])->name('guardarVenta');
     Route::get('/ver-clientes', [VentasController::class, 'consultarClientes'])->name('consultarClientes');
     Route::get('/ver-ventas', [VentasController::class, 'consultarVentas'])->name('consultarVentas');
     Route::get('/datos-dashboard-admin', [VentasController::class, 'datosDashboardAdmin'])->name('datosDashboardAdmin');
+    Route::post('/guardar-venta-existente', [VentasController::class, 'guardarVentaExistente'])->name('guardarVentaExistente');
+    Route::post('/disminuir-pines', [VentasController::class, 'disminuirPines'])->name('disminuirPines');
+
 
 });
 

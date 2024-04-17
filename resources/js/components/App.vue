@@ -27,7 +27,7 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <router-link to="mi-perfil">
-                                            <a class="dropdown-item" href="user-profile.html">
+                                            <a class="dropdown-item" href="mi-perfil">
                                                 <i class="feather icon-user"></i> Mi Perfil
                                             </a>
                                         </router-link>
@@ -57,7 +57,7 @@
                             </router-link>
                         </li>
                         
-                        <li class="nav-item" v-if="datos.rol == '1'">
+                        <li :class="tipo_ruta == '/nueva-venta' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '1'">
                             <router-link to="/nueva-venta">
                                 <a href="#">
                                     <i class="fas fa-user-plus"></i>
@@ -66,11 +66,20 @@
                             </router-link>
                         </li>
 
-                        <li class="nav-item" v-if="datos.rol == '1'">
-                            <router-link to="/lista-caracterizados-digitador">
+                        <li :class="tipo_ruta == '/venta-existente' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '1'">
+                            <router-link to="/venta-existente">
                                 <a href="#">
                                     <i class="fas fa-user-check"></i>
                                     <span class="menu-title" data-i18n="Email Application">Venta Existente</span>
+                                </a>
+                            </router-link>
+                        </li>
+
+                        <li :class="tipo_ruta == '/clientes' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '1'">
+                            <router-link to="/clientes">
+                                <a href="#">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span class="menu-title" data-i18n="Email Application">Clientes</span>
                                 </a>
                             </router-link>
                         </li>

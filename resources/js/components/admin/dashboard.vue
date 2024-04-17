@@ -76,7 +76,7 @@
                         </div>
                         <div class="card-content">
                             <div class="table-responsive">
-                                <table id="tablaVentas" style="width: 100%" v-if="loading == false">
+                                <table id="tablaVentas" style="width: 100%">
                                     <thead>
                                         <tr>
                                             <th>Fecha Venta</th>

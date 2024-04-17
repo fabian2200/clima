@@ -52,17 +52,27 @@
                                                     </div>
                                                     <hr>
                                                     <div class="row">
-                                                        <div class="col-6">
+                                                        <div class="col-12">
                                                             <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.identificacion" name="nombre" placeholder="Ingrese su identificación" required>
+                                                                <input type="text" class="form-control" v-model="datos.cedula" name="nombre" placeholder="Ingrese su identificación" required>
                                                                 <div class="form-control-position">
                                                                     <i class="fas fa-id-card"></i>
                                                                 </div>
                                                             </fieldset>
                                                         </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="col-6">
                                                             <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                                                                <input type="text" class="form-control" v-model="datos.nombres" name="nombre" placeholder="Ingrese sus nombres" required>
+                                                                <div class="form-control-position">
+                                                                    <i class="feather icon-user"></i>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <fieldset class="form-group position-relative has-icon-left">
+                                                                <input type="text" class="form-control" v-model="datos.apellidos" name="nombre" placeholder="Ingrese sus apellidos" required>
                                                                 <div class="form-control-position">
                                                                     <i class="feather icon-user"></i>
                                                                 </div>
@@ -72,7 +82,7 @@
                                                     <div class="row">
                                                         <div class="col-6">
                                                             <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.rol" disabled name="nombre" placeholder="Ingrese su nombre" required>
+                                                                <input type="text" class="form-control" v-model="datos.usuario"  name="nombre" placeholder="Ingrese su usuario" required>
                                                                 <div class="form-control-position">
                                                                     <i class="fas fa-user-lock"></i>
                                                                 </div>
@@ -80,40 +90,12 @@
                                                         </div>
                                                         <div class="col-6">
                                                             <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.usuario" name="nombre" placeholder="Ingrese su usuario" required>
+                                                                <input type="text" class="form-control" v-model="datos.correo" name="nombre" placeholder="Ingrese su correo" required>
                                                                 <div class="form-control-position">
                                                                     <i class="fas fa-at"></i>
                                                                 </div>
                                                             </fieldset>
                                                         </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.email" name="nombre" placeholder="Ingrese su email" required>
-                                                                <div class="form-control-position">
-                                                                    <i class="fas fa-envelope"></i>
-                                                                </div>
-                                                            </fieldset>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.celular" name="nombre" placeholder="Ingrese su número celular" required>
-                                                                <div class="form-control-position">
-                                                                    <i class="fas fa-phone"></i>
-                                                                </div>
-                                                            </fieldset>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <fieldset class="form-group position-relative has-icon-left">
-                                                                <input type="text" class="form-control" v-model="datos.direccion" name="nombre" placeholder="Ingrese su dirección" required>
-                                                                <div class="form-control-position">
-                                                                    <i class="fas fa-route"></i>
-                                                                </div>
-                                                            </fieldset>
-                                                        </div>    
                                                     </div>
                                                     <hr>
                                                     <div class="col-12 d-flex flex-sm-row flex-column justify-content-end" style="padding: 0">
@@ -180,9 +162,7 @@ export default {
     },
     data() {
         return {
-            datos: {
-                tio_registro: null,
-            },
+            datos: {},
             loading: true,
             passwordOld: "",
             passwordNew: "",
@@ -210,7 +190,7 @@ export default {
                     this.datos = respuesta.data;
                     this.datos.imagen_anterior = this.datos.imagen;
                     this.datos.imagen = '/imagenes_usuarios/'+this.datos.imagen;
-                    this.imagen_cambiada = 0;
+                    this.datos.imagen_cambiada = 0;
                     this.loading = false;
                 });
             } catch (error) {
@@ -235,7 +215,6 @@ export default {
             }
         },
         async cambiarPassword(){
-            this.loading = true;
             const datos = {
                 password_old: this.passwordOld,
                 password_new: this.passwordNew,
@@ -253,8 +232,6 @@ export default {
                         }else{
                             toastr.error(respuesta_ok[0]);
                         }
-
-                        this.loading = false;
                     });
                 }else{
                     toastr.error("Las contraseñas no coinciden.");
