@@ -5,7 +5,7 @@
 
 <html lang="en">
 
-<body style="background-image: url('/imagenes/fondo.png'); background-size: 100% 107%; background-position-y: -55px;">
+<body style="background-image: url('/imagenes/fondo.png'); background-size: 100% 109%; background-position-y: -55px;">
     <div id="loginDiv" style="height: 100vh">
         <section class="row flexbox-container" style="height: 100vh; align-items: center">
             <div style="height: 93vh;" class="col-6 d-flex align-items-center justify-content-center">
@@ -40,7 +40,7 @@
                                                 <label for="remember-me"> Recordar la contraseña</label>
                                             </fieldset>
                                         </div>
-                                        <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">¿Olvidaste tu contraseña?</a></div>
+                                        <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="recuperar-clave" class="card-link">¿Olvidaste tu contraseña?</a></div>
                                     </div>
                                     <a onclick="login()" type="submit" class="btn btn-outline-primary btn-block"><i class="feather icon-unlock"></i> Iniciar sesión</a>
                                 </form>

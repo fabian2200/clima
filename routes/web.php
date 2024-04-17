@@ -28,6 +28,8 @@ Route::prefix('api')->group(function () {
     Route::post('/editar-usuario', [UsuarioController::class, 'editarUsuario'])->name('editarUsuario');
     Route::post('/cambiar-password', [UsuarioController::class, 'cambiarPassword'])->name('cambiarPassword');
     Route::get('/cerrar-sesion', [UsuarioController::class, 'cerrarSesion'])->name('cerrarSesion');
+    Route::get('/recuperar-clave', [UsuarioController::class, 'recuperarClave'])->name('recuperarClave');
+
 
     Route::post('/guardar-venta', [VentasController::class, 'guardarVenta'])->name('guardarVenta');
     Route::get('/ver-clientes', [VentasController::class, 'consultarClientes'])->name('consultarClientes');
@@ -41,6 +43,10 @@ Route::prefix('api')->group(function () {
 
 Route::get('/', function () {
     return view('vue');
+});
+
+Route::get('/recuperar-clave', function () {
+    return view('recuperarClave');
 });
 
 Route::get('/{any}', function () {

@@ -6,6 +6,8 @@ use DB;
 use Illuminate\Support\Facades\File;
 
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\EmailController;
+
 
 class UsuarioController extends Controller
 {
@@ -116,5 +118,52 @@ class UsuarioController extends Controller
     public function cerrarSesion(){
         Session::flush();
         return 1;
+    }
+
+    public function recuperarClave(Request $request){
+        $correousuario = $request->input('correousuario');
+
+        $usuario = DB::connection("mysql")->table("usuario")
+        ->where("usuario", $correousuario)
+        ->orWhere("correo", $correousuario)
+        ->first();
+
+        if (!$usuario) {
+            return response()->json(["No encontramos ningún usuario registrado con el usuario/correo ingresado", 0], 200);
+        } else {
+
+            $clave = self::generarPassword();
+            $datos = [
+                'clave' =>  md5($clave)
+            ];
+
+            $actualizado = DB::connection('mysql')->table('usuario')
+            ->where('id', $usuario->id)
+            ->update(
+                $datos 
+            );
+
+            if ($actualizado) {
+                $emailController = new EmailController();
+                $resultado = $emailController->enviarCorreoClave($usuario->nombres.' '.$usuario->apellidos ,$clave, $usuario->correo);
+                return response()->json(["¡Clave recuperada!", 1], 200);
+            }else{
+                return response()->json(["¡Ocurrió un error al procesar la solicitud, intente nuevamente!", 0], 200);
+            }
+        }
+    }
+
+    public function generarPassword(){
+        $length = 8;
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Caracteres permitidos
+
+        $randomPassword = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomPassword .= $characters[rand(0, strlen($characters) - 1)];
+        }
+
+        $password = str_shuffle($randomPassword);
+
+        return $password;
     }
 }
