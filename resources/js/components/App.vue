@@ -83,6 +83,15 @@
                                 </a>
                             </router-link>
                         </li>
+
+                        <li :class="tipo_ruta == '/nueva-empresa' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '2'">
+                            <router-link to="/nueva-empresa">
+                                <a href="#">
+                                    <i class="fas fa-plus-square"></i>
+                                    <span class="menu-title" data-i18n="Email Application">Nueva Empresa</span>
+                                </a>
+                            </router-link>
+                        </li>
                     </ul>
                     <img src="/imagenes/logo_icp.png" id="logo_alcaldia" alt="">
                 </div>

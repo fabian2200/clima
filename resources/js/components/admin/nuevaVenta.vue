@@ -96,6 +96,9 @@ export default {
                             showConfirmButton: false,
                             timer: 1500
                         });
+                        setTimeout(()=>{
+                            location.href = "/dashboard";
+                        }, 1500)
                     }else{
                         Swal.fire({
                             position: "center",
@@ -105,9 +108,6 @@ export default {
                             timer: 1500
                         });
                     }
-                    setTimeout(()=>{
-                        location.href = "/dashboard";
-                    }, 1500)
                 });
             } catch (error) {
                 console.log(error);

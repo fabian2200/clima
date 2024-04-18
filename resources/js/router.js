@@ -4,7 +4,7 @@ import nuevaVenta from './components/admin/nuevaVenta';
 import ventaExistente from './components/admin/ventaExistente';
 import clientes from './components/admin/clientes';
 import miPerfil from './components/miPerfil';
-
+import nuevaEmpresa from './components/cliente/nuevaEmpresa';
 
 const routes = [
   {
@@ -35,6 +35,11 @@ const routes = [
     path: '/mi-perfil',
     name: 'miPerfil',
     component: miPerfil
+  },
+  {
+    path: '/nueva-empresa',
+    name: 'nuevaEmpresa',
+    component: nuevaEmpresa
   }
 ]
 

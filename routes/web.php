@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ClienteController;
 
 use Illuminate\Http\Request;
 
@@ -38,6 +39,12 @@ Route::prefix('api')->group(function () {
     Route::post('/guardar-venta-existente', [VentasController::class, 'guardarVentaExistente'])->name('guardarVentaExistente');
     Route::post('/disminuir-pines', [VentasController::class, 'disminuirPines'])->name('disminuirPines');
 
+    Route::post('/guardar-empresa', [ClienteController::class, 'registrarEmpresa'])->name('registrarEmpresa');
+    Route::get('/ver-empresas', [ClienteController::class, 'verEmpresas'])->name('verEmpresas');
+    Route::get('/datos-dashboard-cliente', [ClienteController::class, 'datosDashboardCliente'])->name('datosDashboardCliente');
+    Route::post('/disminuir-empleados-empresa', [ClienteController::class, 'disminuirEmpleadosEmpresa'])->name('disminuirEmpleadosEmpresa');
+    Route::post('/aumentar-empleados-empresa', [ClienteController::class, 'aumentarEmpleadosEmpresa'])->name('aumentarEmpleadosEmpresa');
+    Route::post('/editar-empresa', [ClienteController::class, 'editarEmpresa'])->name('editarEmpresa');
 
 });
 
