@@ -54,6 +54,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/login-register.css') }}">
     <!-- END: Page CSS-->
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             overflow-x: hidden
@@ -139,6 +140,22 @@
 
         #app {
             height: 97vh;
+        }
+
+        #tabla_paso_2 td, #tabla_paso_2 th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        #tabla_paso_2 th{
+            text-align: center;
+            background-color: #bef9ff;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            box-sizing: border-box;
+            padding: 0;
+            transform: scale(.7);
         }
     </style>
 </head>

@@ -92,6 +92,15 @@
                                 </a>
                             </router-link>
                         </li>
+
+                        <li :class="tipo_ruta == '/areas-empresa' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '2'">
+                            <router-link to="/areas-empresa">
+                                <a href="#">
+                                    <i class="fas fa-laptop-house"></i>
+                                    <span class="menu-title" data-i18n="Email Application">Areas Empresa</span>
+                                </a>
+                            </router-link>
+                        </li>
                     </ul>
                     <img src="/imagenes/logo_icp.png" id="logo_alcaldia" alt="">
                 </div>

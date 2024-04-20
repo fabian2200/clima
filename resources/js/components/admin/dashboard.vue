@@ -181,11 +181,21 @@
                                     <tbody>
                                         <tr v-for="(item, index) in lista_empresas" :key="index">
                                             <td style="text-align: center"><img :src='"/imagenes_empresas/"+item.logo' width="50" alt=''></td>
-                                            <td style="text-align: center">{{ item.nombre}}</td>
+                                            <td style="text-align: center">
+                                                {{ item.nombre }}
+                                            </td>
                                             <td style="text-align: center">{{ item.numero_empleados }}</td>
                                             <td style="text-align: center">{{ item.empleados_responden }}</td>
                                             <td style="text-align: center">{{ item.numero_empleados -  item.empleados_responden}}</td>
                                             <td style="display: flex; justify-content: space-around;">
+                                                <button
+                                                    v-if="item.numero_empleados -  item.empleados_responden == 0"
+                                                    type="button"
+                                                    data-toggle="tooltip" data-placement="top" title="Generar Informes" 
+                                                    class="btn btn-primary"
+                                                >
+                                                    <i style="font-size: 13px" class="fas fa-file-pdf"></i>
+                                                </button>
                                                 <button @click="asignarEmpresaEditar(item)" data-toggle="tooltip" data-placement="top" title="Editar Empresa" type="button" class="btn btn-info">
                                                     <i style="font-size: 13px" class="fas fa-pen"></i>
                                                 </button>
@@ -480,7 +490,7 @@ export default {
         obtenerBaseURL(id_empresa){
             var urlCompleta = window.location.href;
             var urlObjeto = new URL(urlCompleta);
-            var baseUrl = urlObjeto.origin+"/test/empresa/"+id_empresa;
+            var baseUrl = urlObjeto.origin+"/test/"+id_empresa;
             navigator.clipboard.writeText(baseUrl);
             toastr.success("Url Copiada: "+baseUrl);
         },

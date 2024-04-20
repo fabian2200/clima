@@ -7,6 +7,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ClienteController;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 /*
@@ -45,6 +46,11 @@ Route::prefix('api')->group(function () {
     Route::post('/disminuir-empleados-empresa', [ClienteController::class, 'disminuirEmpleadosEmpresa'])->name('disminuirEmpleadosEmpresa');
     Route::post('/aumentar-empleados-empresa', [ClienteController::class, 'aumentarEmpleadosEmpresa'])->name('aumentarEmpleadosEmpresa');
     Route::post('/editar-empresa', [ClienteController::class, 'editarEmpresa'])->name('editarEmpresa');
+    Route::get('/ver-areas', [ClienteController::class, 'verAreas'])->name('verAreas');
+    Route::post('/editar-areas', [ClienteController::class, 'editarAreas'])->name('editarAreas');
+
+    Route::get('/info-empresa', [ClienteController::class, 'infoEmpresa'])->name('infoEmpresa');
+    Route::post('/guardar-test', [ClienteController::class, 'guardarTest'])->name('guardarTest');
 
 });
 
@@ -52,8 +58,20 @@ Route::get('/', function () {
     return view('vue');
 });
 
+
 Route::get('/recuperar-clave', function () {
     return view('recuperarClave');
+});
+
+Route::get('/test/{empresa}', function ($empresa) {
+
+    $areas = DB::connection("mysql")->table("empresa_area")
+    ->select("empresa_area.*", "empresa_area.nombre_area as nombre_area_actual")
+    ->where("id_empresa", $empresa)
+    ->orderBy("nombre_area", "ASC")
+    ->get();
+
+    return view('test', ['areas' => $areas]);
 });
 
 Route::get('/{any}', function () {

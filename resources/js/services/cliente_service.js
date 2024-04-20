@@ -56,3 +56,19 @@ export function editarEmpresa($data) {
         }
     );
 }
+
+export function verAreas(id) {
+    return http().get('/api/ver-areas?id_empresa='+id);
+}
+
+export function editarAreas($data) {
+    return http().post(
+        '/api/editar-areas', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}

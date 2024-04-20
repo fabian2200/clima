@@ -5,7 +5,7 @@ import ventaExistente from './components/admin/ventaExistente';
 import clientes from './components/admin/clientes';
 import miPerfil from './components/miPerfil';
 import nuevaEmpresa from './components/cliente/nuevaEmpresa';
-
+import areasEmpresa from './components/cliente/areasEmpresa'
 const routes = [
   {
     path: '/dashboard',
@@ -40,6 +40,11 @@ const routes = [
     path: '/nueva-empresa',
     name: 'nuevaEmpresa',
     component: nuevaEmpresa
+  },
+  {
+    path: '/areas-empresa',
+    name: 'areasEmpresa',
+    component: areasEmpresa
   }
 ]
 

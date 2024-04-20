@@ -198,4 +198,72 @@ class ClienteController extends Controller
         
         return response()->json(["¡Solicitud procesada con éxito!", 0], 200); 
     }
+
+    public function verAreas(Request $request){
+        $id_empresa = $request->input('id_empresa');
+
+        $areas = DB::connection("mysql")->table("empresa_area")
+        ->select("empresa_area.*", "empresa_area.nombre_area as nombre_area_actual")
+        ->where("id_empresa", $id_empresa)
+        ->orderBy("nombre_area", "ASC")
+        ->get();
+
+        return response()->json($areas, 200);
+    }
+
+    public function editarAreas(Request $request){
+        $areas = $request->input('areas');
+
+        foreach ($areas as $key) {
+            DB::connection('mysql')->table('empresa_area')
+            ->where("id", $key["id"])
+            ->update(
+                [
+                    'nombre_area' => $key["nombre_area"]
+                ]
+            );
+        }
+
+        return response()->json(["¡Solicitud procesada con éxito!", 0], 200); 
+    }
+
+    public function infoEmpresa(Request $request){
+        $id_empresa = $request->input('id');
+
+        $empresa = DB::connection("mysql")->table("empresa")
+        ->where("id", $id_empresa)
+        ->first();
+
+        return response()->json($empresa, 200);
+    }
+
+    public function guardarTest(Request $request){
+        $id_empresa = $request->input('empresa');
+        $datos_socio = $request->input('datos_socio');
+        $respuestas = $request->input('respuestas');
+
+        $datos_socio['id_empresa'] = $id_empresa;
+
+        $insertado1 = DB::connection('mysql')->table('datos_socio')
+        ->insertGetId(
+            $datos_socio
+        );
+
+        $respuestas['id_contesto'] = $insertado1;
+        $respuestas['id_empresa'] = $id_empresa;
+
+        $insertado2 = DB::connection('mysql')->table('respuestas')
+        ->insertGetId(
+            $respuestas
+        );
+
+        DB::connection('mysql')->table('empresa')
+        ->where("id", $id_empresa)
+        ->update([
+            "empleados_responden" => DB::raw('empleados_responden + 1')
+        ]);
+
+
+        return response()->json(["¡Sus respuestas fueron registradas correctamente!", 1], 200); 
+    }
 }
