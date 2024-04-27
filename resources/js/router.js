@@ -5,7 +5,11 @@ import ventaExistente from './components/admin/ventaExistente';
 import clientes from './components/admin/clientes';
 import miPerfil from './components/miPerfil';
 import nuevaEmpresa from './components/cliente/nuevaEmpresa';
-import areasEmpresa from './components/cliente/areasEmpresa'
+import areasEmpresa from './components/cliente/areasEmpresa';
+import listaResponden from './components/cliente/listaResponden';
+import respuesta from './components/cliente/respuesta';
+import informeSocio from './components/cliente/informeSocio';
+
 const routes = [
   {
     path: '/dashboard',
@@ -45,6 +49,21 @@ const routes = [
     path: '/areas-empresa',
     name: 'areasEmpresa',
     component: areasEmpresa
+  },
+  {
+    path: '/lista-responden/:id',
+    name: 'listaResponden',
+    component: listaResponden
+  },
+  {
+    path: '/respuesta/:id',
+    name: 'respuesta',
+    component: respuesta
+  },
+  {
+    path: '/informe-socio/:id',
+    name: 'informeSocio',
+    component: informeSocio
   }
 ]
 

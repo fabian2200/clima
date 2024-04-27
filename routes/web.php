@@ -51,6 +51,9 @@ Route::prefix('api')->group(function () {
 
     Route::get('/info-empresa', [ClienteController::class, 'infoEmpresa'])->name('infoEmpresa');
     Route::post('/guardar-test', [ClienteController::class, 'guardarTest'])->name('guardarTest');
+    Route::get('/datos-empresa', [ClienteController::class, 'datosEmpresa'])->name('datosEmpresa');
+    Route::get('/datos-respuesta', [ClienteController::class, 'dataRespuesta'])->name('dataRespuesta');
+    Route::get('/datos-socio', [ClienteController::class, 'consultarDatosInformeSocio'])->name('consultarDatosInformeSocio');
 
 });
 

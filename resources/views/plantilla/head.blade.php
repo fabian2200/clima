@@ -157,5 +157,13 @@
             padding: 0;
             transform: scale(.7);
         }
+
+        .btn_informe {
+            width: 95%;
+            margin: 10px;
+            font-size: 22px;
+            height: 129px;
+            font-weight: 500
+        }
     </style>
 </head>

@@ -242,28 +242,172 @@ class ClienteController extends Controller
         $datos_socio = $request->input('datos_socio');
         $respuestas = $request->input('respuestas');
 
-        $datos_socio['id_empresa'] = $id_empresa;
-
-        $insertado1 = DB::connection('mysql')->table('datos_socio')
-        ->insertGetId(
-            $datos_socio
-        );
-
-        $respuestas['id_contesto'] = $insertado1;
-        $respuestas['id_empresa'] = $id_empresa;
-
-        $insertado2 = DB::connection('mysql')->table('respuestas')
-        ->insertGetId(
-            $respuestas
-        );
-
-        DB::connection('mysql')->table('empresa')
+        $empresa = DB::connection("mysql")->table("empresa")
         ->where("id", $id_empresa)
-        ->update([
-            "empleados_responden" => DB::raw('empleados_responden + 1')
-        ]);
+        ->first();
 
-
-        return response()->json(["¡Sus respuestas fueron registradas correctamente!", 1], 200); 
+        if($empresa->numero_empleados - $empresa->empleados_responden > 0){
+            $datos_socio['id_empresa'] = $id_empresa;
+            $datos_socio['fecha_respondio'] = date('d-m-Y H.i:s');
+    
+            $insertado1 = DB::connection('mysql')->table('datos_socio')
+            ->insertGetId(
+                $datos_socio
+            );
+    
+            $respuestas['id_contesto'] = $insertado1;
+            $respuestas['id_empresa'] = $id_empresa;
+    
+            $insertado2 = DB::connection('mysql')->table('respuestas')
+            ->insertGetId(
+                $respuestas
+            );
+    
+            DB::connection('mysql')->table('empresa')
+            ->where("id", $id_empresa)
+            ->update([
+                "empleados_responden" => DB::raw('empleados_responden + 1')
+            ]);
+    
+            return response()->json(["¡Sus respuestas fueron registradas correctamente!", 1], 200); 
+        }else{
+            return response()->json(["¡Se alcanzo el limite de respuestas para esta empresa!", 0], 200); 
+        }
     }
+
+    public function datosEmpresa(Request $request){
+        $id_empresa = $request->input('id_empresa');
+
+        $empresa = DB::connection("mysql")->table("empresa")
+        ->where("id", $id_empresa)
+        ->first();
+
+        $empresa->responden = DB::connection("mysql")->table("datos_socio")
+        ->join('empresa_area', "datos_socio.area", "empresa_area.id")
+        ->select("datos_socio.*", "empresa_area.nombre_area")
+        ->where("datos_socio.id_empresa", $id_empresa)
+        ->orderBy("datos_socio.fecha_respondio", "DESC")
+        ->get();
+
+        return response()->json($empresa, 200);
+    }
+
+    public function dataRespuesta(Request $request){
+        $id_respondio = $request->input('id_respondio');
+
+        $datos_socio = DB::connection("mysql")->table("datos_socio")
+        ->join('empresa_area', "datos_socio.area", "empresa_area.id")
+        ->select("datos_socio.*", "empresa_area.nombre_area")
+        ->where("datos_socio.id", $id_respondio)
+        ->first();
+
+        $datos_socio->respuestas = DB::connection("mysql")->table("respuestas")
+        ->where("respuestas.id_contesto", $id_respondio)
+        ->first();
+
+        return response()->json($datos_socio, 200);
+    }
+
+    public function consultarDatosInformeSocio(Request $request){
+        $id_empresa = $request->input('id_empresa');
+
+        $porSexo = DB::connection("mysql")->table("datos_socio")
+        ->select("sexo")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("sexo")
+        ->selectRaw("sexo, COUNT(*) as total")
+        ->get();
+
+        $porEdad = DB::connection("mysql")->table("datos_socio")
+        ->select("edad")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("edad")
+        ->selectRaw("edad, COUNT(*) as total")
+        ->get();
+
+        $porEdad = DB::connection("mysql")->table("datos_socio")
+        ->select("edad")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("edad")
+        ->selectRaw("edad, COUNT(*) as total")
+        ->get();
+
+        $porNivelEducacion = DB::connection("mysql")->table("datos_socio")
+        ->select("nivel_educacion")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("nivel_educacion")
+        ->selectRaw("nivel_educacion, COUNT(*) as total")
+        ->get();
+
+        $porEstadoCivil = DB::connection("mysql")->table("datos_socio")
+        ->select("estado_civil")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("estado_civil")
+        ->selectRaw("estado_civil, COUNT(*) as total")
+        ->get();
+
+        $porTiempoCargo = DB::connection("mysql")->table("datos_socio")
+        ->select("tiempo_cargo")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("tiempo_cargo")
+        ->selectRaw("tiempo_cargo, COUNT(*) as total")
+        ->get();
+
+        $porTiempoAntiguedad = DB::connection("mysql")->table("datos_socio")
+        ->select("tiempo_entidad")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("tiempo_entidad")
+        ->selectRaw("tiempo_entidad, COUNT(*) as total")
+        ->get();
+
+        $porSalario = DB::connection("mysql")->table("datos_socio")
+        ->select("salario_actual")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("salario_actual")
+        ->selectRaw("salario_actual, COUNT(*) as total")
+        ->get();
+
+        $porEstrato = DB::connection("mysql")->table("datos_socio")
+        ->select("estrato")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("estrato")
+        ->selectRaw("estrato, COUNT(*) as total")
+        ->get();
+
+        $porCiudad = DB::connection("mysql")->table("datos_socio")
+        ->select("ciudad")
+        ->where("id_empresa", $id_empresa)
+        ->groupBy("ciudad")
+        ->selectRaw("ciudad, COUNT(*) as total")
+        ->get();
+
+        $porArea = DB::connection("mysql")->table("datos_socio")
+        ->where("datos_socio.id_empresa", $id_empresa)
+        ->join('empresa_area', "datos_socio.area", "empresa_area.id")
+        ->select("empresa_area.nombre_area")
+        ->groupBy("empresa_area.nombre_area")
+        ->selectRaw("empresa_area.nombre_area, COUNT(*) as total")
+        ->get();
+
+        $empresa = DB::connection("mysql")->table("empresa")
+        ->where("id", $id_empresa)
+        ->first();
+
+        $datos = [
+            "empresa" => $empresa,
+            "por_sexo" => $porSexo,
+            "por_edad" => $porEdad,
+            "por_nivel_educacion" => $porNivelEducacion,
+            "por_estado_civil" => $porEstadoCivil,
+            "por_tiempo_cargo" => $porTiempoCargo,
+            "por_tiempo_antiguedad" => $porTiempoAntiguedad,
+            "por_salario" => $porSalario,
+            "por_estrato" => $porEstrato,
+            "por_ciudad" => $porCiudad,
+            "por_area" => $porArea
+        ];
+
+        return response()->json($datos, 200);
+    }
+
 }

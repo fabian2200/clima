@@ -182,13 +182,14 @@
                                         <tr v-for="(item, index) in lista_empresas" :key="index">
                                             <td style="text-align: center"><img :src='"/imagenes_empresas/"+item.logo' width="50" alt=''></td>
                                             <td style="text-align: center">
-                                                {{ item.nombre }}
+                                                <router-link :to="'/lista-responden/' + item.id">{{ item.nombre }}</router-link>
                                             </td>
                                             <td style="text-align: center">{{ item.numero_empleados }}</td>
                                             <td style="text-align: center">{{ item.empleados_responden }}</td>
                                             <td style="text-align: center">{{ item.numero_empleados -  item.empleados_responden}}</td>
                                             <td style="display: flex; justify-content: space-around;">
                                                 <button
+                                                    @click="abrirModalInformes(item.id)"
                                                     v-if="item.numero_empleados -  item.empleados_responden == 0"
                                                     type="button"
                                                     data-toggle="tooltip" data-placement="top" title="Generar Informes" 
@@ -339,6 +340,37 @@
         </div>
     </div>
 
+    <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <button @click="irPaginaInforme('/informe-socio/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-primary">Informe sociodemográfico</button>
+                        </div>  
+                        <div class="col-lg-4">
+                            <button type="button" class="btn_informe btn btn-outline-success">Informe General dimensiones</button>
+                        </div> 
+                        <div class="col-lg-4">
+                            <button type="button" class="btn_informe btn btn-outline-warning">Informe especifico por dimensión</button>
+                        </div>      
+                        <div class="col-lg-4">
+                            <button type="button" class="btn_informe btn btn-outline-info">Comparación de dimensiones</button>
+                        </div>  
+                        <div class="col-lg-4">
+                            <button type="button" class="btn_informe btn btn-outline-secondary">Fortalezas y Debilidades</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </template>
 <script>
@@ -390,7 +422,8 @@ export default {
                 nombre: ''
             },
             imagen_editada_empresa: 'No',
-            imagen_editada: null
+            imagen_editada: null,
+            id_empresa_informe: 0
         }
     },
     mounted() {
@@ -658,6 +691,14 @@ export default {
                 }
             });
         },
+        abrirModalInformes(id_empresa){
+            this.id_empresa_informe = id_empresa;
+            $("#modalInformes").modal('show');
+        },
+        irPaginaInforme(ruta){
+            $("#modalInformes").modal('hide');
+            location.href = ruta;
+        }
     },
 }
 </script>

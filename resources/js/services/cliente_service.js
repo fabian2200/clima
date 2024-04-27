@@ -72,3 +72,15 @@ export function editarAreas($data) {
         }
     );
 }
+
+export function datosEmpresa(id) {
+    return http().get('/api/datos-empresa?id_empresa='+id);
+}
+
+export function dataRespuesta(id) {
+    return http().get('/api/datos-respuesta?id_respondio='+id);
+}
+
+export function consultarDatosInformeSocio(id) {
+    return http().get('/api/datos-socio?id_empresa='+id);
+}
