@@ -221,7 +221,7 @@ export default {
             this.data_informe.por_edad.forEach(element => {
                 chart.data.push({
                     country: element.edad + " Años",
-                    visits: element.total,
+                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
                 });
             });
 
@@ -262,12 +262,14 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+            labelBullet.label.text = "{valueY}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = -15;
-            labelBullet.label.dx = 13;
-            labelBullet.label.fontSize = 15;
-            labelBullet.label.fontWeight = 'bold';
+            labelBullet.label.dy = 15;
+            labelBullet.label.dx = 18;
+            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontWeight = "bold";
+            labelBullet.label.width = 70;
+            labelBullet.label.truncate = false;
 
 
             chart.cursor = new am4charts.XYCursor();
@@ -291,7 +293,7 @@ export default {
             this.data_informe.por_nivel_educacion.forEach(element => {
                 chart.data.push({
                     country: element.nivel_educacion,
-                    visits: element.total,
+                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
                 });
             });
 
@@ -333,12 +335,15 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueX}";
+            labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = -5;
-            labelBullet.label.dx= 16;
-            labelBullet.label.fontSize = 15;
-            labelBullet.label.fontWeight = 'bold';
+            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontWeight = "bold";
+            labelBullet.label.width = 70;
+            labelBullet.label.dy = -7;
+            labelBullet.label.dx = 38;
+            labelBullet.label.truncate = false;
+
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -361,7 +366,7 @@ export default {
             this.data_informe.por_estado_civil.forEach(element => {
                 chart.data.push({
                     country: element.estado_civil,
-                    visits: element.total,
+                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
                 });
             });
 
@@ -405,12 +410,14 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueX}";
+            labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = -5;
-            labelBullet.label.dx= 16;
-            labelBullet.label.fontSize = 15;
-            labelBullet.label.fontWeight = 'bold';
+            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontWeight = "bold";
+            labelBullet.label.width = 70;
+            labelBullet.label.dy = -7;
+            labelBullet.label.dx = 38;
+            labelBullet.label.truncate = false;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -499,7 +506,7 @@ export default {
             this.data_informe.por_salario.forEach(element => {
                 chart.data.push({
                     country: element.salario_actual,
-                    visits: element.total,
+                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
                 });
             });
 
@@ -544,12 +551,14 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueX}";
+            labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = -5;
-            labelBullet.label.dx= 16;
-            labelBullet.label.fontSize = 15;
-            labelBullet.label.fontWeight = 'bold';
+            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontWeight = "bold";
+            labelBullet.label.width = 70;
+            labelBullet.label.dy = -7;
+            labelBullet.label.dx = 38;
+            labelBullet.label.truncate = false;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -572,7 +581,7 @@ export default {
             this.data_informe.por_estrato.forEach(element => {
                 chart.data.push({
                     country: element.estrato,
-                    visits: element.total,
+                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
                 });
             });
 
@@ -613,12 +622,14 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+            labelBullet.label.text = "{valueY}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = -15;
-            labelBullet.label.dx = 13;
-            labelBullet.label.fontSize = 15;
-            labelBullet.label.fontWeight = 'bold';
+            labelBullet.label.dy = 15;
+            labelBullet.label.dx = 18;
+            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontWeight = "bold";
+            labelBullet.label.width = 70;
+            labelBullet.label.truncate = false;
 
 
             chart.cursor = new am4charts.XYCursor();
