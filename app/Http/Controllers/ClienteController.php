@@ -248,7 +248,7 @@ class ClienteController extends Controller
 
         if($empresa->numero_empleados - $empresa->empleados_responden > 0){
             $datos_socio['id_empresa'] = $id_empresa;
-            $datos_socio['fecha_respondio'] = date('d-m-Y H.i:s');
+            $datos_socio['fecha_respondio'] = date('d-m-Y H:i:s');
     
             $insertado1 = DB::connection('mysql')->table('datos_socio')
             ->insertGetId(

@@ -271,33 +271,43 @@
                 }
             },
             async disminuirPines(){
-                this.loading = true;
-                try {
-                    await adminService.disminuirPines(this.datos_disminuir).then(respuesta => {
-                        this.loading = false;
-                        if(respuesta.data[1] == 0){
-                            Swal.fire({
-                                position: "center",
-                                icon: "success",
-                                title: respuesta.data[0],
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }else{
-                            Swal.fire({
-                                position: "center",
-                                icon: "error",
-                                title: respuesta.data[0],
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
-                        }
-                        setTimeout(()=>{
-                            location.reload();
-                        }, 1500)
+                if(this.datos_disminuir.pines_disminuir > this.datos_disminuir.pines_actuales || this.datos_disminuir.pines_disminuir <= 0 || this.datos_disminuir.pines_disminuir == ''){
+                    Swal.fire({
+                        position: "center",
+                        icon: "error",
+                        title: "El numero de pines a disminuir no puede ser negativo, o mayor a la cantidad de pines actuales",
+                        showConfirmButton: false,
+                        timer: 1500
                     });
-                } catch (error) {
-                    console.log(error);
+                }else{
+                    this.loading = true;
+                    try {
+                        await adminService.disminuirPines(this.datos_disminuir).then(respuesta => {
+                            this.loading = false;
+                            if(respuesta.data[1] == 0){
+                                Swal.fire({
+                                    position: "center",
+                                    icon: "success",
+                                    title: respuesta.data[0],
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }else{
+                                Swal.fire({
+                                    position: "center",
+                                    icon: "error",
+                                    title: respuesta.data[0],
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                            }
+                            setTimeout(()=>{
+                                location.reload();
+                            }, 1500)
+                        });
+                    } catch (error) {
+                        console.log(error);
+                    }
                 }
             },
         }

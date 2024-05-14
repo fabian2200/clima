@@ -33,6 +33,7 @@ CREATE TABLE `datos_socio` (
   `ciudad` text CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci,
   `area` text CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci,
   `id_empresa` int DEFAULT NULL,
+  `fecha_respondio` text COLLATE utf8mb3_spanish_ci,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
 
@@ -40,17 +41,17 @@ CREATE TABLE `datos_socio` (
 
 LOCK TABLES `datos_socio` WRITE;
 
-insert  into `datos_socio`(`id`,`sexo`,`edad`,`nivel_educacion`,`estado_civil`,`tiempo_cargo`,`tiempo_entidad`,`salario_actual`,`estrato`,`ciudad`,`area`,`id_empresa`) values 
-(1,'Femenino','18-22','Secundaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','23',4),
-(2,'Femenino','23-27','Primaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','23',4),
-(3,'Femenino','18-22','Primaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Más de 1 hasta 2 salarios MLV','Estrato 1','Valledupar','23',4),
-(4,'Masculino','18-22','Primaria','Unión Libre','21 y más años','Menos  de 1 año','Un salario MLV','Estrato 2','Valledupar','23',4),
-(5,'Femenino','18-22','Postgrado','Casado/a','Menos  de 1 año','Menos  de 1 año','Más de 1 hasta 2 salarios MLV','Estrato 1','Valledupar','23',4),
-(6,'Femenino','18-22','Secundaria','Casado/a','Menos  de 1 año','1 - 5 años','Un salario MLV','Estrato 1','Valledupar','24',4),
-(7,'Femenino','18-22','Primaria','Unión Libre','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','25',4),
-(8,'Femenino','18-22','Primaria','Casado/a','1 - 5 años','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','24',4),
-(9,'Masculino','38-42','Universitario','Soltero/a en una relación','6 - 10 años','6 - 10 años','Más de 1 hasta 2 salarios MLV','Estrato 3','Valledupar','26',4),
-(10,'Femenino','18-22','Secundaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Aguachica','9',3);
+insert  into `datos_socio`(`id`,`sexo`,`edad`,`nivel_educacion`,`estado_civil`,`tiempo_cargo`,`tiempo_entidad`,`salario_actual`,`estrato`,`ciudad`,`area`,`id_empresa`,`fecha_respondio`) values 
+(1,'Femenino','18-22','Secundaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','23',4,'14-05-2024 10:25:20'),
+(2,'Femenino','23-27','Primaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','23',4,'14-05-2024 10:25:20'),
+(3,'Femenino','18-22','Primaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Más de 1 hasta 2 salarios MLV','Estrato 1','Valledupar','23',4,'14-05-2024 10:25:20'),
+(4,'Masculino','18-22','Primaria','Unión Libre','21 y más años','Menos  de 1 año','Un salario MLV','Estrato 2','Valledupar','23',4,'14-05-2024 10:25:20'),
+(5,'Femenino','18-22','Postgrado','Casado/a','Menos  de 1 año','Menos  de 1 año','Más de 1 hasta 2 salarios MLV','Estrato 1','Valledupar','23',4,'14-05-2024 10:25:20'),
+(6,'Femenino','18-22','Secundaria','Casado/a','Menos  de 1 año','1 - 5 años','Un salario MLV','Estrato 1','Valledupar','24',4,'14-05-2024 10:25:20'),
+(7,'Femenino','18-22','Primaria','Unión Libre','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','25',4,'14-05-2024 10:25:20'),
+(8,'Femenino','18-22','Primaria','Casado/a','1 - 5 años','Menos  de 1 año','Un salario MLV','Estrato 1','Valledupar','24',4,'14-05-2024 10:25:20'),
+(9,'Masculino','38-42','Universitario','Soltero/a en una relación','6 - 10 años','6 - 10 años','Más de 1 hasta 2 salarios MLV','Estrato 3','Valledupar','26',4,'14-05-2024 10:25:20'),
+(10,'Femenino','18-22','Secundaria','Casado/a','Menos  de 1 año','Menos  de 1 año','Un salario MLV','Estrato 1','Aguachica','9',3,'14-05-2024 10:25:20');
 
 UNLOCK TABLES;
 
@@ -67,6 +68,7 @@ CREATE TABLE `empresa` (
   `empleados_responden` int DEFAULT NULL,
   `fecha_creada` text CHARACTER SET utf8mb3 COLLATE utf8mb3_spanish_ci,
   `estado_informe_socio` int DEFAULT '0',
+  `estado_informe_general_dim` int DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
 
@@ -74,9 +76,9 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 
-insert  into `empresa`(`id`,`id_cliente`,`nombre`,`logo`,`numero_empleados`,`empleados_responden`,`fecha_creada`,`estado_informe_socio`) values 
-(3,5,'Coca-cola','1713469975_coca.jpg',15,1,'18-04-2024 16:19:58',0),
-(4,5,'Pepsi','1713457608_pepsi.jpg',9,9,'18-04-2024 16:26:48',0);
+insert  into `empresa`(`id`,`id_cliente`,`nombre`,`logo`,`numero_empleados`,`empleados_responden`,`fecha_creada`,`estado_informe_socio`,`estado_informe_general_dim`) values 
+(3,5,'Coca-cola','1713469975_coca.jpg',15,1,'18-04-2024 16:19:58',0,0),
+(4,5,'Pepsi','1713457608_pepsi.jpg',9,9,'18-04-2024 16:26:48',0,0);
 
 UNLOCK TABLES;
 
