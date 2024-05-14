@@ -9,6 +9,7 @@ import areasEmpresa from './components/cliente/areasEmpresa';
 import listaResponden from './components/cliente/listaResponden';
 import respuesta from './components/cliente/respuesta';
 import informeSocio from './components/cliente/informeSocio';
+import informeGeneralDimensiones from './components/cliente/informeGeneralDimensiones';
 
 const routes = [
   {
@@ -64,6 +65,11 @@ const routes = [
     path: '/informe-socio/:id',
     name: 'informeSocio',
     component: informeSocio
+  },
+  {
+    path: '/informe-general-dimensiones/:id',
+    name: 'informeGeneralDimensiones',
+    component: informeGeneralDimensiones
   }
 ]
 

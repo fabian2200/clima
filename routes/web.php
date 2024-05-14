@@ -5,6 +5,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\InformeGeneralDimensionesController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,6 +55,8 @@ Route::prefix('api')->group(function () {
     Route::get('/datos-empresa', [ClienteController::class, 'datosEmpresa'])->name('datosEmpresa');
     Route::get('/datos-respuesta', [ClienteController::class, 'dataRespuesta'])->name('dataRespuesta');
     Route::get('/datos-socio', [ClienteController::class, 'consultarDatosInformeSocio'])->name('consultarDatosInformeSocio');
+
+    Route::get('/inforrme-general-dimensiones', [InformeGeneralDimensionesController::class, 'informeGeneralDimensiones'])->name('informeGeneralDimensiones');
 
 });
 

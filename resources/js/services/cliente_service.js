@@ -84,3 +84,7 @@ export function dataRespuesta(id) {
 export function consultarDatosInformeSocio(id) {
     return http().get('/api/datos-socio?id_empresa='+id);
 }
+
+export function informeGeneralDimensiones(id) {
+    return http().get('/api/inforrme-general-dimensiones?id_empresa='+id);
+}

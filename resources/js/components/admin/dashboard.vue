@@ -355,16 +355,16 @@
                             <button @click="irPaginaInforme('/informe-socio/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-primary">Informe sociodemográfico</button>
                         </div>  
                         <div class="col-lg-4">
-                            <button type="button" class="btn_informe btn btn-outline-success">Informe General dimensiones</button>
+                            <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-success">Informe General dimensiones</button>
                         </div> 
                         <div class="col-lg-4">
-                            <button type="button" class="btn_informe btn btn-outline-warning">Informe especifico por dimensión</button>
+                            <button disabled type="button" class="btn_informe btn btn-outline-warning">Informe especifico por dimensión</button>
                         </div>      
                         <div class="col-lg-4">
-                            <button type="button" class="btn_informe btn btn-outline-info">Comparación de dimensiones</button>
+                            <button disabled type="button" class="btn_informe btn btn-outline-info">Comparación de dimensiones</button>
                         </div>  
                         <div class="col-lg-4">
-                            <button type="button" class="btn_informe btn btn-outline-secondary">Fortalezas y Debilidades</button>
+                            <button disabled type="button" class="btn_informe btn btn-outline-secondary">Fortalezas y Debilidades</button>
                         </div>  
                     </div>
                 </div>
