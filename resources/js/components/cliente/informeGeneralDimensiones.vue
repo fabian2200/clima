@@ -22,19 +22,23 @@
             
             <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 50px 100px 90px 110px; margin-right: 70px">
                 <br>
-                <div style="text-align: center">
-                    <br><br>
+                <div style="text-align: left">
+                    <br>
+                    <h3><strong>VALORACIÓN DEL CLIMA ORGANIZACIONAL</strong></h3>
+                    <br>
+                    <h6>A continuación se presentan los resultados de la valoración del Clima organizacional, de la figura 11 hasta la 21. Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
+                    <br>
                     <div>
-                        <div id="grafica_general" style="height: 500px;"></div>
-                        <br><br>
+                        <div id="grafica_general" style="height: 450px;"></div>
+                        <br>
                     </div>
                     <div>
                         <div id="grafica_dim1" style="height: 400px;"></div>
-                        <br><br>
+                        <br>
                     </div>
                     <div>
                         <div id="grafica_dim2" style="height: 400px;"></div>
-                        <br><br>
+                        <br>
                     </div>
                     <div class="pagina-salto"></div>
                     <div>
@@ -191,8 +195,10 @@ export default {
             });
            
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(GENERAL POR DIMENSIÓN)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 11</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración general del clima organizacional por dimensiones</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -211,7 +217,7 @@ export default {
             categoryAxis.tooltip.label.verticalCenter = "middle";
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
@@ -279,8 +285,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(FUNCIONES Y ENTRENAMIENTO)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 12</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Funciones y Entrenamiento</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -299,11 +307,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -332,7 +348,7 @@ export default {
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
-            labelBullet.label.fontSize = 13;
+            labelBullet.label.fontSize = 15;
             labelBullet.label.dy = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
@@ -366,8 +382,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(AUTONOMÍA)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 13</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Autonomía</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -386,11 +404,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -452,8 +478,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(RECOMPENSA DIRECTA)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 14</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Recompensa Directa</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -472,11 +500,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -538,8 +574,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(RELACIONES INTERPERSONALES)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 15</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Relaciones Interpersonales</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -558,11 +596,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -624,8 +670,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(COOPERACIÓN)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 16</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Cooperación</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -644,11 +692,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -711,8 +767,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(LIBRE EXPRESIÓN)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 17</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Libre Expresión</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -731,11 +789,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -797,8 +863,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(IDENTIDAD)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 18</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Identidad</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -815,14 +883,21 @@ export default {
             categoryAxis.renderer.labels.template.maxWidth = 130;
             categoryAxis.renderer.labels.template.textAlign = "middle";
             categoryAxis.renderer.labels.template.fontSize = 10;
-           
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             
             // Create series
@@ -886,8 +961,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(MOTIVACIÓN INSTITUCIONAL)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 19</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Motivación Institucional</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -906,11 +983,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
@@ -972,8 +1057,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(SATISFACCIÓN LABORAL)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 20</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Satisfacción Laboral</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -990,14 +1077,21 @@ export default {
             categoryAxis.renderer.labels.template.maxWidth = 130;
             categoryAxis.renderer.labels.template.textAlign = "middle";
             categoryAxis.renderer.labels.template.fontSize = 10;
-           
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             
             // Create series
@@ -1061,8 +1155,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Promedio de puntaje</strong> <br><strong>(COMUNICACIÓN)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 21</p></strong>"+
+            "<p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Comunicación</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -1081,11 +1177,19 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 10;
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "Promedio de puntaje";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());

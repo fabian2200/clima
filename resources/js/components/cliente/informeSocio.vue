@@ -21,9 +21,9 @@
             </button>
             
             <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 50px 100px 90px 110px; margin-right: 70px">
-                <h3 style="font-weight: bold">Informe sociodemográfico - ({{data_informe.empresa.nombre}})</h3>
+                <h3 style="font-weight: bold">Informe sociodemográfico</h3>
                 <hr>
-                <div style="text-align: center">
+                <div style="text-align: left">
                     <br><br>
                     <h4 style="width: 100%; text-align: left">De un total de <strong> {{total_personas}}  </strong> Empleados que respondieron el test, se tiene que: </h4>
                     <br><br>
@@ -149,8 +149,10 @@ export default {
             ];
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Sexo)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 1</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por  sexo</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -187,13 +189,15 @@ export default {
             this.data_informe.por_edad.forEach(element => {
                 chart.data.push({
                     country: element.edad + " Años",
-                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
+                    visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Grupo de edad)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 2</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por  edad</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -208,7 +212,7 @@ export default {
             categoryAxis.tooltip.label.verticalCenter = "middle";
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "# de Empleados";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
 
             // Create series
@@ -237,8 +241,8 @@ export default {
             labelBullet.label.text = "{valueY}%";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.dy = 15;
-            labelBullet.label.dx = 18;
-            labelBullet.label.fontSize = 10;
+            labelBullet.label.dx = 14;
+            labelBullet.label.fontSize = 14;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
             labelBullet.label.truncate = false;
@@ -267,13 +271,15 @@ export default {
             this.data_informe.por_nivel_educacion.forEach(element => {
                 chart.data.push({
                     country: element.nivel_educacion,
-                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
+                    visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Nivel de educación)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 3</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por  nivel de educación</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -286,7 +292,7 @@ export default {
             categoryAxis.renderer.labels.template.fontSize = 12;
 
             let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "# de Empleados";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
 
             // Create series
@@ -317,7 +323,7 @@ export default {
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
             labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontSize = 14;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
             labelBullet.label.dy = -7;
@@ -347,13 +353,15 @@ export default {
             this.data_informe.por_estado_civil.forEach(element => {
                 chart.data.push({
                     country: element.estado_civil,
-                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
+                    visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Estado civil)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 4</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por estado civil</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -368,7 +376,7 @@ export default {
             categoryAxis.renderer.labels.template.maxWidth = 120;
 
             let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "# de Empleados";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
 
             // Create series
@@ -399,7 +407,7 @@ export default {
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
             labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontSize = 14;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
             labelBullet.label.dy = -7;
@@ -434,8 +442,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Tiempo que lleva en el cargo)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 5</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por tiempo que lleva en el cargo</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -474,8 +484,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Tiempo de antigüedad en la entidad)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 6</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por tiempo de antigüedad en la entidad</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -509,13 +521,15 @@ export default {
             this.data_informe.por_salario.forEach(element => {
                 chart.data.push({
                     country: element.salario_actual,
-                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
+                    visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Salario)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 7</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por salario</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -530,7 +544,7 @@ export default {
             categoryAxis.renderer.labels.template.maxWidth = 120;
 
             let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "# de Empleados";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
 
             // Create series
@@ -538,7 +552,7 @@ export default {
             series.dataFields.valueX = "visits"; // Use valueX en lugar de valueY
             series.dataFields.categoryY = "country"; // Use categoryY en lugar de categoryX
             series.name = "Visits";
-            series.tooltipText = "{categoryY} Años: [bold]{valueX}[/]";
+            series.tooltipText = "{categoryY}: [bold]{valueX}[/]";
             series.columns.template.strokeWidth = 2;
             series.columns.template.strokeOpacity = 1;
             series.columns.template.stroke = am4core.color("#FFFFFF");
@@ -562,7 +576,7 @@ export default {
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
             labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.fontSize = 10;
+            labelBullet.label.fontSize = 14;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
             labelBullet.label.dy = -7;
@@ -591,13 +605,15 @@ export default {
             this.data_informe.por_estrato.forEach(element => {
                 chart.data.push({
                     country: element.estrato,
-                    visits: Math.floor(((element.total / this.total_personas) * 100) * 100) / 100,
+                    visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Estrato socioeconómico)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 8</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por estrato socioeconómico</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -612,7 +628,7 @@ export default {
             categoryAxis.tooltip.label.verticalCenter = "middle";
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.title.text = "# de Empleados";
+            valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
 
             // Create series
@@ -620,7 +636,7 @@ export default {
             series.dataFields.valueY = "visits";
             series.dataFields.categoryX = "country";
             series.name = "Visits";
-            series.tooltipText = "{categoryX} Años: [bold]{valueY}[/]";
+            series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
             series.columns.template.fillOpacity = .8;
             series.columns.template.width = 40;
 
@@ -641,8 +657,8 @@ export default {
             labelBullet.label.text = "{valueY}%";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.dy = 15;
-            labelBullet.label.dx = 18;
-            labelBullet.label.fontSize = 10;
+            labelBullet.label.dx = 15;
+            labelBullet.label.fontSize = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
             labelBullet.label.truncate = false;
@@ -676,8 +692,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Ciudad donde trabaja)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 9</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por ciudad donde trabaja</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
@@ -717,8 +735,10 @@ export default {
             });
 
             var title = chart.titles.create();
-            title.html = "<strong>Población distribuida por</strong> <br><strong>(Area/Departamento donde labora)</strong>";
-            title.fontSize = 20;
+            title.html = "<strong><p style='margin: 0px;'>Figura 10</p></strong>"+
+            "<p style='margin-right: 40px'><i>Población distribuida por departamento/area</i></p></strong>";
+            title.align = "left";
+            title.fontSize = 15;
             title.marginBottom = 30;
             title.fill = am4core.color("#404e67");
 
