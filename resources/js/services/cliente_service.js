@@ -88,3 +88,19 @@ export function consultarDatosInformeSocio(id) {
 export function informeGeneralDimensiones(id) {
     return http().get('/api/inforrme-general-dimensiones?id_empresa='+id);
 }
+
+export function eliminarArea(id) {
+    return http().get('/api/eliminar-area?id_area='+id);
+}
+
+export function guardarArea($data) {
+    return http().post(
+        '/api/guardar-area', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}

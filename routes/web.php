@@ -55,6 +55,8 @@ Route::prefix('api')->group(function () {
     Route::get('/datos-empresa', [ClienteController::class, 'datosEmpresa'])->name('datosEmpresa');
     Route::get('/datos-respuesta', [ClienteController::class, 'dataRespuesta'])->name('dataRespuesta');
     Route::get('/datos-socio', [ClienteController::class, 'consultarDatosInformeSocio'])->name('consultarDatosInformeSocio');
+    Route::get('/eliminar-area', [ClienteController::class, 'eliminarArea'])->name('eliminarArea');
+    Route::post('/guardar-area', [ClienteController::class, 'guardarArea'])->name('guardarArea');
 
     Route::get('/inforrme-general-dimensiones', [InformeGeneralDimensionesController::class, 'informeGeneralDimensiones'])->name('informeGeneralDimensiones');
 

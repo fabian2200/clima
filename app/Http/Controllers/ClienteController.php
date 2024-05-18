@@ -410,4 +410,43 @@ class ClienteController extends Controller
         return response()->json($datos, 200);
     }
 
+    public function eliminarArea(Request $request){
+        $id_area =  $request->input('id_area');
+
+        $cantidad = DB::connection("mysql")->table("datos_socio")
+        ->where("area", $id_area)
+        ->count();
+
+        if($cantidad > 0){
+            return response()->json(["¡No se puede eliminar, porque ya hay empleados asociados a este departamento!", 0], 200); 
+        }else{
+            $delete = DB::connection("mysql")->table("empresa_area")
+            ->where("id", $id_area)
+            ->delete();
+            
+            if ($delete > 0) {
+                return response()->json(["¡Se elimino el departamento correctamente!", 1], 200); 
+            } else {
+                return response()->json(["¡Ocurrió un error, intente mas tarde!", 0], 200); 
+            }
+        }
+    }
+
+    public function guardarArea(Request $request){
+        $area =  $request->input('area');
+        $id_empresa =  $request->input('id_empresa');
+
+        $insert = DB::connection("mysql")->table("empresa_area")
+        ->insert([
+            "nombre_area" => $area,
+            "id_empresa" => $id_empresa
+        ]);
+
+        if ($insert) {
+            return response()->json(["¡Se registro el departamento correctamente!", 1], 200); 
+        } else {
+            return response()->json(["¡Ocurrió un error, intente mas tarde!", 0], 200); 
+        }
+    }
+    
 }
