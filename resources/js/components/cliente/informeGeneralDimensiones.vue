@@ -28,19 +28,21 @@
                     <br>
                     <h6>A continuación se presentan los resultados de la valoración del Clima organizacional, de la figura 11 hasta la 21. Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
                     <br>
+                    <br>
+                    <hr>
                     <div>
-                        <div id="grafica_general" style="height: 450px;"></div>
+                        <div id="grafica_general" style="height: 550px;"></div>
                         <br>
                     </div>
                     <div>
-                        <div id="grafica_dim1" style="height: 400px;"></div>
-                        <br>
-                    </div>
-                    <div>
-                        <div id="grafica_dim2" style="height: 400px;"></div>
+                        <div id="grafica_dim1" style="height: 440px;"></div>
                         <br>
                     </div>
                     <div class="pagina-salto"></div>
+                    <div>
+                        <div id="grafica_dim2" style="height: 440px;"></div>
+                        <br>
+                    </div>
                     <div>
                         <div id="grafica_dim3" style="height: 440px;"></div>
                         <br><br>
@@ -49,11 +51,11 @@
                         <div id="grafica_dim4" style="height: 440px;"></div>
                         <br><br>
                     </div>
+                    <div class="pagina-salto"></div>
                     <div>
                         <div id="grafica_dim5" style="height: 440px;"></div>
                         <br><br>
                     </div>
-                    <div class="pagina-salto"></div>
                     <div>
                         <div id="grafica_dim6" style="height: 440px;"></div>
                         <br><br>
@@ -62,11 +64,11 @@
                         <div id="grafica_dim7" style="height: 440px;"></div>
                         <br><br>
                     </div>
+                    <div class="pagina-salto"></div>
                     <div>
                         <div id="grafica_dim8" style="height: 440px;"></div>
                         <br><br>
                     </div>
-                    <div class="pagina-salto"></div>
                     <div>
                         <div id="grafica_dim9" style="height: 440px;"></div>
                         <br><br>
@@ -216,12 +218,21 @@ export default {
             categoryAxis.tooltip.label.horizontalCenter = "right";
             categoryAxis.tooltip.label.verticalCenter = "middle";
 
+            
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
+            valueAxis.renderer.minGridDistance = 20;
+            valueAxis.renderer.grid.template.disabled = false;
+
+            // Configura los incrementos del eje Y
+            valueAxis.renderer.grid.template.stroke = am4core.color("#000");
+            valueAxis.renderer.grid.template.strokeOpacity = 0.2;
+            valueAxis.renderer.grid.template.strokeWidth = 1;
+            valueAxis.renderer.step = 0.5; // Incrementos de 0.5
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
