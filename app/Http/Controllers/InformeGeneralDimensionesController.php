@@ -385,78 +385,78 @@ class InformeGeneralDimensionesController extends Controller
             $dim10_promedios[4]["suma_total"] += $key->preg50;
         }
 
-        $dim1_promedios[0]["promedio"] = round(($dim1_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim1_promedios[1]["promedio"] = round(($dim1_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim1_promedios[2]["promedio"] = round(($dim1_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim1_promedios[3]["promedio"] = round(($dim1_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim1_promedios[4]["promedio"] = round(($dim1_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim1_promedios[0]["promedio"] = round(($dim1_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim1_promedios[1]["promedio"] = round(($dim1_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim1_promedios[2]["promedio"] = round(($dim1_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim1_promedios[3]["promedio"] = round(($dim1_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim1_promedios[4]["promedio"] = round(($dim1_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim2_promedios[0]["promedio"] = round(($dim2_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim2_promedios[1]["promedio"] = round(($dim2_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim2_promedios[2]["promedio"] = round(($dim2_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim2_promedios[3]["promedio"] = round(($dim2_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim2_promedios[4]["promedio"] = round(($dim2_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim2_promedios[0]["promedio"] = round(($dim2_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim2_promedios[1]["promedio"] = round(($dim2_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim2_promedios[2]["promedio"] = round(($dim2_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim2_promedios[3]["promedio"] = round(($dim2_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim2_promedios[4]["promedio"] = round(($dim2_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim3_promedios[0]["promedio"] = round(($dim3_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim3_promedios[1]["promedio"] = round(($dim3_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim3_promedios[2]["promedio"] = round(($dim3_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim3_promedios[3]["promedio"] = round(($dim3_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim3_promedios[4]["promedio"] = round(($dim3_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim3_promedios[0]["promedio"] = round(($dim3_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim3_promedios[1]["promedio"] = round(($dim3_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim3_promedios[2]["promedio"] = round(($dim3_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim3_promedios[3]["promedio"] = round(($dim3_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim3_promedios[4]["promedio"] = round(($dim3_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim4_promedios[0]["promedio"] = round(($dim4_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim4_promedios[1]["promedio"] = round(($dim4_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim4_promedios[2]["promedio"] = round(($dim4_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim4_promedios[3]["promedio"] = round(($dim4_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim4_promedios[4]["promedio"] = round(($dim4_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim4_promedios[0]["promedio"] = round(($dim4_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim4_promedios[1]["promedio"] = round(($dim4_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim4_promedios[2]["promedio"] = round(($dim4_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim4_promedios[3]["promedio"] = round(($dim4_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim4_promedios[4]["promedio"] = round(($dim4_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim5_promedios[0]["promedio"] = round(($dim5_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim5_promedios[1]["promedio"] = round(($dim5_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim5_promedios[2]["promedio"] = round(($dim5_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim5_promedios[3]["promedio"] = round(($dim5_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim5_promedios[4]["promedio"] = round(($dim5_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim5_promedios[0]["promedio"] = round(($dim5_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim5_promedios[1]["promedio"] = round(($dim5_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim5_promedios[2]["promedio"] = round(($dim5_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim5_promedios[3]["promedio"] = round(($dim5_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim5_promedios[4]["promedio"] = round(($dim5_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim6_promedios[0]["promedio"] = round(($dim6_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim6_promedios[1]["promedio"] = round(($dim6_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim6_promedios[2]["promedio"] = round(($dim6_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim6_promedios[3]["promedio"] = round(($dim6_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim6_promedios[4]["promedio"] = round(($dim6_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim6_promedios[0]["promedio"] = round(($dim6_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim6_promedios[1]["promedio"] = round(($dim6_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim6_promedios[2]["promedio"] = round(($dim6_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim6_promedios[3]["promedio"] = round(($dim6_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim6_promedios[4]["promedio"] = round(($dim6_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim7_promedios[0]["promedio"] = round(($dim7_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim7_promedios[1]["promedio"] = round(($dim7_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim7_promedios[2]["promedio"] = round(($dim7_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim7_promedios[3]["promedio"] = round(($dim7_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim7_promedios[4]["promedio"] = round(($dim7_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim7_promedios[0]["promedio"] = round(($dim7_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim7_promedios[1]["promedio"] = round(($dim7_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim7_promedios[2]["promedio"] = round(($dim7_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim7_promedios[3]["promedio"] = round(($dim7_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim7_promedios[4]["promedio"] = round(($dim7_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim8_promedios[0]["promedio"] = round(($dim8_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim8_promedios[1]["promedio"] = round(($dim8_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim8_promedios[2]["promedio"] = round(($dim8_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim8_promedios[3]["promedio"] = round(($dim8_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim8_promedios[4]["promedio"] = round(($dim8_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim8_promedios[0]["promedio"] = round(($dim8_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim8_promedios[1]["promedio"] = round(($dim8_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim8_promedios[2]["promedio"] = round(($dim8_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim8_promedios[3]["promedio"] = round(($dim8_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim8_promedios[4]["promedio"] = round(($dim8_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim9_promedios[0]["promedio"] = round(($dim9_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim9_promedios[1]["promedio"] = round(($dim9_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim9_promedios[2]["promedio"] = round(($dim9_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim9_promedios[3]["promedio"] = round(($dim9_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim9_promedios[4]["promedio"] = round(($dim9_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim9_promedios[0]["promedio"] = round(($dim9_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim9_promedios[1]["promedio"] = round(($dim9_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim9_promedios[2]["promedio"] = round(($dim9_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim9_promedios[3]["promedio"] = round(($dim9_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim9_promedios[4]["promedio"] = round(($dim9_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
-        $dim10_promedios[0]["promedio"] = round(($dim10_promedios[0]["suma_total"] / $numero_respuestas), 2);
-        $dim10_promedios[1]["promedio"] = round(($dim10_promedios[1]["suma_total"] / $numero_respuestas), 2);
-        $dim10_promedios[2]["promedio"] = round(($dim10_promedios[2]["suma_total"] / $numero_respuestas), 2);
-        $dim10_promedios[3]["promedio"] = round(($dim10_promedios[3]["suma_total"] / $numero_respuestas), 2);
-        $dim10_promedios[4]["promedio"] = round(($dim10_promedios[4]["suma_total"] / $numero_respuestas), 2);
+        $dim10_promedios[0]["promedio"] = round(($dim10_promedios[0]["suma_total"] / $numero_respuestas), 1);
+        $dim10_promedios[1]["promedio"] = round(($dim10_promedios[1]["suma_total"] / $numero_respuestas), 1);
+        $dim10_promedios[2]["promedio"] = round(($dim10_promedios[2]["suma_total"] / $numero_respuestas), 1);
+        $dim10_promedios[3]["promedio"] = round(($dim10_promedios[3]["suma_total"] / $numero_respuestas), 1);
+        $dim10_promedios[4]["promedio"] = round(($dim10_promedios[4]["suma_total"] / $numero_respuestas), 1);
 
        
         $datos_general = [
-            "dim1" => round(($dimension1 / (5 * $numero_respuestas)), 2),
-            "dim2" => round(($dimension2 / (5 * $numero_respuestas)), 2),
-            "dim3" => round(($dimension3 / (5 * $numero_respuestas)), 2),
-            "dim4" => round(($dimension4 / (5 * $numero_respuestas)), 2),
-            "dim5" => round(($dimension5 / (5 * $numero_respuestas)), 2),
-            "dim6" => round(($dimension6 / (5 * $numero_respuestas)), 2),
-            "dim7" => round(($dimension7 / (5 * $numero_respuestas)), 2),
-            "dim8" => round(($dimension8 / (5 * $numero_respuestas)), 2),
-            "dim9" => round(($dimension9 / (5 * $numero_respuestas)), 2),
-            "dim10" => round(($dimension10 / (5 * $numero_respuestas)), 2),
+            "dim1" => round(($dimension1 / (5 * $numero_respuestas)), 1),
+            "dim2" => round(($dimension2 / (5 * $numero_respuestas)), 1),
+            "dim3" => round(($dimension3 / (5 * $numero_respuestas)), 1),
+            "dim4" => round(($dimension4 / (5 * $numero_respuestas)), 1),
+            "dim5" => round(($dimension5 / (5 * $numero_respuestas)), 1),
+            "dim6" => round(($dimension6 / (5 * $numero_respuestas)), 1),
+            "dim7" => round(($dimension7 / (5 * $numero_respuestas)), 1),
+            "dim8" => round(($dimension8 / (5 * $numero_respuestas)), 1),
+            "dim9" => round(($dimension9 / (5 * $numero_respuestas)), 1),
+            "dim10" => round(($dimension10 / (5 * $numero_respuestas)), 1),
         ];
 
         $datos = [

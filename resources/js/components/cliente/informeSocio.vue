@@ -25,14 +25,14 @@
                 <hr>
                 <div style="text-align: left">
                     <br><br>
-                    <h4 style="width: 100%; text-align: left">De un total de <strong> {{total_personas}}  </strong> Empleados que respondieron el test, se tiene que: </h4>
+                    <h4 style="width: 100%; text-align: left">De un total de  ({{total_personas}}) Empleados que respondieron el test, se tiene que: </h4>
                     <br><br>
                     <div>
                         <div id="grafica_sexo" style="height: 360px"></div>
                         <br><br>
                     </div>
                     <div>
-                        <div id="grafica_edad" style="height: 360px"></div>
+                        <div id="grafica_edad" style="height: 390px"></div>
                         <br><br>
                     </div>
                     <div>
@@ -57,7 +57,7 @@
                         <br><br>
                     </div>
                     <div>
-                        <div id="grafica_estrato" style="height: 360px"></div>
+                        <div id="grafica_estrato" style="height: 460px"></div>
                         <br><br>
                     </div>
                     <div>
@@ -202,27 +202,29 @@ export default {
             title.fill = am4core.color("#404e67");
 
             // Create axes
-            let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
             categoryAxis.dataFields.category = "country";
-            categoryAxis.renderer.labels.template.hideOversized = false;
+            categoryAxis.renderer.inversed = true; // Invierte el eje para hacerlo horizontal
+            categoryAxis.renderer.grid.template.location = 0;
             categoryAxis.renderer.minGridDistance = 20;
-            categoryAxis.renderer.labels.template.horizontalCenter = "middle";
-            categoryAxis.renderer.labels.template.verticalCenter = "middle";
-            categoryAxis.tooltip.label.horizontalCenter = "middle";
-            categoryAxis.tooltip.label.verticalCenter = "middle";
+            categoryAxis.renderer.labels.template.fontSize = 12;
 
-            let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
             valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
+            valueAxis.max = 100;
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
-            series.dataFields.valueY = "visits";
-            series.dataFields.categoryX = "country";
+            series.dataFields.valueX = "visits"; // Use valueX en lugar de valueY
+            series.dataFields.categoryY = "country"; // Use categoryY en lugar de categoryX
             series.name = "Visits";
-            series.tooltipText = "{categoryX} Años: [bold]{valueY}[/]";
-            series.columns.template.fillOpacity = .8;
-            series.columns.template.width = 40;
+            series.tooltipText = "{categoryY} Años: [bold]{valueX}[/]";
+            series.columns.template.strokeWidth = 2;
+            series.columns.template.strokeOpacity = 1;
+            series.columns.template.stroke = am4core.color("#FFFFFF");
+            series.columns.template.fillOpacity = 0.8;
+            series.columns.template.maxHeight = 40;
 
             var columnTemplate = series.columns.template;
             columnTemplate.strokeWidth = 2;
@@ -238,14 +240,19 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}%";
+            labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = 15;
-            labelBullet.label.dx = 14;
             labelBullet.label.fontSize = 14;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
+            labelBullet.label.dy = -7;
+            labelBullet.label.dx = 38;
             labelBullet.label.truncate = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
 
             chart.cursor = new am4charts.XYCursor();
@@ -330,6 +337,10 @@ export default {
             labelBullet.label.dx = 38;
             labelBullet.label.truncate = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -413,6 +424,11 @@ export default {
             labelBullet.label.dy = -7;
             labelBullet.label.dx = 38;
             labelBullet.label.truncate = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -583,6 +599,11 @@ export default {
             labelBullet.label.dx = 38;
             labelBullet.label.truncate = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
+
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
@@ -618,27 +639,29 @@ export default {
             title.fill = am4core.color("#404e67");
 
             // Create axes
-            let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
             categoryAxis.dataFields.category = "country";
-            categoryAxis.renderer.labels.template.hideOversized = false;
+            categoryAxis.renderer.inversed = true; // Invierte el eje para hacerlo horizontal
+            categoryAxis.renderer.grid.template.location = 0;
             categoryAxis.renderer.minGridDistance = 20;
-            categoryAxis.renderer.labels.template.horizontalCenter = "middle";
-            categoryAxis.renderer.labels.template.verticalCenter = "middle";
-            categoryAxis.tooltip.label.horizontalCenter = "middle";
-            categoryAxis.tooltip.label.verticalCenter = "middle";
+            categoryAxis.renderer.labels.template.fontSize = 12;
 
-            let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            let valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
             valueAxis.title.text = "";
             valueAxis.title.fontWeight = "bold";
+            valueAxis.max = 100;
 
             // Create series
             var series = chart.series.push(new am4charts.ColumnSeries3D());
-            series.dataFields.valueY = "visits";
-            series.dataFields.categoryX = "country";
+            series.dataFields.valueX = "visits"; // Use valueX en lugar de valueY
+            series.dataFields.categoryY = "country"; // Use categoryY en lugar de categoryX
             series.name = "Visits";
-            series.tooltipText = "{categoryX}: [bold]{valueY}[/]";
-            series.columns.template.fillOpacity = .8;
-            series.columns.template.width = 40;
+            series.tooltipText = "{categoryY} Años: [bold]{valueX}[/]";
+            series.columns.template.strokeWidth = 2;
+            series.columns.template.strokeOpacity = 1;
+            series.columns.template.stroke = am4core.color("#FFFFFF");
+            series.columns.template.fillOpacity = 0.8;
+            series.columns.template.maxHeight = 40;
 
             var columnTemplate = series.columns.template;
             columnTemplate.strokeWidth = 2;
@@ -654,14 +677,19 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}%";
+            labelBullet.label.text = "{valueX}%";
             labelBullet.label.fill = am4core.color("#000000");
-            labelBullet.label.dy = 15;
-            labelBullet.label.dx = 15;
-            labelBullet.label.fontSize = 15;
+            labelBullet.label.fontSize = 14;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.width = 70;
+            labelBullet.label.dy = -7;
+            labelBullet.label.dx = 38;
             labelBullet.label.truncate = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
 
             chart.cursor = new am4charts.XYCursor();

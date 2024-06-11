@@ -26,7 +26,7 @@
                     <br>
                     <h3><strong>VALORACIÓN DEL CLIMA ORGANIZACIONAL</strong></h3>
                     <br>
-                    <h6>A continuación se presentan los resultados de la valoración del Clima organizacional, de la <strong>figura 11</strong> hasta la <strong>figura 21</strong>. Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
+                    <h6>A continuación se presentan los resultados de la valoración del Clima organizacional, de la (figura 11) hasta la (figura 21). Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
                     <br>
                     <br>
                     <hr>
@@ -267,6 +267,11 @@ export default {
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
+
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -359,10 +364,15 @@ export default {
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
-            labelBullet.label.fontSize = 15;
+            labelBullet.label.fontSize = 13;
             labelBullet.label.dy = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
 
             chart.cursor = new am4charts.XYCursor();
@@ -461,6 +471,11 @@ export default {
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
+
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
@@ -556,6 +571,11 @@ export default {
             labelBullet.label.dy = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -653,6 +673,11 @@ export default {
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
+
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
@@ -749,6 +774,10 @@ export default {
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -845,6 +874,11 @@ export default {
             labelBullet.label.dy = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
+            
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -943,6 +977,10 @@ export default {
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -1039,6 +1077,11 @@ export default {
             labelBullet.label.dy = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -1137,6 +1180,11 @@ export default {
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
 
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
+
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
@@ -1233,6 +1281,11 @@ export default {
             labelBullet.label.dy = 15;
             labelBullet.label.fontWeight = "bold";
             labelBullet.label.hideOversized = false;
+
+            labelBullet.label.paddingTop = 5;
+            labelBullet.label.paddingBottom = 5;
+            labelBullet.label.paddingLeft = 5;
+            labelBullet.label.paddingRight = 5;
 
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
