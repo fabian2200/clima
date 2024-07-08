@@ -10,6 +10,7 @@ import listaResponden from './components/cliente/listaResponden';
 import respuesta from './components/cliente/respuesta';
 import informeSocio from './components/cliente/informeSocio';
 import informeGeneralDimensiones from './components/cliente/informeGeneralDimensiones';
+import comparacionDImensiones from './components/cliente/comparacionDImensiones.vue';
 
 const routes = [
   {
@@ -70,6 +71,11 @@ const routes = [
     path: '/informe-general-dimensiones/:id',
     name: 'informeGeneralDimensiones',
     component: informeGeneralDimensiones
+  },
+  {
+    path: '/comparacion-dimensiones/:id',
+    name: 'comparacionDImensiones',
+    component: comparacionDImensiones
   }
 ]
 

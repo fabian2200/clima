@@ -59,6 +59,7 @@ Route::prefix('api')->group(function () {
     Route::post('/guardar-area', [ClienteController::class, 'guardarArea'])->name('guardarArea');
 
     Route::get('/inforrme-general-dimensiones', [InformeGeneralDimensionesController::class, 'informeGeneralDimensiones'])->name('informeGeneralDimensiones');
+    Route::get('/comparacion-dimensiones', [InformeGeneralDimensionesController::class, 'comparacionDimensiones'])->name('comparacionDimensiones');
 
 });
 

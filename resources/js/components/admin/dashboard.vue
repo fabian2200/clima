@@ -351,20 +351,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <button @click="irPaginaInforme('/informe-socio/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-primary">Informe sociodemográfico</button>
+                        <div class="col-lg-6">
+                            <button @click="irPaginaInforme('/informe-socio/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
                         </div>  
-                        <div class="col-lg-4">
-                            <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-success">Informe General dimensiones</button>
+                        <div class="col-lg-6">
+                            <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
                         </div> 
-                        <div class="col-lg-4">
-                            <button disabled type="button" class="btn_informe btn btn-outline-warning">Informe especifico por dimensión</button>
-                        </div>      
-                        <div class="col-lg-4">
-                            <button disabled type="button" class="btn_informe btn btn-outline-info">Comparación de dimensiones</button>
+                        <div class="col-lg-6">
+                            <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
                         </div>  
-                        <div class="col-lg-4">
-                            <button disabled type="button" class="btn_informe btn btn-outline-secondary">Fortalezas y Debilidades</button>
+                        <div class="col-lg-6">
+                            <button disabled type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
                         </div>  
                     </div>
                 </div>

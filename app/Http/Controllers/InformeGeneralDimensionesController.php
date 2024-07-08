@@ -475,4 +475,193 @@ class InformeGeneralDimensionesController extends Controller
 
         return response()->json($datos, 200);
     }
+
+    public function comparacionDimensiones(Request $request){
+        $id_empresa = $request->input('id_empresa');
+
+        $data_area_trabajo = DB::connection("mysql")->select(
+            "SELECT 
+                SUM(preg1+preg11+preg21+preg31+preg41) AS dim1, 
+                SUM(preg2+preg12+preg22+preg32+preg42) AS dim2, 
+                SUM(preg3+preg13+preg23+preg33+preg43) AS dim3, 
+                SUM(preg4+preg14+preg24+preg34+preg44) AS dim4,
+                SUM(preg5+preg15+preg25+preg35+preg45) AS dim5,  
+                SUM(preg6+preg16+preg26+preg36+preg46) AS dim6, 
+                SUM(preg7+preg17+preg27+preg37+preg47) AS dim7,
+                SUM(preg8+preg18+preg28+preg38+preg48) AS dim8,
+                SUM(preg9+preg19+preg29+preg39+preg49) AS dim9,
+                SUM(preg10+preg20+preg30+preg40+preg50) AS dim10,  
+                5*COUNT(ds.area) AS cantidad, 
+                ds.area 
+            FROM respuestas r 
+            INNER JOIN datos_socio ds 
+            ON r.id_contesto = ds.id
+            WHERE ds.id_empresa = ".$id_empresa."
+            GROUP BY ds.area"
+        );
+
+        foreach ($data_area_trabajo as $key) {
+            $key->promedio1 = round(($key->dim1 / $key->cantidad), 1);
+            $key->promedio2 = round(($key->dim2 / $key->cantidad), 1);
+            $key->promedio3 = round(($key->dim3 / $key->cantidad), 1);
+            $key->promedio4 = round(($key->dim4 / $key->cantidad), 1);
+            $key->promedio5 = round(($key->dim5 / $key->cantidad), 1);
+            $key->promedio6 = round(($key->dim6 / $key->cantidad), 1);
+            $key->promedio7 = round(($key->dim7 / $key->cantidad), 1);
+            $key->promedio8 = round(($key->dim8 / $key->cantidad), 1);
+            $key->promedio9 = round(($key->dim9 / $key->cantidad), 1);
+            $key->promedio10 = round(($key->dim10 / $key->cantidad), 1);
+
+            $key->area = DB::connection("mysql")->table("empresa_area")
+            ->select("id","nombre_area")
+            ->where("id", $key->area)
+            ->first();
+        }
+
+        $data_sexo = DB::connection("mysql")->select(
+            "SELECT 
+                SUM(preg1+preg11+preg21+preg31+preg41) AS dim1, 
+                SUM(preg2+preg12+preg22+preg32+preg42) AS dim2, 
+                SUM(preg3+preg13+preg23+preg33+preg43) AS dim3, 
+                SUM(preg4+preg14+preg24+preg34+preg44) AS dim4,
+                SUM(preg5+preg15+preg25+preg35+preg45) AS dim5,  
+                SUM(preg6+preg16+preg26+preg36+preg46) AS dim6, 
+                SUM(preg7+preg17+preg27+preg37+preg47) AS dim7,
+                SUM(preg8+preg18+preg28+preg38+preg48) AS dim8,
+                SUM(preg9+preg19+preg29+preg39+preg49) AS dim9,
+                SUM(preg10+preg20+preg30+preg40+preg50) AS dim10,  
+                5*COUNT(ds.sexo) AS cantidad, 
+	            ds.sexo 
+            FROM respuestas r 
+            INNER JOIN datos_socio ds 
+            ON r.id_contesto = ds.id
+            WHERE ds.id_empresa = ".$id_empresa."
+            GROUP BY ds.sexo"
+        );
+
+        foreach ($data_sexo as $key) {
+            $key->promedio1 = round(($key->dim1 / $key->cantidad), 1);
+            $key->promedio2 = round(($key->dim2 / $key->cantidad), 1);
+            $key->promedio3 = round(($key->dim3 / $key->cantidad), 1);
+            $key->promedio4 = round(($key->dim4 / $key->cantidad), 1);
+            $key->promedio5 = round(($key->dim5 / $key->cantidad), 1);
+            $key->promedio6 = round(($key->dim6 / $key->cantidad), 1);
+            $key->promedio7 = round(($key->dim7 / $key->cantidad), 1);
+            $key->promedio8 = round(($key->dim8 / $key->cantidad), 1);
+            $key->promedio9 = round(($key->dim9 / $key->cantidad), 1);
+            $key->promedio10 = round(($key->dim10 / $key->cantidad), 1);
+        }
+
+        $data_edad = DB::connection("mysql")->select(
+            "SELECT 
+                SUM(preg1+preg11+preg21+preg31+preg41) AS dim1, 
+                SUM(preg2+preg12+preg22+preg32+preg42) AS dim2, 
+                SUM(preg3+preg13+preg23+preg33+preg43) AS dim3, 
+                SUM(preg4+preg14+preg24+preg34+preg44) AS dim4,
+                SUM(preg5+preg15+preg25+preg35+preg45) AS dim5,  
+                SUM(preg6+preg16+preg26+preg36+preg46) AS dim6, 
+                SUM(preg7+preg17+preg27+preg37+preg47) AS dim7,
+                SUM(preg8+preg18+preg28+preg38+preg48) AS dim8,
+                SUM(preg9+preg19+preg29+preg39+preg49) AS dim9,
+                SUM(preg10+preg20+preg30+preg40+preg50) AS dim10,  
+                5*COUNT(ds.edad) AS cantidad, 
+	            ds.edad 
+            FROM respuestas r 
+            INNER JOIN datos_socio ds 
+            ON r.id_contesto = ds.id
+            WHERE ds.id_empresa = ".$id_empresa."
+            GROUP BY ds.edad"
+        );
+
+        foreach ($data_edad as $key) {
+            $key->promedio1 = round(($key->dim1 / $key->cantidad), 1);
+            $key->promedio2 = round(($key->dim2 / $key->cantidad), 1);
+            $key->promedio3 = round(($key->dim3 / $key->cantidad), 1);
+            $key->promedio4 = round(($key->dim4 / $key->cantidad), 1);
+            $key->promedio5 = round(($key->dim5 / $key->cantidad), 1);
+            $key->promedio6 = round(($key->dim6 / $key->cantidad), 1);
+            $key->promedio7 = round(($key->dim7 / $key->cantidad), 1);
+            $key->promedio8 = round(($key->dim8 / $key->cantidad), 1);
+            $key->promedio9 = round(($key->dim9 / $key->cantidad), 1);
+            $key->promedio10 = round(($key->dim10 / $key->cantidad), 1);
+        }
+
+        $data_tiempo_cargo = DB::connection("mysql")->select(
+            "SELECT 
+                SUM(preg1+preg11+preg21+preg31+preg41) AS dim1, 
+                SUM(preg2+preg12+preg22+preg32+preg42) AS dim2, 
+                SUM(preg3+preg13+preg23+preg33+preg43) AS dim3, 
+                SUM(preg4+preg14+preg24+preg34+preg44) AS dim4,
+                SUM(preg5+preg15+preg25+preg35+preg45) AS dim5,  
+                SUM(preg6+preg16+preg26+preg36+preg46) AS dim6, 
+                SUM(preg7+preg17+preg27+preg37+preg47) AS dim7,
+                SUM(preg8+preg18+preg28+preg38+preg48) AS dim8,
+                SUM(preg9+preg19+preg29+preg39+preg49) AS dim9,
+                SUM(preg10+preg20+preg30+preg40+preg50) AS dim10,  
+                5*COUNT(ds.tiempo_cargo) AS cantidad, 
+	            ds.tiempo_cargo 
+            FROM respuestas r 
+            INNER JOIN datos_socio ds 
+            ON r.id_contesto = ds.id
+            WHERE ds.id_empresa = ".$id_empresa."
+            GROUP BY ds.tiempo_cargo"
+        );
+
+        foreach ($data_tiempo_cargo as $key) {
+            $key->promedio1 = round(($key->dim1 / $key->cantidad), 1);
+            $key->promedio2 = round(($key->dim2 / $key->cantidad), 1);
+            $key->promedio3 = round(($key->dim3 / $key->cantidad), 1);
+            $key->promedio4 = round(($key->dim4 / $key->cantidad), 1);
+            $key->promedio5 = round(($key->dim5 / $key->cantidad), 1);
+            $key->promedio6 = round(($key->dim6 / $key->cantidad), 1);
+            $key->promedio7 = round(($key->dim7 / $key->cantidad), 1);
+            $key->promedio8 = round(($key->dim8 / $key->cantidad), 1);
+            $key->promedio9 = round(($key->dim9 / $key->cantidad), 1);
+            $key->promedio10 = round(($key->dim10 / $key->cantidad), 1);
+        }
+
+        $data_tiempo_entidad = DB::connection("mysql")->select(
+            "SELECT 
+                SUM(preg1+preg11+preg21+preg31+preg41) AS dim1, 
+                SUM(preg2+preg12+preg22+preg32+preg42) AS dim2, 
+                SUM(preg3+preg13+preg23+preg33+preg43) AS dim3, 
+                SUM(preg4+preg14+preg24+preg34+preg44) AS dim4,
+                SUM(preg5+preg15+preg25+preg35+preg45) AS dim5,  
+                SUM(preg6+preg16+preg26+preg36+preg46) AS dim6, 
+                SUM(preg7+preg17+preg27+preg37+preg47) AS dim7,
+                SUM(preg8+preg18+preg28+preg38+preg48) AS dim8,
+                SUM(preg9+preg19+preg29+preg39+preg49) AS dim9,
+                SUM(preg10+preg20+preg30+preg40+preg50) AS dim10,  
+                5*COUNT(ds.tiempo_entidad) AS cantidad, 
+	            ds.tiempo_entidad 
+            FROM respuestas r 
+            INNER JOIN datos_socio ds 
+            ON r.id_contesto = ds.id
+            WHERE ds.id_empresa = ".$id_empresa."
+            GROUP BY ds.tiempo_entidad"
+        );
+
+        foreach ($data_tiempo_entidad as $key) {
+            $key->promedio1 = round(($key->dim1 / $key->cantidad), 1);
+            $key->promedio2 = round(($key->dim2 / $key->cantidad), 1);
+            $key->promedio3 = round(($key->dim3 / $key->cantidad), 1);
+            $key->promedio4 = round(($key->dim4 / $key->cantidad), 1);
+            $key->promedio5 = round(($key->dim5 / $key->cantidad), 1);
+            $key->promedio6 = round(($key->dim6 / $key->cantidad), 1);
+            $key->promedio7 = round(($key->dim7 / $key->cantidad), 1);
+            $key->promedio8 = round(($key->dim8 / $key->cantidad), 1);
+            $key->promedio9 = round(($key->dim9 / $key->cantidad), 1);
+            $key->promedio10 = round(($key->dim10 / $key->cantidad), 1);
+        }
+
+        $data= [
+            "data_area_trabajo" => $data_area_trabajo,
+            "data_sexo" => $data_sexo,
+            "data_edad" => $data_edad,
+            "data_tiempo_cargo"  => $data_tiempo_cargo,
+            "data_tiempo_entidad" => $data_tiempo_entidad
+        ];
+
+        return response()->json($data, 200);
+    }
 }
