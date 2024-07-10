@@ -200,13 +200,13 @@
                                                 <button @click="asignarEmpresaEditar(item)" data-toggle="tooltip" data-placement="top" title="Editar Empresa" type="button" class="btn btn-info">
                                                     <i style="font-size: 13px" class="fas fa-pen"></i>
                                                 </button>
-                                                <button @click="obtenerBaseURL(item.id)" data-toggle="tooltip" data-placement="top" title="Link Test" type="button" class="btn btn-warning">
+                                                <button v-if="item.estado_informe_socio == 0 && item.estado_informe_general_dim == 0 && item.estado_informe_ffd == 0 && item.estado_informe_comparacion == 0" @click="obtenerBaseURL(item.id)" data-toggle="tooltip" data-placement="top" title="Link Test" type="button" class="btn btn-warning">
                                                     <i style="font-size: 13px" class="fas fa-link"></i>
                                                 </button>
-                                                <button @click="asignarItemDisminuir(item)" data-toggle="tooltip" data-placement="top" title="Disminuir # empleados" type="button" class="btn btn-danger">
+                                                <button v-if="item.estado_informe_socio == 0 && item.estado_informe_general_dim == 0 && item.estado_informe_ffd == 0 && item.estado_informe_comparacion == 0" @click="asignarItemDisminuir(item)" data-toggle="tooltip" data-placement="top" title="Disminuir # empleados" type="button" class="btn btn-danger">
                                                     <i style="font-size: 13px" class="fas fa-user-minus"></i>
                                                 </button>
-                                                <button @click="asignarItemAumentar(item)" data-toggle="tooltip" data-placement="top" title="Aumentar # empleados" type="button" class="btn btn-success">
+                                                <button v-if="item.estado_informe_socio == 0 && item.estado_informe_general_dim == 0 && item.estado_informe_ffd == 0 && item.estado_informe_comparacion == 0" @click="asignarItemAumentar(item)" data-toggle="tooltip" data-placement="top" title="Aumentar # empleados" type="button" class="btn btn-success">
                                                     <i style="font-size: 13px" class="fas fa-user-plus"></i>
                                                 </button>
                                             </td>
@@ -361,7 +361,7 @@
                             <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
                         </div>  
                         <div class="col-lg-6">
-                            <button disabled type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
+                            <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa_informe)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
                         </div>  
                     </div>
                 </div>

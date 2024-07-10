@@ -11,6 +11,7 @@ import respuesta from './components/cliente/respuesta';
 import informeSocio from './components/cliente/informeSocio';
 import informeGeneralDimensiones from './components/cliente/informeGeneralDimensiones';
 import comparacionDImensiones from './components/cliente/comparacionDImensiones.vue';
+import fortalezasDebilidadesFortalecer from './components/cliente/fortalezasDebilidadesFortalecer';
 
 const routes = [
   {
@@ -76,6 +77,11 @@ const routes = [
     path: '/comparacion-dimensiones/:id',
     name: 'comparacionDImensiones',
     component: comparacionDImensiones
+  },
+  {
+    path: '/fortalezas-debilidades-fortalecer/:id',
+    name: 'fortalezasDebilidadesFortalecer',
+    component: fortalezasDebilidadesFortalecer
   }
 ]
 

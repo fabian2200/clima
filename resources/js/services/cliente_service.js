@@ -108,3 +108,7 @@ export function guardarArea($data) {
 export function comparacionDimensiones(id) {
     return http().get('/api/comparacion-dimensiones?id_empresa='+id);
 }
+
+export function fortalezasDebilidadesFortalecer(id) {
+    return http().get('/api/fortalezas?id_empresa='+id);
+}

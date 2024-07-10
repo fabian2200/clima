@@ -655,17 +655,28 @@
                     });
                     return;
                 }
-                
-                var formDataArray = $('#paso1Form').serializeArray();
 
-                paso1 = {};
-                $.each(formDataArray, function() {
-                    paso1[this.name] = this.value;
+                Swal.fire({
+                    title: "¿Esta seguro de guardar sus respuestas?",
+                    text: "Por favor revise antes de guardar, no podra cambiar las respuestas guardadas",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si, guardar",
+                    cancelButtonText: "No, cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        var formDataArray = $('#paso1Form').serializeArray();
+
+                        paso1 = {};
+                        $.each(formDataArray, function() {
+                            paso1[this.name] = this.value;
+                        });
+                        document.getElementById("paso1").style.display = "none";
+                        document.getElementById("paso2").style.display = "block";
+                    }
                 });
-
-
-                document.getElementById("paso1").style.display = "none";
-                document.getElementById("paso2").style.display = "block";
             });
         });
 
@@ -681,11 +692,10 @@
                     radiosSeleccionados = false;
                     groupName = 'preg' + i;
                     numeroPregunta = i;
-                    // Iterar sobre los radio buttons del grupo actual
                     $('input[name="' + groupName + '"]').each(function() {
                         if ($(this).is(':checked')) {
                             radiosSeleccionados = true;
-                            return false; // Salir del bucle each
+                            return false;
                         }
                     });
 
@@ -705,68 +715,80 @@
                     return;
                 }
                 
-                var formDataArray = $('#paso2Form').serializeArray();
+                Swal.fire({
+                    title: "¿Esta seguro de guardar sus respuestas?",
+                    text: "Por favor revise antes de guardar, no podra cambiar las respuestas guardadas",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Si, guardar",
+                    cancelButtonText: "No, cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        var formDataArray = $('#paso2Form').serializeArray();
 
-                paso2 = {};
-                $.each(formDataArray, function() {
-                    paso2[this.name] = this.value;
-                });
+                        paso2 = {};
+                        $.each(formDataArray, function() {
+                            paso2[this.name] = this.value;
+                        });
 
-                var datos_enviar = {
-                    empresa: id_empresa,
-                    datos_socio: paso1,
-                    respuestas: paso2
-                }
+                        var datos_enviar = {
+                            empresa: id_empresa,
+                            datos_socio: paso1,
+                            respuestas: paso2
+                        }
 
-                $.ajax({
-                    url: '/api/guardar-test',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify(datos_enviar),
-                    beforeSend: function() {
-                        swal.fire({
-                            html: '<h5>Guardando los datos...</h5>',
-                            showConfirmButton: false,
-                            onRender: function() {
-                                $('.swal2-content').prepend(sweet_loader);
+                        $.ajax({
+                            url: '/api/guardar-test',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            data: JSON.stringify(datos_enviar),
+                            beforeSend: function() {
+                                swal.fire({
+                                    html: '<h5>Guardando los datos...</h5>',
+                                    showConfirmButton: false,
+                                    onRender: function() {
+                                        $('.swal2-content').prepend(sweet_loader);
+                                    }
+                                });
+                            },
+                            success: function(response) {
+                                if (response[1] == 1) {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "success",
+                                        title: response[0],
+                                        showConfirmButton: false,
+                                        timer: 2500
+                                    });
+
+                                    setTimeout(() => {
+                                        localStorage.setItem('respondio', true);
+                                        location.reload();
+                                    }, 2500);
+                                } else {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "error",
+                                        title: response[0],
+                                        showConfirmButton: false,
+                                        timer: 2500
+                                    });
+                                }
+                            },
+                            error: function(error) {
+                                Swal.fire({
+                                    position: "center",
+                                    icon: "success",
+                                    title: error,
+                                    showConfirmButton: false,
+                                    timer: 2500
+                                });
                             }
                         });
-                    },
-                    success: function(response) {
-                        if (response[1] == 1) {
-                            Swal.fire({
-                                position: "center",
-                                icon: "success",
-                                title: response[0],
-                                showConfirmButton: false,
-                                timer: 2500
-                            });
-
-                            setTimeout(() => {
-                                localStorage.setItem('respondio', true);
-                                location.reload();
-                            }, 2500);
-                        } else {
-                            Swal.fire({
-                                position: "center",
-                                icon: "error",
-                                title: response[0],
-                                showConfirmButton: false,
-                                timer: 2500
-                            });
-                        }
-                    },
-                    error: function(error) {
-                        Swal.fire({
-                            position: "center",
-                            icon: "success",
-                            title: error,
-                            showConfirmButton: false,
-                            timer: 2500
-                        });
                     }
-                });
-                
+                });                
             });
         });
 

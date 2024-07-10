@@ -33,8 +33,22 @@
                     <div>
                         <label for="exampleFormControlInput1" style="font-weight: bold">Se creara la empresa con las siguientes areas por defecto</label>
                         <div class="row">
-                            <div class="col-lg-4" style="padding: 5px" v-for="(item, index) in lista_areas" :key="index">
-                                <input type='text' class="form-control" disabled :value="item">
+                            <div class="col-lg-4" style="padding: 15px" v-for="(item, index) in lista_areas" :key="index">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <input type='text' class="form-control" v-model="lista_areas[index]">
+                                    </div> 
+                                    <div class="col-lg-3">
+                                        <button
+                                            @click="eliminarArea(index)"
+                                            style="width: 100%"
+                                            type="button"
+                                            class="btn btn-outline-danger"
+                                        >
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,6 +152,9 @@ export default {
                 this.imageUrl = reader.result;
             };
             reader.readAsDataURL(file);
+        },
+        eliminarArea(index){
+            this.lista_areas.splice(index, 1);
         }
     },
 }
