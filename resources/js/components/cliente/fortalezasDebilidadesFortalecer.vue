@@ -41,7 +41,7 @@
                                         <h5>A continuación de muestran las dimensiones y sus aspectos evaluados que se consideran una fortaleza para la entidad en lo referente a su clima organizacional</h5>
                                         <h5><strong>Nota:</strong> se enumeran las dimensiones que tengan un promedio de igual o superior a <strong>3.9</strong>, asi como también los aspectos con un promedio de igual o superior a <strong>3.9</strong></h5>
                                         <br><br>
-                                        <table class="informe_comparacion">
+                                        <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Dimension</th>
                                                 <th>Promedio</th>
@@ -52,7 +52,7 @@
                                             </tr>
                                         </table>
                                         <br>
-                                        <table class="informe_comparacion">
+                                        <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Aspecto</th>
                                                 <th>Dimension</th>
@@ -73,7 +73,7 @@
                                         <h5>A continuación de muestran las dimensiones y sus aspectos evaluados que se consideran una fortaleza para la entidad en lo referente a su clima organizacional</h5>
                                         <h5><strong>Nota:</strong> se enumeran las dimensiones que tengan un promedio de igual o inferior a <strong>2.9</strong>, asi como también los aspectos con un promedio de igual o inferior a <strong>2.9</strong></h5>
                                         <br><br>
-                                        <table class="informe_comparacion">
+                                        <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Dimension</th>
                                                 <th>Promedio</th>
@@ -84,7 +84,7 @@
                                             </tr>
                                         </table>
                                         <br>
-                                        <table class="informe_comparacion">
+                                        <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Aspecto</th>
                                                 <th>Dimension</th>
@@ -105,7 +105,7 @@
                                         <h5>A continuación de muestran las dimensiones y sus aspectos evaluados que se consideran una fortaleza para la entidad en lo referente a su clima organizacional</h5>
                                         <h5><strong>Nota:</strong> se enumeran las dimensiones que tengan un promedio entre <strong>3.0 a 3.8</strong>, asi como también los aspectos con un promedio entre <strong>3.0 a 3.8</strong></h5>
                                         <br><br>
-                                        <table class="informe_comparacion">
+                                        <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Dimension</th>
                                                 <th>Promedio</th>
@@ -116,7 +116,7 @@
                                             </tr>
                                         </table>
                                         <br>
-                                        <table class="informe_comparacion">
+                                        <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Aspecto</th>
                                                 <th>Dimension</th>
@@ -209,7 +209,7 @@ export default {
     },
 }
 </script>
-<style scoped>
+<style>
     .pagina-salto {
         page-break-after: always;
     }
@@ -219,26 +219,26 @@ export default {
         height: 40px;
     }
 
-    .informe_comparacion {
+    .informe_fortalezas {
         width: 100%;
         border-collapse: collapse;
         margin: 12px 0;
         font-size: 14px;
         text-align: left;
     }
-    .informe_comparacion th, .informe_comparacion td {
-        border: 1px solid #fff;
+    .informe_fortalezas th, .informe_fortalezas td {
+        border: 1px solid #c9c9c9;
         padding: 12px;
         text-align: center;
     }
-    .informe_comparacion th {
+    .informe_fortalezas th {
         background-color: #009199;
         color: #ffff;
     }
-    .informe_comparacion tr:nth-child(even) {
+    .informe_fortalezas tr:nth-child(even) {
         background-color: #f9f9f9;
     }
-    .informe_comparacion tr:hover {
+    .informe_fortalezas tr:hover {
         background-color: #f1f1f1;
     }
 

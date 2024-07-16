@@ -1,7 +1,52 @@
-[11:52 a. m., 2/5/2022] Xiamir: https://206.191.155.175:8443/login_up.php3
-[11:50 a. m., 2/5/2022] Xiamir: AndresQuintero
-[11:50 a. m., 2/5/2022] Xiamir: Andres_2022
+Hola, juan:
 
+Ya se ha activado tu servicio Hosting SSD Senior (Prueba Gratis) con éxito en los servidores de LucusHost con fecha de 16/07/2024.
 
+Actualmente el dominio asociado a tu plan de alojamiento es kzrdmeod.lucusvirtual.es. Si quieres asignarle otro nombre de dominio diferente, no dudes en ponerte en contacto con nosotros y, si es posible, te haremos el cambio sin ningún problema.
 
-https://scienti.minciencias.gov.co/cvlac/Login/pre_s_login.do
+A continuación te facilitamos los datos que necesitas para empezar a utilizar el servicio:
+
+Datos de acceso FTP y publicación web: Sube los archivos que necesites a la carpeta /public_html/. Para hacerlo, te recomendamos el programa FileZilla.
+
+Dirección ftp: ftp.kzrdmeod.lucusvirtual.es
+Usuario: uopsplkh
+Contraseña: G8s!h8xrA(9DX1
+
+Panel de control cPanel: Crea y administra tus cuentas de correo, usuarios, bases de datos, estadísticas, etc.
+
+Dirección: http://www.kzrdmeod.lucusvirtual.es/cpanel
+Usuario: uopsplkh
+Contraseña: G8s!h8xrA(9DX1
+
+Webmail: Accede a tu correo por internet y sin descargártelo a tu equipo. Es especialmente útil si estás de viaje o utilizando un PC en el que no tienes configurada tu cuenta.
+
+Dirección: http://www.kzrdmeod.lucusvirtual.es/webmail
+Usuario: La dirección de correo que hayas creado en cPanel.
+Contraseña: La que hayas configurado en el panel de control cPanel
+
+Gestor de correo electrónico (Outlook, Thunderbird, etc.): Recuerda activar la casilla "Mi servidor requiere auto identificación" para así poder usar el servidor de correo saliente correctamente. Estos son tus servidores de correo POP3, IMAP y SMTP:
+
+POP3/IMAP: mail.kzrdmeod.lucusvirtual.es
+SMTP: mail.kzrdmeod.lucusvirtual.es
+
+Acceso provisional sin dominio: Tu dominio puede tardar entre 24 y 48 horas en estar visible en internet. Mientras tanto, puedes utilizar estos datos provisionales para usar tus servicios.
+
+Dirección FTP: hl126.lucushost.org
+Dirección cPanel: https://hl126.lucushost.org/cpanel
+Nota: Recuerda que el usuario y la contraseña son los que se indican en este mismo correo.
+
+Uso del servicio con dominios que ya estaban registrados previamente: Recuerda que tienes que solicitar al proveedor donde tienes registrado tu dominio que cambie los DNS a:
+DNS primario: ns1.lucushost.com (IP: 176.31.130.166)
+DNS secundario: ns2.lucushost.com (IP: 178.33.116.135)
+DNS terciario: ns3.lucushost.com (IP: 134.209.224.9)
+
+Es probable que dispongas de un panel para gestionar tu dominio. Si es así, podrás utilizarlo para cambiar estos datos. Ten en cuenta que, en muchos proveedores las IPs que te indicamos arriba no son necesarias.
+
+Área de cliente: Podrás actualizar tus datos, abonar facturas, ver información sobre los productos contratados y ponerte en contacto con nosotros. Además, podrás gestionar los cambios de propietario de los dominios (Whois), las DNS y bloquear y desbloquear tus dominios.
+
+Dirección: https://panel.lucushost.com/clientarea.php
+
+Para cualquier consulta o problema no dudes en ponerte en contacto con nosotros.
+
+Un saludo,
+El equipo de LucusHost
