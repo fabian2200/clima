@@ -12,7 +12,7 @@
         <div class="card">
             <br>
             <div class="row" style="padding: 10px">
-                <div class="col-lg-7"></div>
+                <div class="col-lg-6"></div>
                 <div class="col-lg-3" style="text-align: right">
                     <button
                         type="button"
@@ -22,7 +22,7 @@
                         Descargar este Informe <i class="fas fa-file-pdf"></i>
                     </button>
                 </div>
-                <div class="col-lg-2" style="text-align: right">
+                <div class="col-lg-3" style="text-align: right">
                     <button
                         data-toggle="modal" data-target="#modalInformes"
                         type="button"
@@ -76,12 +76,10 @@
                                 </nav>
                                 <div style="padding: 38px !important;" class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <br>
                                         <h3><strong>Fortalezas</strong> (aspectos por mantener)</h3>
                                         <hr>
-                                        <h5>A continuación de muestran las dimensiones y sus aspectos evaluados que se consideran una fortaleza para la entidad en lo referente a su clima organizacional</h5>
-                                        <h5><strong>Nota:</strong> se enumeran las dimensiones que tengan un promedio de igual o superior a <strong>3.9</strong>, asi como también los aspectos con un promedio de igual o superior a <strong>3.9</strong></h5>
-                                        <br><br>
+                                        <h5>A continuación se enumeran las dimensiones y aspectos del clima organizacional de la entidad que tengas un promedio de igual o superior a <strong>3.9</strong> </h5>
+                                        <br>
                                         <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Dimension</th>
@@ -106,14 +104,13 @@
                                             </tr>
                                         </table>
                                         <br>
+                                        <div class="pagina-salto"></div>
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <br>
                                         <h3><strong>Debilidades </strong> (aspectos por intervenir de manera inmediata)</h3>
                                         <hr>
-                                        <h5>A continuación de muestran las dimensiones y sus aspectos evaluados que se consideran una fortaleza para la entidad en lo referente a su clima organizacional</h5>
-                                        <h5><strong>Nota:</strong> se enumeran las dimensiones que tengan un promedio de igual o inferior a <strong>2.9</strong>, asi como también los aspectos con un promedio de igual o inferior a <strong>2.9</strong></h5>
-                                        <br><br>
+                                        <h5>A continuación se enumeran las dimensiones y aspectos del clima organizacional de la entidad que tengas un promedio de igual o inferior a <strong>3.9</strong> </h5>
+                                        <br>
                                         <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Dimension</th>
@@ -138,14 +135,13 @@
                                             </tr>
                                         </table>
                                         <br>
+                                        <div class="pagina-salto"></div>
                                     </div>
                                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                        <br>
                                         <h3><strong>Aspectos por fortalecer</strong></h3>
                                         <hr>
-                                        <h5>A continuación de muestran las dimensiones y sus aspectos evaluados que se consideran una fortaleza para la entidad en lo referente a su clima organizacional</h5>
-                                        <h5><strong>Nota:</strong> se enumeran las dimensiones que tengan un promedio entre <strong>3.0 a 3.8</strong>, asi como también los aspectos con un promedio entre <strong>3.0 a 3.8</strong></h5>
-                                        <br><br>
+                                        <h5>A continuación se enumeran las dimensiones y aspectos del clima organizacional de la entidad que tengas un promedio de entre <strong>3.0 y 3.8</strong> </h5>
+                                        <br>
                                         <table class="informe_fortalezas">
                                             <tr>
                                                 <th>Dimension</th>
@@ -189,6 +185,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
+import html2canvas from 'html2canvas';
 
 export default {
     components: {
@@ -236,32 +233,69 @@ export default {
         generarPDF(){
             this.loading = true;
             setTimeout(()=>{
-                $("#area_informe_fortalezas").printThis({
-                    debug: false,     
-                    importCSS: true,            
-                    importStyle: true,        
-                    printContainer: true,
-                    pageTitle: null,
-                    afterPrint: this.loading = false,
-                    header: "<style>@page { margin: 5mm 5mm 5mm 5mm; }</style>"
+               this.GPDF();
+            }, 500)
+        },
+        async GPDF(){
+            try {
+                var contenido = "";
+                contenido = document.getElementById('nav-tabContent').innerHTML;
+               
+                var bases = {
+                    contenido: contenido,
+                    fileName: "Fortalezas_y_Debilidades_"+this.id_empresa,
+                };
+
+                await clienteService.generarPDFTablas(bases).then(respuesta => {
+                    var url = respuesta.data.url; 
+                    if (url) {
+                        Swal.fire({
+                            title: 'Descargar PDF',
+                            text: 'El PDF está listo para descargar. ¿Deseas proceder?',
+                            icon: 'info',
+                            showCancelButton: true,
+                            confirmButtonText: 'Descargar',
+                            cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                var enlace = document.createElement('a');
+                                enlace.href = url;
+                                enlace.download = "Informe_General_Dimensiones_"+this.id_empresa+'.pdf';
+                                enlace.click();
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'No se recibió una URL para descargar el PDF.',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+                    this.loading = false;                   
                 });
-            }, 100)
+                
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo generar el PDF. Por favor, inténtelo de nuevo más tarde.',
+                    confirmButtonText: 'Aceptar'
+                });
+            }  finally {
+                this.loading = false;
+            }
         },
         irPaginaInforme(ruta){
             $("#modalInformes").modal('hide');
             location.href = ruta;
-        }
+        }    
     },
 }
 </script>
 <style>
     .pagina-salto {
         page-break-after: always;
-    }
-
-    .tapa {
-        width: 100px;
-        height: 40px;
     }
 
     .informe_fortalezas {

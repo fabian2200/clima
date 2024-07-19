@@ -1392,4 +1392,19 @@ class InformeGeneralDimensionesController extends Controller
 
         return response()->json(['url' => $url]);
     }
+
+    public function generarPDFTablas(Request $request){
+        $data = [
+            'contenido' => $request->input('contenido'),
+        ];
+
+        $pdf = PDF::loadView('pdf.fortalezas_debilidades', $data)->setPaper('a4');
+
+        $fileName = $request->input('fileName') . '.pdf';
+        $filePath = 'informes_socio/' . $fileName;
+        $pdf->save(public_path($filePath));
+        $url = asset($filePath);
+
+        return response()->json(['url' => $url]);
+    }
 }

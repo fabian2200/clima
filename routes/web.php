@@ -63,6 +63,7 @@ Route::prefix('api')->group(function () {
     Route::get('/fortalezas', [InformeGeneralDimensionesController::class, 'fortalezas'])->name('fortalezas');
     Route::post('/generar-pdf-socio', [InformeGeneralDimensionesController::class, 'generatePDFSocio'])->name('generatePDFSocio');
     Route::post('/generar-pdf-general', [InformeGeneralDimensionesController::class, 'generatePDFGeneral'])->name('generatePDFGeneral');
+    Route::post('/generar-pdf-tablas', [InformeGeneralDimensionesController::class, 'generarPDFTablas'])->name('generarPDFTablas');
 
 });
 

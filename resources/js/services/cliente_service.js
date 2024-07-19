@@ -136,3 +136,15 @@ export function generarPDFGeneral($data) {
         }
     );
 }
+
+export function generarPDFTablas($data) {
+    return http().post(
+        '/api/generar-pdf-tablas', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}
