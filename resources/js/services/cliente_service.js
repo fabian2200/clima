@@ -148,3 +148,15 @@ export function generarPDFTablas($data) {
         }
     );
 }
+
+export function generarPDFComparacion($data) {
+    return http().post(
+        '/api/generar-pdf-comparacion', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}

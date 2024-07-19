@@ -12,7 +12,7 @@
         <div class="card">
             <br>
             <div class="row" style="padding: 10px">
-                <div class="col-lg-7"></div>
+                <div class="col-lg-6"></div>
                 <div class="col-lg-3" style="text-align: right">
                     <button
                         type="button"
@@ -22,7 +22,7 @@
                         Descargar este Informe <i class="fas fa-file-pdf"></i>
                     </button>
                 </div>
-                <div class="col-lg-2" style="text-align: right">
+                <div class="col-lg-3" style="text-align: right">
                     <button
                         data-toggle="modal" data-target="#modalInformes"
                         type="button"
@@ -101,6 +101,7 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -114,6 +115,8 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
+                                    <br>
+                                    <div class="pagina-salto"></div>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -127,6 +130,7 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -140,6 +144,7 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -153,6 +158,8 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -166,6 +173,7 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -179,6 +187,7 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -192,6 +201,8 @@
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -205,6 +216,7 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -218,8 +230,7 @@
                                             <td>{{ item.promedio10 }}</td>
                                         </tr>
                                     </table>
-                                    <br>
-                                    <br>
+                                    <div class="pagina-salto"></div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                     <br>
@@ -238,6 +249,7 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -251,6 +263,7 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -264,6 +277,7 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -277,6 +291,8 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -290,6 +306,7 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -303,6 +320,7 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -316,6 +334,7 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -329,6 +348,8 @@
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -342,6 +363,7 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -355,6 +377,7 @@
                                             <td>{{ item.promedio10 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                     <br>
@@ -373,6 +396,7 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -386,6 +410,7 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -399,6 +424,8 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -412,6 +439,7 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -425,6 +453,7 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -438,6 +467,7 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -451,6 +481,7 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -464,6 +495,7 @@
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -477,6 +509,7 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -490,6 +523,7 @@
                                             <td>{{ item.promedio10 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
                                     <br>
@@ -508,6 +542,7 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -521,6 +556,7 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -534,6 +570,8 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -547,6 +585,7 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -560,6 +599,7 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -573,6 +613,8 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -586,6 +628,7 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -599,6 +642,7 @@
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -612,6 +656,8 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -625,6 +671,7 @@
                                             <td>{{ item.promedio10 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-about-2" role="tabpanel" aria-labelledby="nav-about-tab">
                                     <br>
@@ -643,6 +690,7 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -656,6 +704,7 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -669,6 +718,8 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -682,6 +733,7 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -695,6 +747,7 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -708,6 +761,8 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -721,6 +776,7 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -734,6 +790,7 @@
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -747,6 +804,8 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+<br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -810,16 +869,58 @@ export default {
         generarPDF(){
             this.loading = true;
             setTimeout(()=>{
-                $("#area_informe_comparacion").printThis({
-                    debug: false,     
-                    importCSS: true,            
-                    importStyle: true,        
-                    printContainer: true,
-                    pageTitle: null,
-                    afterPrint: this.loading = false,
-                    header: "<style>@page { margin: 5mm 5mm 5mm 5mm; }</style>"
+               this.GPDF();
+            }, 500)
+        },
+        async GPDF(){
+            try {
+                var contenido = "";
+                contenido = document.getElementById('nav-tabContent').innerHTML;
+               
+                var bases = {
+                    contenido: contenido,
+                    fileName: "Comparacion_de_Dimensiones_"+this.id_empresa,
+                };
+
+                await clienteService.generarPDFComparacion(bases).then(respuesta => {
+                    var url = respuesta.data.url; 
+                    if (url) {
+                        Swal.fire({
+                            title: 'Descargar PDF',
+                            text: 'El PDF está listo para descargar. ¿Deseas proceder?',
+                            icon: 'info',
+                            showCancelButton: true,
+                            confirmButtonText: 'Descargar',
+                            cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                var enlace = document.createElement('a');
+                                enlace.href = url;
+                                enlace.download = "Comparacion_de_Dimensiones_"+this.id_empresa+'.pdf';
+                                enlace.click();
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'No se recibió una URL para descargar el PDF.',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+                    this.loading = false;                   
                 });
-            }, 100)
+                
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo generar el PDF. Por favor, inténtelo de nuevo más tarde.',
+                    confirmButtonText: 'Aceptar'
+                });
+            }  finally {
+                this.loading = false;
+            }
         },
         irPaginaInforme(ruta){
             $("#modalInformes").modal('hide');
