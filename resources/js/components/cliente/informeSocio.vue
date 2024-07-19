@@ -11,68 +11,136 @@
         </loading>
         <div class="card">
             <br>
-            <button
-                type="button"
-                class="btn btn-primary"
-                style="width: 200px; position: absolute; right: 25px; top: 27px;"
-                @click="generarPDF"
-            >
-                Descargar informe <i class="fas fa-file-pdf"></i>
-            </button>
-            
-            <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 50px 100px 90px 110px; margin-right: 70px">
+            <div class="row" style="padding: 10px">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-3" style="text-align: right">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        @click="generarPDF"
+                    >
+                        Descargar este Informe <i class="fas fa-file-pdf"></i>
+                    </button>
+                </div>
+                <div class="col-lg-3" style="text-align: right">
+                    <button
+                        data-toggle="modal" data-target="#modalInformes"
+                        type="button"
+                        class="btn btn-warning"
+                    >
+                        Descargar otro Informe    <i class="fas fa-file-pdf"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/informe-socio/'+id_empresa)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
+                                </div>  
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
+                                </div> 
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
+                                </div>  
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 0px 100px 90px 110px; margin-right: 70px">
+                <br>
                 <h3 style="font-weight: bold">Informe sociodemográfico</h3>
                 <hr>
                 <div style="text-align: left">
                     <br><br>
                     <h4 style="width: 100%; text-align: left">De un total de  ({{total_personas}}) Empleados que respondieron el test, se tiene que: </h4>
                     <br><br>
+                    <strong><p style='margin: 0px;'>Figura 1</p></strong>
+                    <p style='margin-right: 40px'><i>Población distribuida por  sexo</i></p>
                     <div>
-                        <div id="grafica_sexo" style="height: 360px"></div>
+                        <div id="grafica_sexo" style="height: 260px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 2</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  edad</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_edad" style="height: 390px"></div>
+                        <div id="grafica_edad" style="height: 290px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 3</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  nivel de educación</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_nivel_educacion" style="height: 460px"></div>
+                        <div id="grafica_nivel_educacion" style="height: 360px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 4</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  estado civil</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_estado_civil" style="height: 460px"></div>
+                        <div id="grafica_estado_civil" style="height: 360px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 5</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  tiempo que lleva en el cargo</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_tiempo_cargo" style="height: 360px"></div>
+                        <div id="grafica_tiempo_cargo" style="height: 260px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 6</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  tiempo de antigüedad en el cargo</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_tiempo_antiguedad" style="height: 360px"></div>
+                        <div id="grafica_tiempo_antiguedad" style="height: 260px"></div>
                         <br><br>
                     </div>
-                    <div class="pagina-salto"></div>
+                    <strong><p style='margin: 0px;'>Figura 7</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  salario</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_salario" style="height: 460px"></div>
+                        <div id="grafica_salario" style="height: 360px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 8</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  estrato socioeconómico</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_estrato" style="height: 460px"></div>
+                        <div id="grafica_estrato" style="height: 360px"></div>
                         <br><br>
                     </div>
+                    <strong><p style='margin: 0px;'>Figura 1</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  ciudad donde trabaja</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_ciudad" style="height: 360px"></div>
+                        <div id="grafica_ciudad" style="height: 260px"></div>
                         <br><br>
                     </div>
-                    <div class="pagina-salto"></div>
-                    <br>
+                    <strong><p style='margin: 0px;'>Figura 1</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  departamento/area</i></p>
+                        <br>
                     <div>
-                        <div id="grafica_area" style="height: 360px"></div>
+                        <div id="grafica_area" style="height: 260px"></div>
                         <br><br>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </template>
 <script>
@@ -83,6 +151,8 @@ import Swal from 'sweetalert2';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import html2canvas from 'html2canvas';
+
 am4core.useTheme(am4themes_animated);
 
 export default {
@@ -148,14 +218,6 @@ export default {
                 }
             ];
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 1</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por  sexo</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
-
             var pieSeries = chart.series.push(new am4charts.PieSeries3D());
             pieSeries.dataFields.value = "litres";
             pieSeries.dataFields.category = "country";
@@ -192,14 +254,6 @@ export default {
                     visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
-
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 2</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por  edad</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
 
             // Create axes
             let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -282,14 +336,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 3</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por  nivel de educación</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
-
             // Create axes
             let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
             categoryAxis.dataFields.category = "country";
@@ -367,14 +413,6 @@ export default {
                     visits: Math.round((element.total / this.total_personas) * 1000) / 10,
                 });
             });
-
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 4</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por estado civil</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
 
             // Create axes
             let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -457,14 +495,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 5</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por tiempo que lleva en el cargo</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
-
             var pieSeries = chart.series.push(new am4charts.PieSeries3D());
             pieSeries.dataFields.value = "litres";
             pieSeries.dataFields.category = "country";
@@ -499,13 +529,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 6</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por tiempo de antigüedad en la entidad</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
 
             var pieSeries = chart.series.push(new am4charts.PieSeries3D());
             pieSeries.dataFields.value = "litres";
@@ -541,13 +564,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 7</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por salario</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
 
             // Create axes
             let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -630,13 +646,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 8</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por estrato socioeconómico</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
 
             // Create axes
             let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -719,13 +728,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 9</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por ciudad donde trabaja</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
 
             var pieSeries = chart.series.push(new am4charts.PieSeries3D());
             pieSeries.dataFields.value = "litres";
@@ -762,14 +764,6 @@ export default {
                 });
             });
 
-            var title = chart.titles.create();
-            title.html = "<strong><p style='margin: 0px;'>Figura 10</p></strong>"+
-            "<p style='margin-right: 40px'><i>Población distribuida por departamento/area</i></p></strong>";
-            title.align = "left";
-            title.fontSize = 15;
-            title.marginBottom = 30;
-            title.fill = am4core.color("#404e67");
-
             var pieSeries = chart.series.push(new am4charts.PieSeries3D());
             pieSeries.dataFields.value = "litres";
             pieSeries.dataFields.category = "country";
@@ -795,20 +789,115 @@ export default {
             divBlanco.style.bottom = "-2px";
             div.appendChild(divBlanco);
         },
-        generarPDF(){
+        async generarPDF(){
             this.loading = true;
+           
             setTimeout(()=>{
-                $("#area_informe").printThis({
-                    debug: false,     
-                    importCSS: true,            
-                    importStyle: true,        
-                    printContainer: true,
-                    pageTitle: null,
-                    afterPrint: this.loading = false,
-                    header: "<style>@page { margin: 5mm 5mm 5mm 5mm; }</style>"
-                });
-            }, 100)
+                this.GPDF();
+            }, 500)
         },
+        async GPDF(){
+            try {
+                var contenido = "";
+                contenido = document.getElementById('grafica_sexo');
+                var canvas = await html2canvas(contenido);
+                var base1 = canvas.toDataURL('image/png')
+
+                contenido = document.getElementById('grafica_edad');
+                var canvas2 = await html2canvas(contenido);
+                var base2 = canvas2.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_nivel_educacion');
+                var canvas3 = await html2canvas(contenido);
+                var base3 = canvas3.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_estado_civil');
+                var canvas4 = await html2canvas(contenido);
+                var base4 = canvas4.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_tiempo_cargo');
+                var canvas5 = await html2canvas(contenido);
+                var base5 = canvas5.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_tiempo_antiguedad');
+                var canvas6 = await html2canvas(contenido);
+                var base6 = canvas6.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_salario');
+                var canvas7 = await html2canvas(contenido);
+                var base7 = canvas7.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_estrato');
+                var canvas8 = await html2canvas(contenido);
+                var base8 = canvas8.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_ciudad');
+                var canvas9 = await html2canvas(contenido);
+                var base9 = canvas9.toDataURL('image/png');
+
+                contenido = document.getElementById('grafica_area');
+                var canvas10 = await html2canvas(contenido);
+                var base10 = canvas10.toDataURL('image/png');
+
+                var bases = {
+                    base1: base1,
+                    base2: base2,
+                    base3: base3,
+                    base4: base4,
+                    base5: base5,
+                    base6: base6,
+                    base7: base7,
+                    base8: base8,
+                    base9: base9,
+                    base10: base10,
+                    total_personas: this.total_personas,
+                    fileName: "Informe_Socio_"+this.id_empresa,
+                };
+
+                await clienteService.generarPDFSocio(bases).then(respuesta => {
+                    var url = respuesta.data.url; 
+                    if (url) {
+                        Swal.fire({
+                            title: 'Descargar PDF',
+                            text: 'El PDF está listo para descargar. ¿Deseas proceder?',
+                            icon: 'info',
+                            showCancelButton: true,
+                            confirmButtonText: 'Descargar',
+                            cancelButtonText: 'Cancelar'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                var enlace = document.createElement('a');
+                                enlace.href = url;
+                                enlace.download = "Informe_Socio_"+this.id_empresa+'.pdf';
+                                enlace.click();
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'No se recibió una URL para descargar el PDF.',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+                    this.loading = false;                   
+                });
+                
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'No se pudo generar el PDF. Por favor, inténtelo de nuevo más tarde.',
+                    confirmButtonText: 'Aceptar'
+                });
+            }  finally {
+                this.loading = false;
+            }
+        },
+        irPaginaInforme(ruta){
+            $("#modalInformes").modal('hide');
+            location.href = ruta;
+        }
     },
 }
 </script>

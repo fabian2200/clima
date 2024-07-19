@@ -61,6 +61,8 @@ Route::prefix('api')->group(function () {
     Route::get('/inforrme-general-dimensiones', [InformeGeneralDimensionesController::class, 'informeGeneralDimensiones'])->name('informeGeneralDimensiones');
     Route::get('/comparacion-dimensiones', [InformeGeneralDimensionesController::class, 'comparacionDimensiones'])->name('comparacionDimensiones');
     Route::get('/fortalezas', [InformeGeneralDimensionesController::class, 'fortalezas'])->name('fortalezas');
+    Route::post('/generar-pdf-socio', [InformeGeneralDimensionesController::class, 'generatePDFSocio'])->name('generatePDFSocio');
+    Route::post('/generar-pdf-general', [InformeGeneralDimensionesController::class, 'generatePDFGeneral'])->name('generatePDFGeneral');
 
 });
 

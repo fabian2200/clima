@@ -112,3 +112,27 @@ export function comparacionDimensiones(id) {
 export function fortalezasDebilidadesFortalecer(id) {
     return http().get('/api/fortalezas?id_empresa='+id);
 }
+
+export function generarPDFSocio($data) {
+    return http().post(
+        '/api/generar-pdf-socio', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}
+
+export function generarPDFGeneral($data) {
+    return http().post(
+        '/api/generar-pdf-general', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}

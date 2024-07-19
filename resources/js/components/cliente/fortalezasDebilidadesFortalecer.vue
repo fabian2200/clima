@@ -11,16 +11,57 @@
         </loading>
         <div class="card">
             <br>
-            <button
-                type="button"
-                class="btn btn-info"
-                style="width: 200px; position: absolute; right: 25px; top: 27px;"
-                @click="generarPDF"
-            >
-                Descargar informe <i class="fas fa-file-pdf"></i>
-            </button>
+            <div class="row" style="padding: 10px">
+                <div class="col-lg-7"></div>
+                <div class="col-lg-3" style="text-align: right">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        @click="generarPDF"
+                    >
+                        Descargar este Informe <i class="fas fa-file-pdf"></i>
+                    </button>
+                </div>
+                <div class="col-lg-2" style="text-align: right">
+                    <button
+                        data-toggle="modal" data-target="#modalInformes"
+                        type="button"
+                        class="btn btn-warning"
+                    >
+                        Descargar otro Informe <i class="fas fa-file-pdf"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/informe-socio/'+id_empresa)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
+                                </div>  
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
+                                </div> 
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
+                                </div>  
+                                <div class="col-lg-6">
+                                    <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div v-if="loading2 == false" id="area_informe_fortalezas" class="card-content" style="padding: 50px 100px 90px 110px; margin-right: 10px">
+            <div v-if="loading2 == false" id="area_informe_fortalezas" class="card-content" style="padding: 0px 100px 90px 110px; margin-right: 10px">
                 <br>
                 <div style="text-align: left">
                     <div class="container">
@@ -206,6 +247,10 @@ export default {
                 });
             }, 100)
         },
+        irPaginaInforme(ruta){
+            $("#modalInformes").modal('hide');
+            location.href = ruta;
+        }
     },
 }
 </script>

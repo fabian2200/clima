@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\EmailController;
 
+use \PDF;
+use Illuminate\Support\Facades\Storage;
+
 class InformeGeneralDimensionesController extends Controller
 {
     public function informeGeneralDimensiones(Request $request){
@@ -664,7 +667,6 @@ class InformeGeneralDimensionesController extends Controller
 
         return response()->json($data, 200);
     }
-
 
     public function fortalezas(Request $request){
         $id_empresa = $request->input('id_empresa');
@@ -1324,7 +1326,6 @@ class InformeGeneralDimensionesController extends Controller
         return response()->json($datos, 200);
     }
 
-
     function generarColorPastelHex() {
         // Generar un color aleatorio
         $r = mt_rand(170, 255);
@@ -1340,5 +1341,55 @@ class InformeGeneralDimensionesController extends Controller
         $hex = sprintf("#%02x%02x%02x", $r, $g, $b);
         
         return $hex;
+    }
+
+    public function generatePDFSocio(Request $request){
+        $data = [
+            'base1' => $request->input('base1'),
+            'base2' => $request->input('base2'),
+            'base3' => $request->input('base3'),
+            'base4' => $request->input('base4'),
+            'base5' => $request->input('base5'),
+            'base6' => $request->input('base6'),
+            'base7' => $request->input('base7'),
+            'base8' => $request->input('base8'),
+            'base9' => $request->input('base9'),
+            'base10' => $request->input('base10'),
+            'total_personas' => $request->input('total_personas')
+        ];
+
+        $pdf = PDF::loadView('pdf.prueba', $data)->setPaper('a4');
+
+        $fileName = $request->input('fileName') . '.pdf';
+        $filePath = 'informes_socio/' . $fileName;
+        $pdf->save(public_path($filePath));
+        $url = asset($filePath);
+
+        return response()->json(['url' => $url]);
+    }
+
+    public function generatePDFGeneral(Request $request){
+        $data = [
+            'base1' => $request->input('base1'),
+            'base2' => $request->input('base2'),
+            'base3' => $request->input('base3'),
+            'base4' => $request->input('base4'),
+            'base5' => $request->input('base5'),
+            'base6' => $request->input('base6'),
+            'base7' => $request->input('base7'),
+            'base8' => $request->input('base8'),
+            'base9' => $request->input('base9'),
+            'base10' => $request->input('base10'),
+            'base11' => $request->input('base11'),
+        ];
+
+        $pdf = PDF::loadView('pdf.generalDimensiones', $data)->setPaper('a4');
+
+        $fileName = $request->input('fileName') . '.pdf';
+        $filePath = 'informes_socio/' . $fileName;
+        $pdf->save(public_path($filePath));
+        $url = asset($filePath);
+
+        return response()->json(['url' => $url]);
     }
 }
