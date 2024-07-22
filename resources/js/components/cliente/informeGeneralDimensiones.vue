@@ -261,14 +261,14 @@ export default {
             // Create axes
             let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
             categoryAxis.dataFields.category = "country";
-            categoryAxis.renderer.labels.template.rotation = -45;
+            categoryAxis.renderer.labels.template.rotation = -65;
             categoryAxis.renderer.labels.template.hideOversized = false;
             categoryAxis.renderer.minGridDistance = 20;
             categoryAxis.renderer.labels.template.dx = 20;
             categoryAxis.renderer.labels.template.horizontalCenter = "right";
             categoryAxis.renderer.labels.template.verticalCenter = "middle";
             categoryAxis.renderer.labels.template.fontSize = 10;
-            categoryAxis.tooltip.label.rotation = -45;
+            categoryAxis.tooltip.label.rotation = -49;
             categoryAxis.tooltip.label.horizontalCenter = "right";
             categoryAxis.tooltip.label.verticalCenter = "middle";
 
@@ -367,6 +367,7 @@ export default {
             categoryAxis.renderer.labels.template.maxWidth = 130;
             categoryAxis.renderer.labels.template.textAlign = "middle";
             categoryAxis.renderer.labels.template.fontSize = 11;
+            categoryAxis.renderer.labels.template.fontWeight = "bold";
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.title.text = "";

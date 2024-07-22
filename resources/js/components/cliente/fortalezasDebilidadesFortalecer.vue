@@ -260,7 +260,7 @@ export default {
                             if (result.isConfirmed) {
                                 var enlace = document.createElement('a');
                                 enlace.href = url;
-                                enlace.download = "Informe_General_Dimensiones_"+this.id_empresa+'.pdf';
+                                enlace.download = "Fortalezas_y_Debilidades_"+this.id_empresa+'.pdf';
                                 enlace.click();
                             }
                         });

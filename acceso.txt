@@ -1,38 +1,38 @@
 Hola, juan:
 
-Ya se ha activado tu servicio Hosting SSD Senior (Prueba Gratis) con éxito en los servidores de LucusHost con fecha de 16/07/2024.
+Ya se ha activado tu servicio Hosting SSD Senior (Prueba Gratis) con éxito en los servidores de LucusHost con fecha de 22/07/2024.
 
-Actualmente el dominio asociado a tu plan de alojamiento es kzrdmeod.lucusvirtual.es. Si quieres asignarle otro nombre de dominio diferente, no dudes en ponerte en contacto con nosotros y, si es posible, te haremos el cambio sin ningún problema.
+Actualmente el dominio asociado a tu plan de alojamiento es tueqnewd.lucusvirtual.es. Si quieres asignarle otro nombre de dominio diferente, no dudes en ponerte en contacto con nosotros y, si es posible, te haremos el cambio sin ningún problema.
 
 A continuación te facilitamos los datos que necesitas para empezar a utilizar el servicio:
 
 Datos de acceso FTP y publicación web: Sube los archivos que necesites a la carpeta /public_html/. Para hacerlo, te recomendamos el programa FileZilla.
 
-Dirección ftp: ftp.kzrdmeod.lucusvirtual.es
-Usuario: uopsplkh
-Contraseña: G8s!h8xrA(9DX1
+Dirección ftp: ftp.tueqnewd.lucusvirtual.es
+Usuario: ttplgtoy
+Contraseña: P74Uird65+@EmW
 
 Panel de control cPanel: Crea y administra tus cuentas de correo, usuarios, bases de datos, estadísticas, etc.
 
-Dirección: http://www.kzrdmeod.lucusvirtual.es/cpanel
-Usuario: uopsplkh
-Contraseña: G8s!h8xrA(9DX1
+Dirección: http://www.tueqnewd.lucusvirtual.es/cpanel
+Usuario: ttplgtoy
+Contraseña: P74Uird65+@EmW
 
 Webmail: Accede a tu correo por internet y sin descargártelo a tu equipo. Es especialmente útil si estás de viaje o utilizando un PC en el que no tienes configurada tu cuenta.
 
-Dirección: http://www.kzrdmeod.lucusvirtual.es/webmail
+Dirección: http://www.tueqnewd.lucusvirtual.es/webmail
 Usuario: La dirección de correo que hayas creado en cPanel.
 Contraseña: La que hayas configurado en el panel de control cPanel
 
 Gestor de correo electrónico (Outlook, Thunderbird, etc.): Recuerda activar la casilla "Mi servidor requiere auto identificación" para así poder usar el servidor de correo saliente correctamente. Estos son tus servidores de correo POP3, IMAP y SMTP:
 
-POP3/IMAP: mail.kzrdmeod.lucusvirtual.es
-SMTP: mail.kzrdmeod.lucusvirtual.es
+POP3/IMAP: mail.tueqnewd.lucusvirtual.es
+SMTP: mail.tueqnewd.lucusvirtual.es
 
 Acceso provisional sin dominio: Tu dominio puede tardar entre 24 y 48 horas en estar visible en internet. Mientras tanto, puedes utilizar estos datos provisionales para usar tus servicios.
 
-Dirección FTP: hl126.lucushost.org
-Dirección cPanel: https://hl126.lucushost.org/cpanel
+Dirección FTP: hl127.lucushost.org
+Dirección cPanel: https://hl127.lucushost.org/cpanel
 Nota: Recuerda que el usuario y la contraseña son los que se indican en este mismo correo.
 
 Uso del servicio con dominios que ya estaban registrados previamente: Recuerda que tienes que solicitar al proveedor donde tienes registrado tu dominio que cambie los DNS a:
