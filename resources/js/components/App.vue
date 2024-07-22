@@ -101,6 +101,15 @@
                                 </a>
                             </router-link>
                         </li>
+
+                        <li :class="tipo_ruta == '/convertidor-pdf' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '2'">
+                            <router-link to="/convertidor-pdf">
+                                <a href="#">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span class="menu-title" data-i18n="Email Application">Convertidor PDF a DOC</span>
+                                </a>
+                            </router-link>
+                        </li>
                     </ul>
                     <img src="/imagenes/logo_icp.png" id="logo_alcaldia" alt="">
                 </div>

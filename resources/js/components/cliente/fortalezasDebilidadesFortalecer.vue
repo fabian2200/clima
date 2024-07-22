@@ -93,9 +93,9 @@
                                         <br>
                                         <table class="informe_fortalezas">
                                             <tr>
-                                                <th>Aspecto</th>
-                                                <th>Dimension</th>
-                                                <th>Promedio</th>
+                                                <th style="width: 50%">Aspecto</th>
+                                                <th style="width: 40%">Dimension</th>
+                                                <th style="width: 10%">Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in aspectos.fortalezas_aspectos" :key="index">
                                                 <td :style="'background-color:'+item.color">{{ item.pregunta }}</td>
@@ -124,9 +124,9 @@
                                         <br>
                                         <table class="informe_fortalezas">
                                             <tr>
-                                                <th>Aspecto</th>
-                                                <th>Dimension</th>
-                                                <th>Promedio</th>
+                                                <th style="width: 50%">Aspecto</th>
+                                                <th style="width: 40%">Dimension</th>
+                                                <th style="width: 10%">Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in aspectos.debilidades_aspectos" :key="index">
                                                 <td :style="'background-color:'+item.color">{{ item.pregunta }}</td>
@@ -155,9 +155,9 @@
                                         <br>
                                         <table class="informe_fortalezas">
                                             <tr>
-                                                <th>Aspecto</th>
-                                                <th>Dimension</th>
-                                                <th>Promedio</th>
+                                                <th style="width: 50%">Aspecto</th>
+                                                <th style="width: 40%">Dimension</th>
+                                                <th style="width: 10%">Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in aspectos.fortalecer_aspectos" :key="index">
                                                 <td :style="'background-color:'+item.color">{{ item.pregunta }}</td>
@@ -231,7 +231,14 @@ export default {
             });
         },
         generarPDF(){
-            this.loading = true;
+            Swal.fire({
+                title: 'Generando informe',
+                html: 'Por favor espera, puede tardar varios minutos...',
+                allowOutsideClick: false,  // Evita que se cierre al hacer clic fuera
+                didOpen: () => {
+                    Swal.showLoading()  // Muestra el indicador de carga
+                }
+            });
             setTimeout(()=>{
                this.GPDF();
             }, 500)
@@ -307,7 +314,7 @@ export default {
     }
     .informe_fortalezas th, .informe_fortalezas td {
         border: 1px solid #c9c9c9;
-        padding: 12px;
+        padding: 5px;
         text-align: center;
     }
     .informe_fortalezas th {

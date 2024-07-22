@@ -1283,7 +1283,14 @@ export default {
             div.appendChild(divBlanco);
         },
         generarPDF(){
-            this.loading = true;
+            Swal.fire({
+                title: 'Generando informe',
+                html: 'Por favor espera, puede tardar varios minutos...',
+                allowOutsideClick: false,  // Evita que se cierre al hacer clic fuera
+                didOpen: () => {
+                    Swal.showLoading()  // Muestra el indicador de carga
+                }
+            });
            
            setTimeout(()=>{
                this.GPDF();
