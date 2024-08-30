@@ -43,12 +43,47 @@
             font-size: 22px !important;
             color: #009199;
         }
+
+        .segunda_tabla {
+            margin-top: 110px;
+        }
+
+        i {
+            color: #3c3c3d;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .tab-pane p {
+            font-size: 15px;
+        }
+
+        .tab-pane i {
+            font-size: 15px;
+        }
+
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        @page { margin: 30px 50px; }
+
+       
+        header { position: fixed; top: -20px; left: 0px; right: 0px; background-color: transparent; height: 50px; color: #fbfbfb}
+        footer { position: fixed; bottom: -20px; left: 0px; right: 0px; background-color: transparent; height: 50px; color: #fbfbfb}
+
+
     </style>
 </head>
 <body>
-    <h3 style="color: #009199;"><strong>COMPARACIÓN DE DIMENSIONES</strong></h3>
-    <hr>
-    <h5>En este aparte se presentan las tablas cruzadas de cada una de las <strong style="color: #009199;"> 10 dimensiones </strong> del clima organizacional por área, sexo, edad, tiempo de antigüedad en el cargo y en la entidad.</h5>
-    {!! $contenido !!}
+
+    <header>este es un encabezado</header>
+    <footer>este es el pie de</footer>
+    <main>
+        <h3 style="color: #009199;"><strong>COMPARACIÓN DE DIMENSIONES</strong></h3>
+        <hr>
+        <h5>En este aparte se presentan las tablas cruzadas de cada una de las <strong style="color: #009199;"> 10 dimensiones </strong> del clima organizacional por área, sexo, edad, tiempo de antigüedad en el cargo y en la entidad.</h5>
+        {!! $contenido !!}
+    </main>
 </body>
 </html>

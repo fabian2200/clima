@@ -86,8 +86,11 @@
                             </nav>
                             <div style="padding: 38px !important;" class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                    <h4 style="font-weight: bold; color: #009199;">COMPARACIÓN POR ÁREA DE TRABAJO</h4>
+                                    <h4 style="text-align: center; font-weight: bold; color: #009199;">COMPARACIÓN POR ÁREA DE TRABAJO</h4>
                                     <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 1</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Funciones y entrenamiento</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">FUNCIONES  Y  ENTRENAMIENTO</th>
@@ -101,6 +104,10 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 2 </strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Autonomía</i>
                                     <br>
                                     <table class="informe_comparacion">
                                         <tr>
@@ -115,8 +122,11 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
-                                    <br>
                                     <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 3</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Recompensa Directa</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -130,7 +140,11 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 4</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Relaciones Interpersonales </i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -144,7 +158,11 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 5</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Cooperación</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -159,7 +177,10 @@
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 6</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Libre Expresión</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -173,7 +194,11 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 7</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Identidad</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -187,7 +212,11 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 8</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Motivación Institucional</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -202,7 +231,10 @@
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 9</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Satisfacción Laboral</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -216,7 +248,11 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 10</strong></p>
+                                    <i>Comparación entre el área de trabajo y la dimensión Comunicación</i>
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -234,8 +270,11 @@
                                 </div>
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                     <br>
-                                    <h4 style="font-weight: bold; color: #009199;">COMPARACIÓN POR SEXO</h4>
+                                    <h4 style="text-align: center; font-weight: bold; color: #009199;">COMPARACIÓN POR SEXO</h4>
                                     <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 11</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Funciones y Entrenamiento</i>   
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">FUNCIONES  Y  ENTRENAMIENTO</th>
@@ -249,7 +288,9 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <p class="segunda_tabla" style="margin-bottom: 5px"><strong>Tabla 12</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Autonomía</i>   
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -263,7 +304,11 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>    
+                                    <p style="margin-bottom: 5px"><strong>Tabla 13</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Recompensa Directa</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -277,7 +322,9 @@
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <p class="segunda_tabla" style="margin-bottom: 5px"><strong>Tabla 14</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Relaciones Interpersonales</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -292,7 +339,10 @@
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 15</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Cooperación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -306,7 +356,9 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <p  class="segunda_tabla" style="margin-bottom: 5px"><strong>Tabla 16</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Libre Expresión</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -320,7 +372,11 @@
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 17</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Identidad</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -334,7 +390,10 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <br>    
+                                    <p class="segunda_tabla" style="margin-bottom: 5px"><strong>Tabla 18</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Motivación Institucional</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -349,7 +408,10 @@
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 19</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Satisfacción Laboral</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -363,7 +425,10 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <br>    
+                                    <p class="segunda_tabla" style="margin-bottom: 5px"><strong>Tabla 20</strong></p>
+                                    <i>Comparación entre sexo y la dimensión Comunicación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -381,8 +446,11 @@
                                 </div>
                                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                     <br>
-                                    <h4 style="font-weight: bold; color: #009199;">COMPARACIÓN POR GRUPO DE EDAD</h4>
-                                    <br>    
+                                    <h4 style="text-align: center; font-weight: bold; color: #009199;">COMPARACIÓN POR GRUPO DE EDAD</h4>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 21</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Funciones y Entrenamiento</i> 
+                                    <br> 
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">FUNCIONES  Y  ENTRENAMIENTO</th>
@@ -396,7 +464,11 @@
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 22</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Autonomía</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -410,7 +482,11 @@
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 23</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Recompensa Directa</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -425,7 +501,10 @@
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 24</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Relaciones Interpersonales</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -439,7 +518,11 @@
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 25</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Cooperación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -453,7 +536,11 @@
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 26</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Libre Expresión</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -468,6 +555,10 @@
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 27</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Identidad</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -481,7 +572,11 @@
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 28</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Motivación Institucional</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -495,7 +590,11 @@
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 29</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Satisfacción Laboral</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -509,7 +608,11 @@
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 30</strong></p>
+                                    <i>Comparación entre grupo de edad y la dimensión Comunicación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -527,8 +630,11 @@
                                 </div>
                                 <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
                                     <br>
-                                    <h4 style="font-weight: bold; color: #009199;">COMPARACIÓN POR ANTIGÜEDAD EN EL CARGO</h4>
-                                    <br>    
+                                    <h4 style="text-align: center; font-weight: bold; color: #009199;">COMPARACIÓN POR ANTIGÜEDAD EN EL CARGO</h4>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 31</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Funciones y Entrenamiento</i> 
+                                    <br>  
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">FUNCIONES  Y  ENTRENAMIENTO</th>
@@ -538,11 +644,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 32</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Autonomía</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -552,11 +662,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 33</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Recompensa Directa</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -566,12 +680,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 34</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Relaciones Interpersonales</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -581,11 +698,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 35</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Cooperación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -595,11 +716,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 36</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Libre Expresión</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -609,12 +734,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 37</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Identidad</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -624,11 +752,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 38</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Motivación Institucional</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -638,11 +770,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 39</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Satisfacción Laboral</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -652,12 +788,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 40</strong></p>
+                                    <i>Comparación entre antigüedad en el cargo y la dimensión Comunicación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -667,7 +806,7 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_cargo" :key="index">
-                                            <td>{{ item.tiempo_cargo }} Años</td>
+                                            <td>{{ item.tiempo_cargo }}</td>
                                             <td>{{ item.promedio10 }}</td>
                                         </tr>
                                     </table>
@@ -675,8 +814,11 @@
                                 </div>
                                 <div class="tab-pane fade" id="nav-about-2" role="tabpanel" aria-labelledby="nav-about-tab">
                                     <br>
-                                    <h4 style="font-weight: bold; color: #009199;">COMPARACIÓN POR ANTIGÜEDAD LA ENTIDAD</h4>
-                                    <br>    
+                                    <h4 style="text-align: center; font-weight: bold; color: #009199;">COMPARACIÓN POR ANTIGÜEDAD LA ENTIDAD</h4>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 41</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Satisfacción Laboral</i> 
+                                    <br>  
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">FUNCIONES  Y  ENTRENAMIENTO</th>
@@ -686,11 +828,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio1 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 42</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Autonomía</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">AUTONOMÍA</th>
@@ -700,11 +846,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio2 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 43</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Recompensa Directa</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RECOMPENSA DIRECTA</th>
@@ -714,12 +864,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio3 }}</td>
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 44</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Relaciones Interpersonales</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">RELACIONES INTERPERSONALES</th>
@@ -729,11 +882,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio4 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 45</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Cooperación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COOPERACIÓN</th>
@@ -743,11 +900,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio5 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 46</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Libre Expresión</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">LIBRE EXPRESIÓN</th>
@@ -757,12 +918,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio6 }}</td>
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 47</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Identidad</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">IDENTIDAD</th>
@@ -772,11 +936,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio7 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 48</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Motivación Institucional</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">MOTIVACIÓN INSTITUCIONAL</th>
@@ -786,11 +954,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio8 }}</td>
                                         </tr>
                                     </table>
-<br>
+                                    <div class="pagina-salto"></div>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 49</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Satisfacción Laboral</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">SATISFACCIÓN LABORAL</th>
@@ -800,12 +972,15 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio9 }}</td>
                                         </tr>
                                     </table>
                                     <div class="pagina-salto"></div>
-<br>
+                                    <br>
+                                    <p style="margin-bottom: 5px"><strong>Tabla 50</strong></p>
+                                    <i>Comparación entre la antigüedad en la entidad y la dimensión Comunicación</i> 
+                                    <br>
                                     <table class="informe_comparacion">
                                         <tr>
                                             <th colspan="2">COMUNICACIÓN</th>
@@ -815,7 +990,7 @@
                                             <th>Promedio</th>
                                         </tr>
                                         <tr v-for="(item, index) in datos.data_tiempo_entidad" :key="index">
-                                            <td>{{ item.tiempo_entidad }} Años</td>
+                                            <td>{{ item.tiempo_entidad }}</td>
                                             <td>{{ item.promedio10 }}</td>
                                         </tr>
                                     </table>

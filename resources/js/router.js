@@ -12,7 +12,6 @@ import informeSocio from './components/cliente/informeSocio';
 import informeGeneralDimensiones from './components/cliente/informeGeneralDimensiones';
 import comparacionDImensiones from './components/cliente/comparacionDImensiones.vue';
 import fortalezasDebilidadesFortalecer from './components/cliente/fortalezasDebilidadesFortalecer';
-import convertidor from './components/cliente/convertidor.vue';
 
 const routes = [
   {
@@ -83,11 +82,6 @@ const routes = [
     path: '/fortalezas-debilidades-fortalecer/:id',
     name: 'fortalezasDebilidadesFortalecer',
     component: fortalezasDebilidadesFortalecer
-  },
-  {
-    path: '/convertidor-pdf',
-    name: 'convertidor',
-    component: convertidor
   }
 ]
 
