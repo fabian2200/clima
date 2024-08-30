@@ -875,7 +875,7 @@ export default {
                             if (result.isConfirmed) {
                                 var enlace = document.createElement('a');
                                 enlace.href = url;
-                                enlace.download = "Informe_Socio_"+this.id_empresa+'.pdf';
+                                enlace.download = "Informe_Socio.pdf";
                                 enlace.click();
                             }
                         });

@@ -82,7 +82,7 @@
                                         <br>
                                         <table class="informe_fortalezas">
                                             <tr>
-                                                <th>Dimension</th>
+                                                <th>Dimensión</th>
                                                 <th>Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in fortalezas" :key="index">
@@ -94,7 +94,7 @@
                                         <table class="informe_fortalezas">
                                             <tr>
                                                 <th style="width: 50%">Aspecto</th>
-                                                <th style="width: 40%">Dimension</th>
+                                                <th style="width: 40%">Dimensión</th>
                                                 <th style="width: 10%">Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in aspectos.fortalezas_aspectos" :key="index">
@@ -113,7 +113,7 @@
                                         <br>
                                         <table class="informe_fortalezas">
                                             <tr>
-                                                <th>Dimension</th>
+                                                <th>Dimensión</th>
                                                 <th>Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in debilidades" :key="index">
@@ -125,7 +125,7 @@
                                         <table class="informe_fortalezas">
                                             <tr>
                                                 <th style="width: 50%">Aspecto</th>
-                                                <th style="width: 40%">Dimension</th>
+                                                <th style="width: 40%">Dimensión</th>
                                                 <th style="width: 10%">Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in aspectos.debilidades_aspectos" :key="index">
@@ -144,7 +144,7 @@
                                         <br>
                                         <table class="informe_fortalezas">
                                             <tr>
-                                                <th>Dimension</th>
+                                                <th>Dimensión</th>
                                                 <th>Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in fortalecer" :key="index">
@@ -156,7 +156,7 @@
                                         <table class="informe_fortalezas">
                                             <tr>
                                                 <th style="width: 50%">Aspecto</th>
-                                                <th style="width: 40%">Dimension</th>
+                                                <th style="width: 40%">Dimensión</th>
                                                 <th style="width: 10%">Promedio</th>
                                             </tr>
                                             <tr v-for="(item, index) in aspectos.fortalecer_aspectos" :key="index">
@@ -267,7 +267,7 @@ export default {
                             if (result.isConfirmed) {
                                 var enlace = document.createElement('a');
                                 enlace.href = url;
-                                enlace.download = "Fortalezas_y_Debilidades_"+this.id_empresa+'.pdf';
+                                enlace.download = "Fortalezas_y_Debilidades.pdf";
                                 enlace.click();
                             }
                         });

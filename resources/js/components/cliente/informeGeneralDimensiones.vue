@@ -67,7 +67,7 @@
                     <br>
                     <h3><strong>VALORACIÓN DEL CLIMA ORGANIZACIONAL</strong></h3>
                     <br>
-                    <h6>A continuación se presentan los resultados de la valoración del Clima organizacional, de la <strong>(figura 11)</strong> hasta la <strong>(figura 21)</strong> Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
+                    <h6>A continuación se presentan los resultados de la valoración del clima organizacional, de la <strong>(figura 11)</strong> hasta la <strong>(figura 21)</strong> Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
                     <br>
                     <br>
                     <hr>
@@ -311,7 +311,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+            labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -407,7 +407,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -502,7 +502,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -596,7 +596,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -689,7 +689,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -782,7 +782,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -875,7 +875,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -969,7 +969,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -1062,7 +1062,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -1156,7 +1156,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -1250,7 +1250,7 @@ export default {
             })
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-            labelBullet.label.text = "{valueY}";
+             labelBullet.label.text = "{valueY.formatNumber('#.0')}";
             labelBullet.label.fill = am4core.color("#000000");
             labelBullet.label.horizontalCenter = "middle";
             labelBullet.label.verticalCenter = "middle";
@@ -1372,7 +1372,7 @@ export default {
                             if (result.isConfirmed) {
                                 var enlace = document.createElement('a');
                                 enlace.href = url;
-                                enlace.download = "Informe_General_Dimensiones_"+this.id_empresa+'.pdf';
+                                enlace.download = "Informe_General_Dimensiones.pdf";
                                 enlace.click();
                             }
                         });

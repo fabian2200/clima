@@ -1,6 +1,6 @@
 <template>
     <div>
-      <iframe ref="pdfIframe" style="width: 100%; height: 80vh" src='https://pdf2doc.com/es/' title=''></iframe>
+      <iframe ref="pdfIframe" style="width: 100%; height: 80vh" src='https://www.cleverpdf.com/es/convertir-pdf-a-word' title=''></iframe>
     </div>
   </template>
   

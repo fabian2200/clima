@@ -26,7 +26,7 @@
 <body>
     <br>
     <h3 style="color: #009199;"><strong>VALORACIÓN DEL CLIMA ORGANIZACIONAL</strong></h3>
-    <h4>A continuación se presentan los resultados de la valoración del Clima organizacional, de la <strong style="color: #009199;"> (figura 11) </strong> hasta la <strong style="color: #009199;"> (figura 21) </strong> se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h4>
+    <h4>A continuación se presentan los resultados de la valoración del clima organizacional, de la <strong style="color: #009199;"> (figura 11) </strong> hasta la <strong style="color: #009199;"> (figura 21) </strong> se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h4>
     <hr>
     <strong><p style='margin: 0; display: block;'>Figura 11</p></strong>
     <p style='margin-right: 40px'><i>Promedio de la valoración general del clima organizacional por dimensiones</i></p>

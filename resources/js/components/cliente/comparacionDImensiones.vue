@@ -903,7 +903,7 @@ export default {
                             if (result.isConfirmed) {
                                 var enlace = document.createElement('a');
                                 enlace.href = url;
-                                enlace.download = "Comparacion_de_Dimensiones_"+this.id_empresa+'.pdf';
+                                enlace.download = "Comparacion_de_Dimensiones.pdf";
                                 enlace.click();
                             }
                         });
