@@ -9,138 +9,140 @@
             :on-cancel="onCancel"
             :is-full-page="true">
         </loading>
-        <div class="card">
-            <br>
-            <div class="row" style="padding: 10px">
-                <div class="col-lg-6"></div>
-                <div class="col-lg-3" style="text-align: right">
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        @click="generarPDF"
-                    >
-                        Descargar este Informe <i class="fas fa-file-pdf"></i>
-                    </button>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 1000px" class="card">
+                <br>
+                <div class="row" style="padding: 10px">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-3" style="text-align: right">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            @click="generarPDF"
+                        >
+                            Descargar este Informe <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </div>
+                    <div class="col-lg-3" style="text-align: left">
+                        <button
+                            data-toggle="modal" data-target="#modalInformes"
+                            type="button"
+                            class="btn btn-warning"
+                        >
+                            Descargar otro Informe    <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-lg-3" style="text-align: right">
-                    <button
-                        data-toggle="modal" data-target="#modalInformes"
-                        type="button"
-                        class="btn btn-warning"
-                    >
-                        Descargar otro Informe    <i class="fas fa-file-pdf"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/informe-socio/'+id_empresa)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
-                                </div>  
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
-                                </div> 
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
-                                </div>  
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
-                                </div>  
+                <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/informe-socio/'+id_empresa)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
+                                    </div>  
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
+                                    </div> 
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
+                                    </div>  
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
+                                    </div>  
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 0px 100px 90px 110px; margin-right: 70px">
-                <br>
-                <h3 style="font-weight: bold">Informe sociodemográfico</h3>
-                <hr>
-                <div style="text-align: left">
-                    <br><br>
-                    <h4 style="width: 100%; text-align: left">De un total de  ({{total_personas}}) Empleados que respondieron el test, se tiene que: </h4>
-                    <br><br>
-                    <strong><p style='margin: 0px;'>Figura 1</p></strong>
-                    <p style='margin-right: 40px'><i>Población distribuida por  sexo</i></p>
-                    <div>
-                        <div id="grafica_sexo" style="height: 260px"></div>
+                <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 0px 100px 90px 110px; margin-right: 70px">
+                    <br>
+                    <h3 style="font-weight: bold">Informe sociodemográfico</h3>
+                    <hr>
+                    <div style="text-align: left">
                         <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 2</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  edad</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_edad" style="height: 290px"></div>
+                        <h4 style="width: 100%; text-align: left">De un total de  ({{total_personas}}) Empleados que respondieron el test, se tiene que: </h4>
                         <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 3</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  nivel de educación</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_nivel_educacion" style="height: 360px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 4</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  estado civil</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_estado_civil" style="height: 360px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 5</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  tiempo que lleva en el cargo</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_tiempo_cargo" style="height: 260px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 6</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  tiempo de antigüedad en el cargo</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_tiempo_antiguedad" style="height: 260px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 7</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  salario</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_salario" style="height: 360px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 8</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  estrato socioeconómico</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_estrato" style="height: 360px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 1</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  ciudad donde trabaja</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_ciudad" style="height: 260px"></div>
-                        <br><br>
-                    </div>
-                    <strong><p style='margin: 0px;'>Figura 1</p></strong>
-                        <p style='margin-right: 40px'><i>Población distribuida por  departamento/area</i></p>
-                        <br>
-                    <div>
-                        <div id="grafica_area" style="height: 260px"></div>
-                        <br><br>
+                        <strong><p style='margin: 0px;'>Figura 1</p></strong>
+                        <p style='margin-right: 40px'><i>Población distribuida por  sexo</i></p>
+                        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div id="grafica_sexo" style="height: 260px; width: 600px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 2</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  edad</i></p>
+                            <br>
+                        <div>
+                            <div id="grafica_edad" style="height: 290px; width: 800px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 3</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  nivel de educación</i></p>
+                            <br>
+                        <div>
+                            <div id="grafica_nivel_educacion" style="height: 360px; width: 800px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 4</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  estado civil</i></p>
+                            <br>
+                        <div>
+                            <div id="grafica_estado_civil" style="height: 360px; width: 800px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 5</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  tiempo que lleva en el cargo</i></p>
+                            <br>
+                        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div id="grafica_tiempo_cargo" style="height: 260px; width: 600px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 6</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  tiempo de antigüedad en el cargo</i></p>
+                            <br>
+                        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div id="grafica_tiempo_antiguedad" style="height: 260px; width: 600px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 7</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  salario</i></p>
+                            <br>
+                        <div>
+                            <div id="grafica_salario" style="height: 360px; width: 800px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 8</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  estrato socioeconómico</i></p>
+                            <br>
+                        <div>
+                            <div id="grafica_estrato" style="height: 360px; width: 800px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 9</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  ciudad donde trabaja</i></p>
+                            <br>
+                        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div id="grafica_ciudad" style="height: 260px; width: 600px;"></div>
+                            <br><br>
+                        </div>
+                        <strong><p style='margin: 0px;'>Figura 10</p></strong>
+                            <p style='margin-right: 40px'><i>Población distribuida por  departamento/area</i></p>
+                            <br>
+                        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div id="grafica_area" style="height: 260px; width: 700px;"></div>
+                            <br><br>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>        
+            </div> 
+        </div>       
     </div>
 </template>
 <script>

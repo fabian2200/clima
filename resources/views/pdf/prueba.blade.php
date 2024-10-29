@@ -35,10 +35,9 @@
     <header>este es un encabezado</header>
     <footer>este es el pie de</footer>
     <main>
-        <h2 style="font-weight: bold; color: #009199;">Informe sociodemográfico</h2>
-        <br>
+        <h1 style="font-weight: bold; color: #009199; font-size: 26px !important">Informe sociodemográfico</h1>
         <h3 style="width: 100%; text-align: left;">De un total de  <strong style="color: #009199;">({{$total_personas}}) Empleados </strong> que respondieron el test, se tiene que: </h3>
-        <br><br>
+        <br>
         <p>Figura 1</p>
         <i>Población distribuida por  sexo</i>
         <br>
@@ -47,20 +46,20 @@
         <br><br>
         <p>Figura 2</p>
         <i>Población distribuida por  edad</i>
-        <img src="{{$base2}}"  height="260" alt="">
+        <img src="{{$base2}}"  height="260" width="650" alt="">
         
         <div class="page-break"></div>
         <br>
         <p>Figura 3</p>
         <i>Población distribuida por  nivel de educación</i>
         <br>
-        <img src="{{$base3}}"  height="260" alt="">
+        <img src="{{$base3}}"  height="260" width="650" alt="">
         
         <br><br>
         <p>Figura 4</p>
         <i>Población distribuida por  estado civil</i>
         <br>
-        <img src="{{$base4}}"  height="260" alt="">
+        <img src="{{$base4}}"  height="260" width="650" alt="">
         
         <br><br>
         <p>Figura 5</p>
@@ -79,13 +78,13 @@
         <p>Figura 7</p>
         <i>Población distribuida por  salario</i>
         <br>
-        <img src="{{$base7}}"  height="260" alt="">
+        <img src="{{$base7}}"  height="260" width="650" alt="">
         
         <br><br>
         <p>Figura 8</p>
         <i>Población distribuida por  estrato socioeconómico</i>
         <br>
-        <img src="{{$base8}}"  height="260" alt="">
+        <img src="{{$base8}}"  height="260" width="650" alt="">
         
         <div class="page-break"></div>
         

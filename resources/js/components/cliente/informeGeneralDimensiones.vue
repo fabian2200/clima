@@ -9,133 +9,135 @@
             :on-cancel="onCancel"
             :is-full-page="true">
         </loading>
-        <div class="card">
-            <br>
-            <div class="row" style="padding: 10px">
-                <div class="col-lg-6"></div>
-                <div class="col-lg-3" style="text-align: right">
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        @click="generarPDF"
-                    >
-                        Descargar este Informe <i class="fas fa-file-pdf"></i>
-                    </button>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 1000px" class="card">
+                <br>
+                <div class="row" style="padding: 10px">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-3" style="text-align: right">
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            @click="generarPDF"
+                        >
+                            Descargar este Informe <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </div>
+                    <div class="col-lg-3" style="text-align: left">
+                        <button
+                            data-toggle="modal" data-target="#modalInformes"
+                            type="button"
+                            class="btn btn-warning"
+                        >
+                            Descargar otro Informe <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-lg-3" style="text-align: right">
-                    <button
-                        data-toggle="modal" data-target="#modalInformes"
-                        type="button"
-                        class="btn btn-warning"
-                    >
-                        Descargar otro Informe <i class="fas fa-file-pdf"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/informe-socio/'+id_empresa)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
-                                </div>  
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
-                                </div> 
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
-                                </div>  
-                                <div class="col-lg-6">
-                                    <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
-                                </div>  
+                <div class="modal fade bd-example-modal-lg" id="modalInformes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel">Seleccione un tipo de informe</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/informe-socio/'+id_empresa)" type="button" class="btn_informe btn btn-outline-primary">Informe <br> Sociodemográfico</button>
+                                    </div>  
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/informe-general-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-success">Informe General <br> de Dimensiones</button>
+                                    </div> 
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/comparacion-dimensiones/'+id_empresa)" type="button" class="btn_informe btn btn-outline-info">Comparación <br> de Dimensiones</button>
+                                    </div>  
+                                    <div class="col-lg-6">
+                                        <button @click="irPaginaInforme('/fortalezas-debilidades-fortalecer/'+id_empresa)" type="button" class="btn_informe btn btn-outline-secondary">Fortalezas <br> y <br> Debilidades</button>
+                                    </div>  
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 0px 100px 90px 110px; margin-right: 70px">
-                <br>
-                <div style="text-align: left">
+                
+                <div v-if="loading2 == false" id="area_informe" class="card-content" style="padding: 60px;">
                     <br>
-                    <h3><strong>VALORACIÓN DEL CLIMA ORGANIZACIONAL</strong></h3>
-                    <br>
-                    <h6>A continuación se presentan los resultados de la valoración del clima organizacional, de la <strong>(figura 11)</strong> hasta la <strong>(figura 21)</strong> Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
-                    <br>
-                    <br>
-                    <hr>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 11</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración general del clima organizacional por dimensiones</i></p>
-                        <div id="grafica_general" style="height: 450px;"></div>
+                    <div style="text-align: left">
                         <br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 12</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Funciones y Entrenamiento</i></p>
-                        <div id="grafica_dim1" style="height: 340px;"></div>
+                        <h3><strong>VALORACIÓN DEL CLIMA ORGANIZACIONAL</strong></h3>
                         <br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 13</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Autonomía</i></p>
-                        <div id="grafica_dim2" style="height: 340px;"></div>
+                        <h6>A continuación se presentan los resultados de la valoración del clima organizacional, de la <strong>(figura 11)</strong> hasta la <strong>(figura 21)</strong> Se presentan los promedios de todas las dimensiones y posteriormente, los de cada dimensión y de los aspectos que componen cada una de ellas.</h6>
                         <br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 14</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Recompensa Directa</i></p>
-                        <div id="grafica_dim3" style="height: 340px;"></div>
-                        <br><br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 15</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Relaciones Interpersonales</i></p>
-                        <div id="grafica_dim4" style="height: 340px;"></div>
-                        <br><br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 16</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Cooperación</i></p>
-                        <br><br>
-                        <div id="grafica_dim5" style="height: 340px;"></div>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 17</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Libre Expresión</i></p>
-                        <div id="grafica_dim6" style="height: 340px;"></div>
-                        <br><br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 18</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Identidad</i></p>
-                        <div id="grafica_dim7" style="height: 340px;"></div>
-                        <br><br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 19</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Motivación Institucional</i></p>
-                        <div id="grafica_dim8" style="height: 340px;"></div>
-                        <br><br>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 20</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Satisfacción Laboral</i></p>
-                        <br><br>
-                        <div id="grafica_dim9" style="height: 340px;"></div>
-                    </div>
-                    <div>
-                        <strong><p style='margin: 0px;'>Figura 21</p></strong>
-                        <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Comunicación</i></p>
-                        <div id="grafica_dim10" style="height: 340px;"></div>
-                        <br><br>
+                        <br>
+                        <hr>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 11</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración general del clima organizacional por dimensiones</i></p>
+                            <div id="grafica_general" style="height: 450px;"></div>
+                            <br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 12</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Funciones y Entrenamiento</i></p>
+                            <div id="grafica_dim1" style="height: 340px;"></div>
+                            <br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 13</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Autonomía</i></p>
+                            <div id="grafica_dim2" style="height: 340px;"></div>
+                            <br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 14</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Recompensa Directa</i></p>
+                            <div id="grafica_dim3" style="height: 340px;"></div>
+                            <br><br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 15</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Relaciones Interpersonales</i></p>
+                            <div id="grafica_dim4" style="height: 340px;"></div>
+                            <br><br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 16</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Cooperación</i></p>
+                            <br><br>
+                            <div id="grafica_dim5" style="height: 340px;"></div>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 17</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Libre Expresión</i></p>
+                            <div id="grafica_dim6" style="height: 340px;"></div>
+                            <br><br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 18</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Identidad</i></p>
+                            <div id="grafica_dim7" style="height: 340px;"></div>
+                            <br><br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 19</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Motivación Institucional</i></p>
+                            <div id="grafica_dim8" style="height: 340px;"></div>
+                            <br><br>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 20</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Satisfacción Laboral</i></p>
+                            <br><br>
+                            <div id="grafica_dim9" style="height: 340px;"></div>
+                        </div>
+                        <div>
+                            <strong><p style='margin: 0px;'>Figura 21</p></strong>
+                            <p style='margin-right: 40px'><i>Promedio de la valoración de los  aspectos de la dimensión Comunicación</i></p>
+                            <div id="grafica_dim10" style="height: 340px;"></div>
+                            <br><br>
+                        </div>
                     </div>
                 </div>
             </div>

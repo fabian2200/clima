@@ -47,27 +47,32 @@
         <br><br>
         <p>Figura 11</p>
         <i>Promedio de la valoración general del clima organizacional por dimensiones</i>
+        <br><br>
         <img src="{{$base1}}"   width="625">
         
         <br>
         <p>Figura 12</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Funciones y Entrenamiento</i>
+        <br><br>
         <img src="{{$base2}}"   width="625">
         
         <div class="page-break"></div>
         <br>
         <p>Figura 13</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Autonomía</i>
+        <br><br>
         <img src="{{$base3}}"   width="625">
         
         <br>
         <p>Figura 14</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Recompensa Directa</i>
+        <br><br>
         <img src="{{$base4}}"   width="625">
         
         <br>
         <p>Figura 15</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Relaciones Interpersonales</i>
+        <br><br>
         <img src="{{$base5}}"   width="625">
         
         <div class="page-break"></div>
@@ -79,27 +84,32 @@
         <br>
         <p>Figura 17</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Libre Expresión</i>
+        <br><br>
         <img src="{{$base7}}"   width="625">
         
         <br>
         <p>Figura 18</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Identidad</i>
+        <br><br>
         <img src="{{$base8}}"   width="625">
         
         <div class="page-break"></div>
         <br>
         <p>Figura 19</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Motivación Institucional</i>
+        <br><br>
         <img src="{{$base9}}"   width="625">
         
         <br>
         <p>Figura 20</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Satisfacción Laboral</i>
+        <br><br>
         <img src="{{$base10}}"   width="625">
         
         <br>
         <p>Figura 21</p>
         <i>Promedio de la valoración de los  aspectos de la dimensión Comunicación</i>
+        <br><br>
         <img src="{{$base11}}"   width="625">
     </main>
 </body>

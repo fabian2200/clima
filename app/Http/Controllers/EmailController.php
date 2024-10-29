@@ -14,14 +14,14 @@ class EmailController extends Controller
     
         try {
             $mail->isSMTP();
-            $mail->Host = 'mail.tueqnewd.lucusvirtual.es';
+            $mail->Host = 'mail.tkqpqaql.lucusvirtual.es';
             $mail->SMTPAuth = true;
-            $mail->Username = '_mainaccount@tueqnewd.lucusvirtual.es';
-            $mail->Password = 'P74Uird65+@EmW';
+            $mail->Username = '_mainaccount@tkqpqaql.lucusvirtual.es';
+            $mail->Password = 'RH9Ie:u9Pgl]29';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
             
-            $mail->setFrom('_mainaccount@tueqnewd.lucusvirtual.es', 'Instituto Colombiano de Psicometria');
+            $mail->setFrom('_mainaccount@tkqpqaql.lucusvirtual.es', 'Instituto Colombiano de Psicometria');
             $mail->addAddress($email, $nombres_apellidos);
     
             $mail->isHTML(true);
@@ -511,14 +511,14 @@ class EmailController extends Controller
     
         try {
             $mail->isSMTP();
-            $mail->Host = 'mail.tueqnewd.lucusvirtual.es';
+            $mail->Host = 'mail.tkqpqaql.lucusvirtual.es';
             $mail->SMTPAuth = true;
-            $mail->Username = '_mainaccount@tueqnewd.lucusvirtual.es';
-            $mail->Password = 'P74Uird65+@EmW';
+            $mail->Username = '_mainaccount@tkqpqaql.lucusvirtual.es';
+            $mail->Password = 'RH9Ie:u9Pgl]29';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
             
-            $mail->setFrom('_mainaccount@tueqnewd.lucusvirtual.es', 'Instituto Colombiano de Psicometria');
+            $mail->setFrom('_mainaccount@tkqpqaql.lucusvirtual.es', 'Instituto Colombiano de Psicometria');
             $mail->addAddress($email, $nombres_apellidos);
     
             $mail->isHTML(true);
