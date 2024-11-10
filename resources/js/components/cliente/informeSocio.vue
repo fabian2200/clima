@@ -207,7 +207,7 @@ export default {
             }
             am4core.useTheme(am4themes_myTheme);
             var chart = am4core.create("grafica_sexo", am4charts.PieChart3D);
-            this.total_personas = this.data_informe.por_sexo[0].total + this.data_informe.por_sexo[1].total;
+            this.total_personas = parseInt(this.data_informe.por_sexo[0].total) + parseInt(this.data_informe.por_sexo[1].total);
             // Add data
             chart.data = [
                 {
@@ -794,13 +794,14 @@ export default {
         async generarPDF(){
             Swal.fire({
                 title: 'Generando informe',
-                html: 'Por favor espera, puede tardar varios minutos...',
-                allowOutsideClick: false,  // Evita que se cierre al hacer clic fuera
-                didOpen: () => {
-                    Swal.showLoading()  // Muestra el indicador de carga
-                }
+                html: '<p>Por favor espera, este proceso puede tardar varios minutos, no cierre esta ventana...</p> <br> <div class="progress" style="margin-bottom: 5px !important"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="barra_progreso" style="width: 0%"></div></div><div><h3 style="font-weight: bold" id="letras_progreso">0%</h3></div>',
+                allowOutsideClick: false,
+                showConfirmButton: false,
             });
            
+            document.getElementById("barra_progreso").style.width = "5%";
+            document.getElementById("letras_progreso").innerText = "5%";
+            
             setTimeout(()=>{
                 this.GPDF();
             }, 500)
@@ -808,45 +809,76 @@ export default {
         async GPDF(){
             try {
                 var contenido = "";
+                
                 contenido = document.getElementById('grafica_sexo');
                 var canvas = await html2canvas(contenido);
                 var base1 = canvas.toDataURL('image/png')
+
+                document.getElementById("barra_progreso").style.width = "10%";
+                document.getElementById("letras_progreso").innerText = "10%";
 
                 contenido = document.getElementById('grafica_edad');
                 var canvas2 = await html2canvas(contenido);
                 var base2 = canvas2.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "20%";
+                document.getElementById("letras_progreso").innerText = "20%";
+
                 contenido = document.getElementById('grafica_nivel_educacion');
                 var canvas3 = await html2canvas(contenido);
                 var base3 = canvas3.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "30%";
+                document.getElementById("letras_progreso").innerText = "30%";
 
                 contenido = document.getElementById('grafica_estado_civil');
                 var canvas4 = await html2canvas(contenido);
                 var base4 = canvas4.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "40%";
+                document.getElementById("letras_progreso").innerText = "40%";
+
                 contenido = document.getElementById('grafica_tiempo_cargo');
                 var canvas5 = await html2canvas(contenido);
                 var base5 = canvas5.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "50%";
+                document.getElementById("letras_progreso").innerText = "50%";
 
                 contenido = document.getElementById('grafica_tiempo_antiguedad');
                 var canvas6 = await html2canvas(contenido);
                 var base6 = canvas6.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "60%";
+                document.getElementById("letras_progreso").innerText = "60%";
+
                 contenido = document.getElementById('grafica_salario');
                 var canvas7 = await html2canvas(contenido);
                 var base7 = canvas7.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "70%";
+                document.getElementById("letras_progreso").innerText = "70%";
 
                 contenido = document.getElementById('grafica_estrato');
                 var canvas8 = await html2canvas(contenido);
                 var base8 = canvas8.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "80%";
+                document.getElementById("letras_progreso").innerText = "80%";
+
                 contenido = document.getElementById('grafica_ciudad');
                 var canvas9 = await html2canvas(contenido);
                 var base9 = canvas9.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "90%";
+                document.getElementById("letras_progreso").innerText = "90%";
+
                 contenido = document.getElementById('grafica_area');
                 var canvas10 = await html2canvas(contenido);
                 var base10 = canvas10.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "100%";
+                document.getElementById("letras_progreso").innerText = "100%";
 
                 var bases = {
                     base1: base1,

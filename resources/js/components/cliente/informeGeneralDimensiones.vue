@@ -1287,16 +1287,17 @@ export default {
         generarPDF(){
             Swal.fire({
                 title: 'Generando informe',
-                html: 'Por favor espera, puede tardar varios minutos...',
-                allowOutsideClick: false,  // Evita que se cierre al hacer clic fuera
-                didOpen: () => {
-                    Swal.showLoading()  // Muestra el indicador de carga
-                }
+                html: '<p>Por favor espera, este proceso puede tardar varios minutos, no cierre esta ventana...</p> <br> <div class="progress" style="margin-bottom: 5px !important"><div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="barra_progreso" style="width: 0%"></div></div><div><h3 style="font-weight: bold" id="letras_progreso">0%</h3></div>',
+                allowOutsideClick: false,
+                showConfirmButton: false,
             });
+
+            document.getElementById("barra_progreso").style.width = "5%";
+            document.getElementById("letras_progreso").innerText = "5%";
            
-           setTimeout(()=>{
-               this.GPDF();
-           }, 500)
+            setTimeout(()=>{
+                this.GPDF();
+            }, 200)
         },
         async GPDF(){
             try {
@@ -1305,45 +1306,78 @@ export default {
                 var canvas = await html2canvas(contenido);
                 var base1 = canvas.toDataURL('image/png')
 
+                document.getElementById("barra_progreso").style.width = "9%";
+                document.getElementById("letras_progreso").innerText = "9%";
+
                 contenido = document.getElementById('grafica_dim1');
                 var canvas2 = await html2canvas(contenido);
                 var base2 = canvas2.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "18%";
+                document.getElementById("letras_progreso").innerText = "18%";
 
                 contenido = document.getElementById('grafica_dim2');
                 var canvas3 = await html2canvas(contenido);
                 var base3 = canvas3.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "27%";
+                document.getElementById("letras_progreso").innerText = "27%";
+
                 contenido = document.getElementById('grafica_dim3');
                 var canvas4 = await html2canvas(contenido);
                 var base4 = canvas4.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "36%";
+                document.getElementById("letras_progreso").innerText = "36%";
 
                 contenido = document.getElementById('grafica_dim4');
                 var canvas5 = await html2canvas(contenido);
                 var base5 = canvas5.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "45%";
+                document.getElementById("letras_progreso").innerText = "45%";
+
                 contenido = document.getElementById('grafica_dim5');
                 var canvas6 = await html2canvas(contenido);
                 var base6 = canvas6.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "54%";
+                document.getElementById("letras_progreso").innerText = "54%";
 
                 contenido = document.getElementById('grafica_dim6');
                 var canvas7 = await html2canvas(contenido);
                 var base7 = canvas7.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "63%";
+                document.getElementById("letras_progreso").innerText = "63%";
+
                 contenido = document.getElementById('grafica_dim7');
                 var canvas8 = await html2canvas(contenido);
                 var base8 = canvas8.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "72%";
+                document.getElementById("letras_progreso").innerText = "72%";
 
                 contenido = document.getElementById('grafica_dim8');
                 var canvas9 = await html2canvas(contenido);
                 var base9 = canvas9.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "81%";
+                document.getElementById("letras_progreso").innerText = "81%";
+
                 contenido = document.getElementById('grafica_dim9');
                 var canvas10 = await html2canvas(contenido);
                 var base10 = canvas10.toDataURL('image/png');
 
+                document.getElementById("barra_progreso").style.width = "91%";
+                document.getElementById("letras_progreso").innerText = "91%";
+
                 contenido = document.getElementById('grafica_dim10');
                 var canvas11 = await html2canvas(contenido);
                 var base11 = canvas11.toDataURL('image/png');
+
+                document.getElementById("barra_progreso").style.width = "100%";
+                document.getElementById("letras_progreso").innerText = "100%";
 
                 var bases = {
                     base1: base1,
