@@ -7,10 +7,8 @@
             <h2>Institulo Colombiano de Psicometría</h2>
             <h3>Test De Clima Laboral</h3>
             <br>
-            <div style="width: 100%" class="text-center">
-                <img src="" id="logo_empresa" width="100" alt="">
-            </div>
             <h2 style="font-weight: bold"><span id="nombre_empresa"></span></h2>
+            <br>
             <hr>
             <div id="paso1" class="text-left" style="display: block">
                 <br>
@@ -621,7 +619,6 @@
             type: 'GET',
             success: function(response) {
                 if(response != null){
-                    document.getElementById("logo_empresa").setAttribute("src", '/imagenes_empresas/'+response.logo);
                     document.getElementById("nombre_empresa").textContent = response.nombre;
                 }
             },

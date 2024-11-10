@@ -79,20 +79,22 @@
                                 <table id="tablaVentas" style="width: 100%">
                                     <thead>
                                         <tr>
+                                            <th># Venta</th>
                                             <th>Fecha Venta</th>
                                             <th>Cliente</th>
-                                            <th>Pines</th>
-                                            <th>Precio x Pin</th>
-                                            <th>Total</th>
+                                            <th style="text-align: center">Pines</th>
+                                            <th style="text-align: center">Precio x Pin</th>
+                                            <th style="text-align: center">Total</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr v-for="(item, index) in lista_ventas" :key="index">
+                                            <td>{{ item.id }}</td>
                                             <td>{{ item.fecha }}</td>
                                             <td>{{ item.nombres}} {{item.apellidos}}</td>
-                                            <td>{{ item.pines_comprados }}</td>
-                                            <td>{{ item.precio_pin }}</td>
-                                            <td>{{ item.total }}</td>
+                                            <td style="text-align: right">{{ item.pines_comprados }}</td>
+                                            <td style="text-align: right">$ {{ item.precio_pin }}</td>
+                                            <td style="text-align: right">$ {{ item.total }}</td>
                                         </tr>
                                     </tbody>
                                 </table>

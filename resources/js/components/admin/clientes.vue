@@ -30,6 +30,7 @@
                                 <table id="tablaClientes" style="width: 100%">
                                     <thead>
                                         <tr>
+                                            <th>Identificación</th>
                                             <th>Cliente</th>
                                             <th>Pines Comprados</th>
                                             <th>Pines Borrados</th>
@@ -39,6 +40,7 @@
                                     </thead>
                                     <tbody>
                                         <tr v-for="(item, index) in lista_clientes" :key="index">
+                                            <td>{{ item.cedula }}</td>
                                             <td>{{ item.nombres}} {{item.apellidos}}</td>
                                             <td>{{ item.pines_comprados }}</td>
                                             <td>{{ item.pines_borrados }}</td>
@@ -201,7 +203,7 @@
             dataTables() {
                 setTimeout(() => {
                     $("#tablaClientes").DataTable({
-                        ordering: false,
+                        ordering: true,
                         language: {
                             "decimal": "",
                             "emptyTable": "No hay información",
