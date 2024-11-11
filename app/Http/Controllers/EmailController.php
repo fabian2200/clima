@@ -32,6 +32,12 @@ class EmailController extends Controller
             switch ($asunto) {
                 case 'Activación de cuenta':
                     $mail->Body = self::mapearPlantilla($email, $nombres_apellidos, $usuario, $password, $pines, $precio, $total);
+                    $pdfPath = public_path('manual_usuario.pdf');
+                    if (file_exists($pdfPath)) {
+                        $mail->addAttachment($pdfPath, 'manual_usuario.pdf');
+                    } else {
+                        return "El archivo PDF de activación de cuenta no se encuentra en la ruta especificada.";
+                    }
                     break;
                 case 'Compra de pines':
                     $mail->Body = self::mapearPlantilla2($email, $nombres_apellidos, $usuario, $password, $pines, $precio, $total);
@@ -244,7 +250,7 @@ class EmailController extends Controller
                     <h4>Cordial saludo $nombres_apellidos:</h4>
                     <h4 style='text-align: justify;'>Usted ha adquirido nuestro servicio</h4>
                     <br>
-                    <h4 style='color: red; font-weight: bold'>Datos de Acceso</h4>
+                    <h4 style='color: #d10808; font-weight: bold'>Datos de Acceso</h4>
                     <hr>
                     <p style='font-weight: bold; margin: 4px;'>Su usuario es: $usuario</p>
                     <p style='font-weight: bold; margin: 4px;'>Su clave es: $password</p>
@@ -265,13 +271,14 @@ class EmailController extends Controller
                     </tr>
                     </table>
                     <br>
+                    <h4 style='text-align:justify; color: #d10808;'>En este correo se adjunta el manual de usuario del programa, por favor descargarlo.</h4>
                     <h4 style='text-align:justify;'>De antemano agradecemos la confianza depositada en nosotros.</h4>
                     <br>
                     <h4>Atentamente</b></h4>
                     <br>
                     <p style='margin: 4px;'>Instituto Colombiano de Psicometría.</p>
                     <p style='margin: 4px;'>Ps. Mgr. Antonio Martínez, Gerente</p>
-                    <p style='margin: 4px;'>Correo: icp@incometria.com - Celular (WhatsApp): 3012990890</p>
+                    <p style='margin: 4px;'>Correo: incolpsicometria@gmail.com - Celular (WhatsApp): 3012990890</p>
                 </div>
             </div>
             </body>
@@ -498,7 +505,7 @@ class EmailController extends Controller
                      <br>
                      <p style='margin: 4px;'>Instituto Colombiano de Psicometría.</p>
                      <p style='margin: 4px;'>Ps. Mgr. Antonio Martínez, Gerente</p>
-                     <p style='margin: 4px;'>Correo: icp@incometria.com - Celular (WhatsApp): 3012990890</p>
+                     <p style='margin: 4px;'>Correo: incolpsicometria@gmail.com - Celular (WhatsApp): 3012990890</p>
                  </div>
              </div>             
              </body>
@@ -741,7 +748,7 @@ class EmailController extends Controller
                      <br>
                      <p style='margin: 4px;'>Instituto Colombiano de Psicometría.</p>
                      <p style='margin: 4px;'>Ps. Mgr. Antonio Martínez, Gerente</p>
-                     <p style='margin: 4px;'>Correo: icp@incometria.com - Celular (WhatsApp): 3012990890</p>
+                     <p style='margin: 4px;'>Correo: incolpsicometria@gmail.com - Celular (WhatsApp): 3012990890</p>
                  </div>
              </div>             
              </body>

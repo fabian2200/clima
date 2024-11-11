@@ -166,7 +166,18 @@ export default {
             data_general: {},
             id_empresa: null,
             chart_sexo: null,
-            total_personas: 0
+            total_personas: 0,
+            chart1: null, 
+            chart2: null, 
+            chart3: null, 
+            chart4: null, 
+            chart5: null, 
+            chart6: null, 
+            chart7: null, 
+            chart8: null, 
+            chart9: null, 
+            chart10: null,
+            chart11: null,
         }
     },
     mounted() {
@@ -333,6 +344,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart1 = chart;
+
            this.agregardivblanco("grafica_general");
         },
         generarDim1() {
@@ -369,11 +382,9 @@ export default {
             categoryAxis.renderer.labels.template.maxWidth = 130;
             categoryAxis.renderer.labels.template.textAlign = "middle";
             categoryAxis.renderer.labels.template.fontSize = 11;
-            categoryAxis.renderer.labels.template.fontWeight = "bold";
 
             let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.title.text = "";
-            valueAxis.title.fontWeight = "bold";
             valueAxis.min = 1; 
             valueAxis.max = 4; 
             valueAxis.strictMinMax = true;
@@ -427,6 +438,8 @@ export default {
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
+
+            this.chart2 = chart;
 
             this.agregardivblanco("grafica_dim1");
         },
@@ -522,6 +535,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart3 = chart;
+
             this.agregardivblanco("grafica_dim2");
         },
         generarDim3() {
@@ -616,6 +631,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart4 = chart;
+
             this.agregardivblanco("grafica_dim3");
         },
         generarDim4() {
@@ -708,6 +725,8 @@ export default {
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
+
+            this.chart5 = chart;
 
             this.agregardivblanco("grafica_dim4");
         },
@@ -802,6 +821,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart6 = chart;
+
             this.agregardivblanco("grafica_dim5");
         },
         generarDim6() {
@@ -894,6 +915,8 @@ export default {
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
+
+            this.chart7 = chart;
 
             this.agregardivblanco("grafica_dim6");
         },
@@ -989,6 +1012,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart8 = chart;
+
             this.agregardivblanco("grafica_dim7");
         },
         generarDim8() {
@@ -1081,6 +1106,8 @@ export default {
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
+
+            this.chart9 = chart;
 
             this.agregardivblanco("grafica_dim8");
         },
@@ -1177,6 +1204,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart10 = chart;
+
             this.agregardivblanco("grafica_dim9");
         },
         generarDim10() {
@@ -1270,6 +1299,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart11 = chart;
+
             this.agregardivblanco("grafica_dim10");
         },
         agregardivblanco(id){
@@ -1301,83 +1332,94 @@ export default {
         },
         async GPDF(){
             try {
-                var contenido = "";
-                contenido = document.getElementById('grafica_general');
-                var canvas = await html2canvas(contenido);
-                var base1 = canvas.toDataURL('image/png')
 
-                document.getElementById("barra_progreso").style.width = "9%";
-                document.getElementById("letras_progreso").innerText = "9%";
+                var base1 = "";
+                var base2 = "";
+                var base3 = "";
+                var base4 = "";
+                var base5 = "";
+                var base6 = "";
+                var base7 = "";
+                var base8 = "";
+                var base9 = "";
+                var base10 = "";
+                var base11 = "";
 
-                contenido = document.getElementById('grafica_dim1');
-                var canvas2 = await html2canvas(contenido);
-                var base2 = canvas2.toDataURL('image/png');
+                await this.chart1.exporting.getImage("png").then((dataUrl) => {
+                    base1 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "10%";
+                    document.getElementById("letras_progreso").innerText = "10%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "18%";
-                document.getElementById("letras_progreso").innerText = "18%";
+                // Exportar el segundo gráfico
+                await this.chart2.exporting.getImage("png").then((dataUrl) => {
+                    base2 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "20%";
+                    document.getElementById("letras_progreso").innerText = "20%";
+                });
 
-                contenido = document.getElementById('grafica_dim2');
-                var canvas3 = await html2canvas(contenido);
-                var base3 = canvas3.toDataURL('image/png');
+                // Exportar el tercer gráfico
+                await this.chart3.exporting.getImage("png").then((dataUrl) => {
+                    base3 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "30%";
+                    document.getElementById("letras_progreso").innerText = "30%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "27%";
-                document.getElementById("letras_progreso").innerText = "27%";
+                // Exportar el cuarto gráfico
+                await this.chart4.exporting.getImage("png").then((dataUrl) => {
+                    base4 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "40%";
+                    document.getElementById("letras_progreso").innerText = "40%";
+                });
 
-                contenido = document.getElementById('grafica_dim3');
-                var canvas4 = await html2canvas(contenido);
-                var base4 = canvas4.toDataURL('image/png');
+                // Exportar el quinto gráfico
+                await this.chart5.exporting.getImage("png").then((dataUrl) => {
+                    base5 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "50%";
+                    document.getElementById("letras_progreso").innerText = "50%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "36%";
-                document.getElementById("letras_progreso").innerText = "36%";
+                // Exportar el sexto gráfico
+                await this.chart6.exporting.getImage("png").then((dataUrl) => {
+                    base6 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "60%";
+                    document.getElementById("letras_progreso").innerText = "60%";
+                });
 
-                contenido = document.getElementById('grafica_dim4');
-                var canvas5 = await html2canvas(contenido);
-                var base5 = canvas5.toDataURL('image/png');
+                // Exportar el séptimo gráfico
+                await this.chart7.exporting.getImage("png").then((dataUrl) => {
+                    base7 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "70%";
+                    document.getElementById("letras_progreso").innerText = "70%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "45%";
-                document.getElementById("letras_progreso").innerText = "45%";
+                // Exportar el octavo gráfico
+                await this.chart8.exporting.getImage("png").then((dataUrl) => {
+                    base8 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "80%";
+                    document.getElementById("letras_progreso").innerText = "80%";
+                });
 
-                contenido = document.getElementById('grafica_dim5');
-                var canvas6 = await html2canvas(contenido);
-                var base6 = canvas6.toDataURL('image/png');
+                // Exportar el noveno gráfico
+                await this.chart9.exporting.getImage("png").then((dataUrl) => {
+                    base9 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "90%";
+                    document.getElementById("letras_progreso").innerText = "90%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "54%";
-                document.getElementById("letras_progreso").innerText = "54%";
+                // Exportar el décimo gráfico
+                await this.chart10.exporting.getImage("png").then((dataUrl) => {
+                    base10 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "95%";
+                    document.getElementById("letras_progreso").innerText = "95%";
+                });
 
-                contenido = document.getElementById('grafica_dim6');
-                var canvas7 = await html2canvas(contenido);
-                var base7 = canvas7.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "63%";
-                document.getElementById("letras_progreso").innerText = "63%";
-
-                contenido = document.getElementById('grafica_dim7');
-                var canvas8 = await html2canvas(contenido);
-                var base8 = canvas8.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "72%";
-                document.getElementById("letras_progreso").innerText = "72%";
-
-                contenido = document.getElementById('grafica_dim8');
-                var canvas9 = await html2canvas(contenido);
-                var base9 = canvas9.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "81%";
-                document.getElementById("letras_progreso").innerText = "81%";
-
-                contenido = document.getElementById('grafica_dim9');
-                var canvas10 = await html2canvas(contenido);
-                var base10 = canvas10.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "91%";
-                document.getElementById("letras_progreso").innerText = "91%";
-
-                contenido = document.getElementById('grafica_dim10');
-                var canvas11 = await html2canvas(contenido);
-                var base11 = canvas11.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "100%";
-                document.getElementById("letras_progreso").innerText = "100%";
+                // Exportar el undécimo gráfico
+                await this.chart11.exporting.getImage("png").then((dataUrl) => {
+                    base11 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "100%";
+                    document.getElementById("letras_progreso").innerText = "100%";
+                });
 
                 var bases = {
                     base1: base1,

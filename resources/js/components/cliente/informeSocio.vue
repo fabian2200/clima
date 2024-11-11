@@ -168,7 +168,17 @@ export default {
             data_informe: {},
             id_empresa: null,
             chart_sexo: null,
-            total_personas: 0
+            total_personas: 0,
+            chart1: null, 
+            chart2: null, 
+            chart3: null, 
+            chart4: null, 
+            chart5: null, 
+            chart6: null, 
+            chart7: null, 
+            chart8: null, 
+            chart9: null, 
+            chart10: null
         }
     },
     mounted() {
@@ -232,7 +242,7 @@ export default {
 
             chart.hiddenState.properties.radius = am4core.percent(0);
 
-            this.chart_sexo = chart;
+            this.chart1 = chart;
 
             this.agregardivblanco("grafica_sexo");
         },
@@ -315,6 +325,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart2 = chart;
+
             this.agregardivblanco("grafica_edad");
         },
         generarGraficoEducacion() {
@@ -393,6 +405,9 @@ export default {
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
+
+            this.chart3 = chart;
+
             this.agregardivblanco("grafica_nivel_educacion");
         },
         generarGraficoEstadoCivil() {
@@ -474,6 +489,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart4 = chart;
+
             this.agregardivblanco("grafica_estado_civil");
         },
         generarGraficoTiempoCargo() {
@@ -508,6 +525,9 @@ export default {
             pieSeries.hiddenState.properties.startAngle = -90;
 
             chart.hiddenState.properties.radius = am4core.percent(0);
+
+            this.chart5 = chart;
+
             this.agregardivblanco("grafica_tiempo_cargo")
         },
         generarGraficoTiempoAntiguedad() {
@@ -543,6 +563,9 @@ export default {
             pieSeries.hiddenState.properties.startAngle = -90;
 
             chart.hiddenState.properties.radius = am4core.percent(0);
+
+            this.chart6 = chart;
+
             this.agregardivblanco("grafica_tiempo_antiguedad");
         },
         generarGraficoSalario() {
@@ -625,6 +648,9 @@ export default {
             chart.cursor = new am4charts.XYCursor();
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
+
+            this.chart7 = chart;
+
             this.agregardivblanco("grafica_salario");
         },
         generarGraficoEstrato() {
@@ -707,6 +733,8 @@ export default {
             chart.cursor.lineX.strokeOpacity = 0;
             chart.cursor.lineY.strokeOpacity = 0;
 
+            this.chart8 = chart;
+
             this.agregardivblanco("grafica_estrato");
         },
         generarGraficoCiudad() {
@@ -743,6 +771,8 @@ export default {
 
             chart.hiddenState.properties.radius = am4core.percent(0);
 
+            this.chart9 = chart;
+
             this.agregardivblanco("grafica_ciudad");
         },
         generarGraficoArea() {
@@ -777,6 +807,9 @@ export default {
             pieSeries.hiddenState.properties.startAngle = -90;
 
             chart.hiddenState.properties.radius = am4core.percent(0);
+
+            this.chart10 = chart;
+
             this.agregardivblanco("grafica_area");
         },
         agregardivblanco(id){
@@ -808,77 +841,86 @@ export default {
         },
         async GPDF(){
             try {
-                var contenido = "";
                 
-                contenido = document.getElementById('grafica_sexo');
-                var canvas = await html2canvas(contenido);
-                var base1 = canvas.toDataURL('image/png')
+                var base1 = "";
+                var base2 = "";
+                var base3 = "";
+                var base4 = "";
+                var base5 = "";
+                var base6 = "";
+                var base7 = "";
+                var base8 = "";
+                var base9 = "";
+                var base10 = "";
 
-                document.getElementById("barra_progreso").style.width = "10%";
-                document.getElementById("letras_progreso").innerText = "10%";
+                await this.chart1.exporting.getImage("png").then((dataUrl) => {
+                    base1 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "10%";
+                    document.getElementById("letras_progreso").innerText = "10%";
+                });
 
-                contenido = document.getElementById('grafica_edad');
-                var canvas2 = await html2canvas(contenido);
-                var base2 = canvas2.toDataURL('image/png');
+                // Exportar el segundo gráfico
+                await this.chart2.exporting.getImage("png").then((dataUrl) => {
+                    base2 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "20%";
+                    document.getElementById("letras_progreso").innerText = "20%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "20%";
-                document.getElementById("letras_progreso").innerText = "20%";
+                // Exportar el tercer gráfico
+                await this.chart3.exporting.getImage("png").then((dataUrl) => {
+                    base3 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "30%";
+                    document.getElementById("letras_progreso").innerText = "30%";
+                });
 
-                contenido = document.getElementById('grafica_nivel_educacion');
-                var canvas3 = await html2canvas(contenido);
-                var base3 = canvas3.toDataURL('image/png');
+                // Exportar el cuarto gráfico
+                await this.chart4.exporting.getImage("png").then((dataUrl) => {
+                    base4 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "40%";
+                    document.getElementById("letras_progreso").innerText = "40%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "30%";
-                document.getElementById("letras_progreso").innerText = "30%";
+                // Exportar el quinto gráfico
+                await this.chart5.exporting.getImage("png").then((dataUrl) => {
+                    base5 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "50%";
+                    document.getElementById("letras_progreso").innerText = "50%";
+                });
 
-                contenido = document.getElementById('grafica_estado_civil');
-                var canvas4 = await html2canvas(contenido);
-                var base4 = canvas4.toDataURL('image/png');
+                // Exportar el sexto gráfico
+                await this.chart6.exporting.getImage("png").then((dataUrl) => {
+                    base6 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "60%";
+                    document.getElementById("letras_progreso").innerText = "60%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "40%";
-                document.getElementById("letras_progreso").innerText = "40%";
+                // Exportar el séptimo gráfico
+                await this.chart7.exporting.getImage("png").then((dataUrl) => {
+                    base7 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "70%";
+                    document.getElementById("letras_progreso").innerText = "70%";
+                });
 
-                contenido = document.getElementById('grafica_tiempo_cargo');
-                var canvas5 = await html2canvas(contenido);
-                var base5 = canvas5.toDataURL('image/png');
+                // Exportar el octavo gráfico
+                await this.chart8.exporting.getImage("png").then((dataUrl) => {
+                    base8 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "80%";
+                    document.getElementById("letras_progreso").innerText = "80%";
+                });
 
-                document.getElementById("barra_progreso").style.width = "50%";
-                document.getElementById("letras_progreso").innerText = "50%";
+                // Exportar el noveno gráfico
+                await this.chart9.exporting.getImage("png").then((dataUrl) => {
+                    base9 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "90%";
+                    document.getElementById("letras_progreso").innerText = "90%";
+                });
 
-                contenido = document.getElementById('grafica_tiempo_antiguedad');
-                var canvas6 = await html2canvas(contenido);
-                var base6 = canvas6.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "60%";
-                document.getElementById("letras_progreso").innerText = "60%";
-
-                contenido = document.getElementById('grafica_salario');
-                var canvas7 = await html2canvas(contenido);
-                var base7 = canvas7.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "70%";
-                document.getElementById("letras_progreso").innerText = "70%";
-
-                contenido = document.getElementById('grafica_estrato');
-                var canvas8 = await html2canvas(contenido);
-                var base8 = canvas8.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "80%";
-                document.getElementById("letras_progreso").innerText = "80%";
-
-                contenido = document.getElementById('grafica_ciudad');
-                var canvas9 = await html2canvas(contenido);
-                var base9 = canvas9.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "90%";
-                document.getElementById("letras_progreso").innerText = "90%";
-
-                contenido = document.getElementById('grafica_area');
-                var canvas10 = await html2canvas(contenido);
-                var base10 = canvas10.toDataURL('image/png');
-
-                document.getElementById("barra_progreso").style.width = "100%";
-                document.getElementById("letras_progreso").innerText = "100%";
+                // Exportar el décimo gráfico
+                await this.chart10.exporting.getImage("png").then((dataUrl) => {
+                    base10 = dataUrl;
+                    document.getElementById("barra_progreso").style.width = "100%";
+                    document.getElementById("letras_progreso").innerText = "100%";
+                });
 
                 var bases = {
                     base1: base1,
