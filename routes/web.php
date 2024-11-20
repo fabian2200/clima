@@ -32,7 +32,11 @@ Route::prefix('api')->group(function () {
     Route::post('/cambiar-password', [UsuarioController::class, 'cambiarPassword'])->name('cambiarPassword');
     Route::get('/cerrar-sesion', [UsuarioController::class, 'cerrarSesion'])->name('cerrarSesion');
     Route::get('/recuperar-clave', [UsuarioController::class, 'recuperarClave'])->name('recuperarClave');
-
+    Route::get('/listar-paquetes', [UsuarioController::class, 'listarPaquetes'])->name('listarPaquetes');
+    Route::post('/guardar-paquete', [UsuarioController::class, 'guardarPaquete'])->name('guardarPaquete');
+    Route::post('/editar-paquete', [UsuarioController::class, 'editarPaquete'])->name('editarPaquete');
+    Route::get('/eliminar-paquete', [UsuarioController::class, 'eliminarPaquete'])->name('eliminarPaquete');
+    Route::get('/buscar-paquete', [UsuarioController::class, 'buscarPaquete'])->name('buscarPaquete');
 
     Route::post('/guardar-venta', [VentasController::class, 'guardarVenta'])->name('guardarVenta');
     Route::get('/ver-clientes', [VentasController::class, 'consultarClientes'])->name('consultarClientes');

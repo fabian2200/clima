@@ -48,3 +48,36 @@ export function disminuirPines($data) {
         }
     );
 }
+
+export function listarPaquetes() {
+    return http().get('/api/listar-paquetes');
+}
+
+export function guardarPaquete($data) {
+    return http().post(
+        '/api/guardar-paquete', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}
+
+
+export function editarPaquete($data) {
+    return http().post(
+        '/api/editar-paquete', 
+        $data, 
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
+        }
+    );
+}
+
+export function eliminarPaquete(id) {
+    return http().get('/api/eliminar-paquete?id='+id);
+}

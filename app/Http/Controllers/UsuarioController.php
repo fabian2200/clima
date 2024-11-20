@@ -166,4 +166,105 @@ class UsuarioController extends Controller
 
         return $password;
     }
+
+    public function listarPaquetes(){        
+        $paquetes = DB::connection("mysql")->table("paquetes")
+        ->get();
+
+        return response()->json($paquetes, 200);
+    }
+
+    public function buscarPaquete(Request $request){    
+
+        $idPaquete = $request->query('id_paquete');
+
+        if (!$idPaquete) {
+            return response()->json(['error' => 'El parámetro id_paquete es obligatorio.'], 400);
+        }
+    
+        $paquete = DB::connection("mysql")->table("paquetes")
+            ->where('id', $idPaquete)
+            ->first();
+    
+        if (!$paquete) {
+            return response()->json(['error' => 'Paquete no encontrado.'], 404);
+        }
+    
+        return response()->json($paquete, 200);
+    }
+
+    public function guardarPaquete(Request $request){
+        $nombre_paquete = $request->input('nombre');
+        $numero_pines = (int) $request->input('numero_pines');
+        $precio_pin = (int) $request->input('precio_pin');
+        $subtotal = $numero_pines * $precio_pin;
+        $descuento = (double) $request->input('descuento');
+        $total = $subtotal - ($subtotal * ($descuento / 100));
+    
+        
+        $datos = [
+            'nombre' => $nombre_paquete,
+            'numero_pines' => $numero_pines,
+            'precio_pin' => $precio_pin,
+            'subtotal' => $subtotal,
+            'descuento' => $descuento,
+            'total' => $total,
+        ];
+
+        $guardado = DB::connection('mysql')->table('paquetes')->insert(
+            $datos 
+        );
+
+        if ($guardado) {
+            return response()->json(["¡Paquete registrado correctamente!", 1], 200);
+        }else{
+            return response()->json(["¡Ocurrió un error, intente nuevamente!", 0], 200);
+        }
+    }
+
+    public function editarPaquete(Request $request){
+        $id = (int) $request->input('id');
+        $nombre_paquete = $request->input('nombre');
+        $numero_pines = (int) $request->input('numero_pines');
+        $precio_pin = (int) $request->input('precio_pin');
+        $subtotal = $numero_pines * $precio_pin;
+        $descuento = (double) $request->input('descuento');
+        $total = $subtotal - ($subtotal * ($descuento / 100));
+    
+        
+        $datos = [
+            'nombre' => $nombre_paquete,
+            'numero_pines' => $numero_pines,
+            'precio_pin' => $precio_pin,
+            'subtotal' => $subtotal,
+            'descuento' => $descuento,
+            'total' => $total,
+        ];
+
+        $guardado = DB::connection('mysql')->table('paquetes')
+        ->where("id", $id)
+        ->update(
+            $datos 
+        );
+
+        if ($guardado) {
+            return response()->json(["¡Paquete modificado correctamente!", 1], 200);
+        }else{
+            return response()->json(["¡Ocurrió un error, intente nuevamente!", 0], 200);
+        }
+    }
+
+    public function eliminarPaquete(Request $request){
+        $id = (int) $request->input('id');
+    
+        $eliminado = DB::connection('mysql')->table('paquetes')
+        ->where("id", $id)
+        ->delete();
+
+        if ($eliminado) {
+            return response()->json(["¡Paquete eliminado correctamente!", 1], 200);
+        }else{
+            return response()->json(["¡Ocurrió un error, intente nuevamente!", 0], 200);
+        }
+    }
 }

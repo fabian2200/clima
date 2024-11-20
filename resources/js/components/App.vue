@@ -84,6 +84,15 @@
                             </router-link>
                         </li>
 
+                        <li :class="tipo_ruta == '/paquetes' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '1'">
+                            <router-link to="/paquetes">
+                                <a href="#">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span class="menu-title" data-i18n="Email Application">Paquetes</span>
+                                </a>
+                            </router-link>
+                        </li>
+
                         <li :class="tipo_ruta == '/nueva-empresa' ? 'nav-item open' : 'nav-item'" v-if="datos.rol == '2'">
                             <router-link to="/nueva-empresa">
                                 <a href="#">

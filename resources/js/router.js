@@ -12,6 +12,7 @@ import informeSocio from './components/cliente/informeSocio';
 import informeGeneralDimensiones from './components/cliente/informeGeneralDimensiones';
 import comparacionDImensiones from './components/cliente/comparacionDImensiones.vue';
 import fortalezasDebilidadesFortalecer from './components/cliente/fortalezasDebilidadesFortalecer';
+import Paquetes from './components/admin/paquetes.vue';
 
 const routes = [
   {
@@ -82,7 +83,12 @@ const routes = [
     path: '/fortalezas-debilidades-fortalecer/:id',
     name: 'fortalezasDebilidadesFortalecer',
     component: fortalezasDebilidadesFortalecer
-  }
+  },
+  {
+    path: '/paquetes',
+    name: 'paquetes',
+    component: Paquetes
+  },
 ]
 
 const router = createRouter({
