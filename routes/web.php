@@ -6,6 +6,7 @@ use App\Http\Controllers\VentasController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InformeGeneralDimensionesController;
+use App\Http\Controllers\VentaElectronicaController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -69,6 +70,8 @@ Route::prefix('api')->group(function () {
     Route::post('/generar-pdf-general', [InformeGeneralDimensionesController::class, 'generatePDFGeneral'])->name('generatePDFGeneral');
     Route::post('/generar-pdf-tablas', [InformeGeneralDimensionesController::class, 'generarPDFTablas'])->name('generarPDFTablas');
     Route::post('/generar-pdf-comparacion', [InformeGeneralDimensionesController::class, 'generarPDFComparacion'])->name('generarPDFComparacion');
+
+    Route::post('/enviar-credenciales', [VentaElectronicaController::class, 'enviarCredenciales'])->name('enviarCredenciales');
 
 });
 
