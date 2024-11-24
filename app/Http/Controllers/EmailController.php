@@ -260,7 +260,7 @@ class EmailController extends Controller
                     <hr>
                     <p style='font-weight: bold; margin: 4px;'>Su usuario es: $usuario</p>
                     <p style='font-weight: bold; margin: 4px;'>Su clave es: $password</p>
-                    <p style='font-weight: bold; margin: 4px;'>El enlace de inicio es: https://clima.institutocolombianodepsicometria.com/</p>
+                    <p style='font-weight: bold; margin: 4px;'>El enlace de inicio es: https://pruebaclima.climalaborald10.com</p>
                     <br>
                     <h4>Resumen de su compra</h4>
                     <br>
